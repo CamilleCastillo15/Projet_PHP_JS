@@ -24,6 +24,13 @@ app.singleFlower = Backbone.Model.extend({
       console.log("Something in our model has changed");
     });
 
+    // Cut and paste this inside our initialize method
+    //Création d'une fonction, qui, à chaque fois que le prix change, va, va afficher le nom de l'instance du modèle, et le prix modifié
+    // La fonction sera appelée à chaque fois que le modèle est modifié
+    this.on('change:price', function(){
+      console.log("The price for the " + this.get("name") + " model just changed to $" + this.get("price") + " dollars");
+    });
+
   }
 
 });
