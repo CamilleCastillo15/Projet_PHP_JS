@@ -1,4 +1,3 @@
-console.log("routes");
 console.log("singleFlowerModel");
 
 
@@ -15,6 +14,7 @@ app.singleFlower = Backbone.Model.extend({
     img: "images/placeholder.jpg"
   },
 
+  /*
   initialize: function() {
     console.log("A model instance named " + this.get("name") +  " has been created and it costs " + this.get("price"));
   
@@ -32,13 +32,11 @@ app.singleFlower = Backbone.Model.extend({
       console.log("The price for the " + this.get("name") + " model just changed to $" + this.get("price") + " dollars");
     });
 
-  }
+  }*/
 
 });
 
 
-console.log("allFlowerView");
-console.log("singleFlowerView");
 console.log("allFlower");
 
 // Une collection est un groupe d'instances de modèles
@@ -53,6 +51,24 @@ app.FlowersCollection = Backbone.Collection.extend({
 
 });
 
+console.log("routes");
+console.log("allFlowerView");
+console.log("singleFlowerView");
+
+// Namespace our flowerApp
+var app = app || {};
+
+// The view for a single model view, which is one flower
+app.singleFlowerView = Backbone.View.extend({
+
+//tagname définit le nom de la balise HTML dans lequelles les données vont être insérées
+//className définit la classe du tagName (optionnel)
+//tagName est aussi optionnel, mais Backbonne définira par défaut la balise div
+  tagName: "article",
+  className: "flowerListItem",
+
+
+});
 console.log("main");
 $("#kk");
 
@@ -84,13 +100,13 @@ var heirloomRoses = new app.singleFlower({
 });
 
 var flowerGroup = new app.FlowersCollection([
-  redRoses, rainbowRoses
+  redRoses, rainbowRoses, heirloomRoses
 ]);
 
-flowerGroup.add(heirloomRoses);
+/*flowerGroup.add(heirloomRoses);
 flowerGroup.remove(redRoses);
 
-console.log(flowerGroup.toJSON());
+console.log(flowerGroup.toJSON());*/
 
 
 /* console.log(heirloomRoses.toJSON());

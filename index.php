@@ -14,7 +14,21 @@
       <img src="images/site/logo.png" width="207" height="124" alt="Hansel and Petal" />
     </div>
 
+    <div id="allFlowers"></div>
+
+    <div id="copy"></div>
+
   </div>  
+
+<!-- id de script définit le nom définit dans la partie view ?-->
+<script id="flowerElement" type="text/template">
+    <a href="#<%= link %>"><img src="<%= img %>" alt="<%= name %>" class="image" /></a>
+    <ul>
+      <li class="flowerInfo">Name:<%= name %></li>
+      <li class="flowerInfo">Price:<%= price %></li>
+      <li class="flowerInfo">Color:<%= color %></li>
+    </ul>
+  </script>
 
 	<script src="include/js/lib/vendor.min.js"></script>
 	<script src="include/js/scripts/scripts.min.js"></script>

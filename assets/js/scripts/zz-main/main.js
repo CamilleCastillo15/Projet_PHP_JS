@@ -29,13 +29,13 @@ var heirloomRoses = new app.singleFlower({
 });
 
 var flowerGroup = new app.FlowersCollection([
-  redRoses, rainbowRoses
+  redRoses, rainbowRoses, heirloomRoses
 ]);
 
-flowerGroup.add(heirloomRoses);
+/*flowerGroup.add(heirloomRoses);
 flowerGroup.remove(redRoses);
 
-console.log(flowerGroup.toJSON());
+console.log(flowerGroup.toJSON());*/
 
 
 /* console.log(heirloomRoses.toJSON());

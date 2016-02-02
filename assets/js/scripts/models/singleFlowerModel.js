@@ -14,6 +14,7 @@ app.singleFlower = Backbone.Model.extend({
     img: "images/placeholder.jpg"
   },
 
+  /*
   initialize: function() {
     console.log("A model instance named " + this.get("name") +  " has been created and it costs " + this.get("price"));
   
@@ -31,7 +32,7 @@ app.singleFlower = Backbone.Model.extend({
       console.log("The price for the " + this.get("name") + " model just changed to $" + this.get("price") + " dollars");
     });
 
-  }
+  }*/
 
 });
 
