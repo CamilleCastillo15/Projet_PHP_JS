@@ -1,0 +1,20 @@
+{
+  "name": "camille-gulp-stack",
+  "description": "Paquets requis pour builder le site",
+  "main": "gulpfile.js",
+  "authors": [
+    "Camille Castillo <camillecastillo15@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/Camomille15/monsite",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "backbone": "~1.2.3"
+  }
+}
