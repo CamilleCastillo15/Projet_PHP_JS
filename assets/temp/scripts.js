@@ -1,3 +1,17 @@
+console.log("allFlower");
+
+// Une collection est un groupe d'instances de modèles
+
+   
+// Namespace our flowerApp
+var app = app || {};
+
+app.FlowersCollection = Backbone.Collection.extend({
+
+  model: app.singleFlower
+
+});
+
 console.log("singleFlowerModel");
 
 
@@ -37,20 +51,6 @@ app.singleFlower = Backbone.Model.extend({
 });
 
 
-console.log("allFlower");
-
-// Une collection est un groupe d'instances de modèles
-
-   
-// Namespace our flowerApp
-var app = app || {};
-
-app.FlowersCollection = Backbone.Collection.extend({
-
-  model: app.singleFlower
-
-});
-
 console.log("routes");
 console.log("allFlowerView");
 console.log("singleFlowerView");
@@ -67,6 +67,17 @@ app.singleFlowerView = Backbone.View.extend({
   tagName: "article",
   className: "flowerListItem",
 
+  //Indique la balise html où seront insérées les données (avec JQuery - plus rapide-)
+  template: _.template( $("#flowerElement").html() ),
+
+  //render construit les élémnts html
+  //Elle récupère les données crées précedemment
+  //$el ?
+  render: function() {
+    var flowerTemplate = this.template(this.model.toJSON());
+    this.$el.html(flowerTemplate);
+    return this;
+  }
 
 });
 console.log("main");

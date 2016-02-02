@@ -20,7 +20,10 @@
 
   </div>  
 
-<!-- id de script définit le nom définit dans la partie view ?-->
+<!-- id de script définit le nom définit dans la partie view ?
+< % = référence la façon d'appeler le template underscore.js
+
+-->
 <script id="flowerElement" type="text/template">
     <a href="#<%= link %>"><img src="<%= img %>" alt="<%= name %>" class="image" /></a>
     <ul>

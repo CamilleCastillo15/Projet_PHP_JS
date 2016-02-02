@@ -12,5 +12,16 @@ app.singleFlowerView = Backbone.View.extend({
   tagName: "article",
   className: "flowerListItem",
 
+  //Indique la balise html où seront insérées les données (avec JQuery - plus rapide-)
+  template: _.template( $("#flowerElement").html() ),
+
+  //render construit les élémnts html
+  //Elle récupère les données crées précedemment
+  //$el ?
+  render: function() {
+    var flowerTemplate = this.template(this.model.toJSON());
+    this.$el.html(flowerTemplate);
+    return this;
+  }
 
 });
