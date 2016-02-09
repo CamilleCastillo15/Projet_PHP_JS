@@ -1,17 +1,3 @@
-console.log("allFlower");
-
-// Une collection est un groupe d'instances de modèles
-
-   
-// Namespace our flowerApp
-var app = app || {};
-
-app.FlowersCollection = Backbone.Collection.extend({
-
-  model: app.singleFlower
-
-});
-
 console.log("singleFlowerModel");
 
 
@@ -26,7 +12,7 @@ app.singleFlower = Backbone.Model.extend({
   defaults: {
     color: "pink",
     img: "images/placeholder.jpg"
-  },
+  }
 
   /*
   initialize: function() {
@@ -52,7 +38,41 @@ app.singleFlower = Backbone.Model.extend({
 
 
 console.log("routes");
+console.log("allFlower");
+
+// Une collection est un groupe d'instances de modèles
+
+   
+// Namespace our flowerApp
+var app = app || {};
+
+app.FlowersCollection = Backbone.Collection.extend({
+
+  model: app.singleFlower
+
+});
+
 console.log("allFlowerView");
+
+// Namespace our flowerApp
+var app = app || {};
+
+// The view for all the flowers
+app.allFlowersView = Backbone.View.extend({
+
+  tagName: "section",
+
+  render: function() {
+      this.collection.each(this.addFlower, this);
+        return this;
+  },
+
+ addFlower: function(flower) {
+        var flowerView = new app.singleFlowerView ({ model: flower });
+        this.$el.append(flowerView.render().el);
+ }
+
+});
 console.log("singleFlowerView");
 
 // Namespace our flowerApp
@@ -106,13 +126,17 @@ var rainbowRoses = new app.singleFlower({
 var heirloomRoses = new app.singleFlower({
   name: "Heirloom roses",
   price: 19.95,
-  img: "images/heirloomRoses.jpg",
+  img: "images/heirloomPinkRoses.jpg",
   link: "heirloomRose"
 });
 
 var flowerGroup = new app.FlowersCollection([
   redRoses, rainbowRoses, heirloomRoses
 ]);
+
+var flowerGroupView = new app.allFlowersView({ collection: flowerGroup});
+
+$("#allFlowers").html(flowerGroupView.render().el);
 
 /*flowerGroup.add(heirloomRoses);
 flowerGroup.remove(redRoses);

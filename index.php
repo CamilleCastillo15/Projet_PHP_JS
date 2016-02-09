@@ -24,14 +24,23 @@
 < % = référence la façon d'appeler le template underscore.js
 
 -->
-<script id="flowerElement" type="text/template">
+   <script id="flowerElement" type="text/template">
+      <a href="#<%= link %>"><img src="<%= img %>" alt="<%= name %>" class="image" /></a>
+      <ul>
+        <li class="flowerInfo"><strong>Name:</strong> <%= name %></li>
+        <li class="flowerInfo"><strong>Price:</strong> <%= price %></li>
+        <li class="flowerInfo"><strong>Color:</strong> <%= color %></li>
+      </ul>
+    </script>
+
+<!--  <script id="flowerElement" type="text/template">
     <a href="#<%= link %>"><img src="<%= img %>" alt="<%= name %>" class="image" /></a>
     <ul>
       <li class="flowerInfo">Name:<%= name %></li>
       <li class="flowerInfo">Price:<%= price %></li>
       <li class="flowerInfo">Color:<%= color %></li>
     </ul>
-  </script>
+  </script> -->
 
 	<script src="include/js/lib/vendor.min.js"></script>
 	<script src="include/js/scripts/scripts.min.js"></script>

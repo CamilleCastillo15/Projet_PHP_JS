@@ -1,5 +1,5 @@
 {
-  "name": "camille-gulp-stack",
+  "name": "camille-bower-PHP-JS",
   "description": "Paquets requis pour builder le site",
   "main": "gulpfile.js",
   "authors": [
