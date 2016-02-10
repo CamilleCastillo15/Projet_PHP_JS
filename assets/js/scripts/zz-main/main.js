@@ -36,6 +36,13 @@ var flowerGroupView = new app.allFlowersView({ collection: flowerGroup});
 
 $("#allFlowers").html(flowerGroupView.render().el);
 
+//Création d'une nouvelle instance de router 
+//nommée flowerRouter
+var flowerRouter = new app.Router();
+
+Backbone.history.start();
+
+
 /*flowerGroup.add(heirloomRoses);
 flowerGroup.remove(redRoses);
 

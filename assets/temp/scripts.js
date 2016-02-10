@@ -37,21 +37,6 @@ app.singleFlower = Backbone.Model.extend({
 });
 
 
-console.log("routes");
-console.log("allFlower");
-
-// Une collection est un groupe d'instances de modèles
-
-   
-// Namespace our flowerApp
-var app = app || {};
-
-app.FlowersCollection = Backbone.Collection.extend({
-
-  model: app.singleFlower
-
-});
-
 console.log("allFlowerView");
 
 // Namespace our flowerApp
@@ -97,7 +82,75 @@ app.singleFlowerView = Backbone.View.extend({
     var flowerTemplate = this.template(this.model.toJSON());
     this.$el.html(flowerTemplate);
     return this;
+  },
+
+  //Evènements spécifiques à Backbone
+  events: {
+    'mouseover': 'addBgColor',
+    'mouseout': 'removeBgColor'
+  },
+
+  //Ajout au template, à la balise #allFlower est modifiée ?
+  //balise article (référence)
+  addBgColor: function() {
+    this.$el.addClass("bgColorImage");
+  },
+
+  removeBgColor: function() {
+    this.$el.removeClass("bgColorImage");
   }
+
+});
+console.log("allFlower");
+
+// Une collection est un groupe d'instances de modèles
+
+   
+// Namespace our flowerApp
+var app = app || {};
+
+app.FlowersCollection = Backbone.Collection.extend({
+
+  model: app.singleFlower
+
+});
+
+console.log("routes");
+
+// Namespace our flowerApp
+var app = app || {};
+
+//Création d'un routeur
+//Sur le modèle clé / valeur
+//La route est sur la gauche
+app.Router = Backbone.Router.extend({
+
+	routes :{
+	  //Définit une route pour index.html
+	  //La méthode noCopy sera appelée
+	  "": "noCopy",
+	  //Les méthodes appelées pour :
+	  //#heirloomRose, #rainbowRose, #redRose
+	  "heirloomRose" : "heirloomRoseMessage",
+	  "rainbowRose": "rainbowRoseMessage",
+	  "redRose" : "redRoseMessage"
+	},
+
+	noCopy: function() {
+  	  $("#copy").html("");
+	},
+
+	heirloomRoseMessage: function() {
+	  $("#copy").html("Heirloom Roses are great Mother's Day flowers");
+	},
+
+	rainbowRoseMessage: function() {
+	  $("#copy").html("Choose Rainbow Roses for your wedding");
+	},
+
+	redRoseMessage: function() {
+	  $("#copy").html("On Valentine's Day, give that special someone Red Roses");
+	}
 
 });
 console.log("main");
@@ -137,6 +190,13 @@ var flowerGroup = new app.FlowersCollection([
 var flowerGroupView = new app.allFlowersView({ collection: flowerGroup});
 
 $("#allFlowers").html(flowerGroupView.render().el);
+
+//Création d'une nouvelle instance de router 
+//nommée flowerRouter
+var flowerRouter = new app.Router();
+
+Backbone.history.start();
+
 
 /*flowerGroup.add(heirloomRoses);
 flowerGroup.remove(redRoses);

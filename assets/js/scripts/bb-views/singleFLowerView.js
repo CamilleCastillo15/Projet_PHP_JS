@@ -22,6 +22,22 @@ app.singleFlowerView = Backbone.View.extend({
     var flowerTemplate = this.template(this.model.toJSON());
     this.$el.html(flowerTemplate);
     return this;
+  },
+
+  //Evènements spécifiques à Backbone
+  events: {
+    'mouseover': 'addBgColor',
+    'mouseout': 'removeBgColor'
+  },
+
+  //Ajout au template, à la balise #allFlower est modifiée ?
+  //balise article (référence)
+  addBgColor: function() {
+    this.$el.addClass("bgColorImage");
+  },
+
+  removeBgColor: function() {
+    this.$el.removeClass("bgColorImage");
   }
 
 });
