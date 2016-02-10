@@ -11,7 +11,7 @@
   <div class="site">
 
     <div class="logo">  
-      <img src="images/site/logo.png" width="207" height="124" alt="Hansel and Petal" />
+      <p>Polygon Animals Shop</p>
     </div>
 
     <div id="allFlowers"></div>
