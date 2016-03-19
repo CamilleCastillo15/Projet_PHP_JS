@@ -43,9 +43,9 @@ creator.fetch();
 var creatorGroup = new app.CreatorsCollection();
 //creatorsGroup.fetch();
 
-var creatorGroupView = new app.allCreatorsView({ collection: creatorGroup});
+var creatorView = new app.singleCreatorView({ model: creator});
 
-$("#allFlowers").html(creatorGroupView.render().el);
+$("#allFlowers").html(creatorView.render().el);
 
 /*
 var hello = new creatorsView({
