@@ -29,27 +29,9 @@ var panda = new app.singleAnimal({
   link: "panda"
 });
 
-var animalGroup = new app.AnimalsCollection([
-  wolf, owl, panda
-]);
+//$("#allFlowers").html(animalGroupView.render().el);
 
-var creator = new app.singleCreator();
-creator.fetch();
-
-var animal = new app.singleAnimal();
-
-var creatorGroup = new app.CreatorsCollection(creator);
-//creatorsGroup.fetch();
-
-var creatorView = new app.singleCreatorView({ model: creator});
-var creatorGroupView = new app.allCreatorsView({ collection: creatorGroup});
-
-var animalView = new app.singleAnimalView({ model: animal});
-var animalGroupView = new app.allAnimalsView({ collection: animalGroup});
-
-$("#allFlowers").html(animalGroupView.render().el);
-
-$("#allCreators").html(creatorGroupView.render().el);
+//$("#allCreators").html(creatorGroupView.render().el);
 
 /*
 var hello = new creatorsView({

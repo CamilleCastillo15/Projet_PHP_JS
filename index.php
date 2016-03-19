@@ -8,6 +8,8 @@
 
 <body>
 
+  <div class="msg"><a href="#creators">Voir les Creators</a> | <a href="#animals">Voir les Animals</a></div>
+
   <div class="site">
 
     <div class="logo">  
