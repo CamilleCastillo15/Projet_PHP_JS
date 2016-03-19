@@ -28,24 +28,28 @@ var panda = new app.singleAnimal({
   img: "images/panda.svg",
   link: "panda"
 });
-/*
+
 var animalGroup = new app.AnimalsCollection([
   wolf, owl, panda
 ]);
 
-var animalGroupView = new app.allAnimalsView({ collection: animalGroup});
-
-$("#allFlowers").html(animalGroupView.render().el);*/
-
-var creator = new app.singleCreator({id:1});
+var creator = new app.singleCreator();
 creator.fetch();
 
-var creatorGroup = new app.CreatorsCollection();
+var animal = new app.singleAnimal();
+
+var creatorGroup = new app.CreatorsCollection(creator);
 //creatorsGroup.fetch();
 
 var creatorView = new app.singleCreatorView({ model: creator});
+var creatorGroupView = new app.allCreatorsView({ collection: creatorGroup});
 
-$("#allFlowers").html(creatorView.render().el);
+var animalView = new app.singleAnimalView({ model: animal});
+var animalGroupView = new app.allAnimalsView({ collection: animalGroup});
+
+$("#allFlowers").html(animalGroupView.render().el);
+
+$("#allCreators").html(creatorGroupView.render().el);
 
 /*
 var hello = new creatorsView({

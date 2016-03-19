@@ -8,6 +8,7 @@ var app = app || {};
 //Création d'une variable
 app.singleAnimal = Backbone.Model.extend({
 
+urlRoot: 'http://localhost/dev/PolygonalAnimalsApi_2/public/polygonalanimals',
 //Chaque instance de modèles auront leurs propres propriétés
   defaults: {
     color: "pink",

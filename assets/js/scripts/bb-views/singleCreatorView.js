@@ -9,7 +9,7 @@ app.singleCreatorView = Backbone.View.extend({
   tagName: "article",
   className: "flowerListItem",
 
-  template: _.template( $("#flowerElement").html() ),
+  template: _.template( $("#creatorElement").html() ),
 
     /*initialize: function() {
 			this.template = _.template($('#creatorsTemplate').html());
