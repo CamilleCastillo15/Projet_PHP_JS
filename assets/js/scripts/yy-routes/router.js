@@ -1,4 +1,4 @@
-console.log("routes");
+console.log("router");
 
 // Namespace our flowerApp
 var app = app || {};
@@ -14,24 +14,24 @@ app.Router = Backbone.Router.extend({
 	  "": "noCopy",
 	  //Les méthodes appelées pour :
 	  //#heirloomRose, #rainbowRose, #redRose
-	  "heirloomRose" : "heirloomRoseMessage",
-	  "rainbowRose": "rainbowRoseMessage",
-	  "redRose" : "redRoseMessage"
+	  "wolf" : "wolfMessage",
+	  "owl": "owlMessage",
+	  "panda" : "pandaMessage"
 	},
 
 	noCopy: function() {
   	  $("#copy").html("");
 	},
 
-	heirloomRoseMessage: function() {
+	wolfMessage: function() {
 	  $("#copy").html("Heirloom Roses are great Mother's Day flowers");
 	},
 
-	rainbowRoseMessage: function() {
+	owlMessage: function() {
 	  $("#copy").html("Choose Rainbow Roses for your wedding");
 	},
 
-	redRoseMessage: function() {
+	pandaMessage: function() {
 	  $("#copy").html("On Valentine's Day, give that special someone Red Roses");
 	}
 

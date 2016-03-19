@@ -6,40 +6,40 @@ $("#kk");
 // vont avoir des propriétés spécifiques
 // sauf par exemple rose arc - en - ciel qui aura li'mage
 
-var redRoses = new app.singleFlower({
-  name: "Red Roses",
+var wolf = new app.singleAnimal({
+  name: "Polygon Wolf",
   price: 39.95,
   color: "Red",
   img: "images/wolf.svg",
-  link: "redRose"
+  link: "wolf"
 });
 
-var rainbowRoses = new app.singleFlower({
-  name: "Rainbow Roses",
+var owl = new app.singleAnimal({
+  name: "Polygon Owl",
   price: 29.95,
   color: "orange",
   img: "images/owl.svg",
-  link: "rainbowRose"
+  link: "owl"
 });
 
-var heirloomRoses = new app.singleFlower({
-  name: "Heirloom roses",
+var panda = new app.singleAnimal({
+  name: "Polygon Panda",
   price: 19.95,
   img: "images/panda.svg",
-  link: "heirloomRose"
+  link: "panda"
 });
 
-var flowerGroup = new app.FlowersCollection([
-  redRoses, rainbowRoses, heirloomRoses
+var animalGroup = new app.AnimalsCollection([
+  wolf, owl, panda
 ]);
 
-var flowerGroupView = new app.allFlowersView({ collection: flowerGroup});
+var animalGroupView = new app.allAnimalsView({ collection: animalGroup});
 
-$("#allFlowers").html(flowerGroupView.render().el);
+$("#allFlowers").html(animalGroupView.render().el);
 
 //Création d'une nouvelle instance de router 
 //nommée flowerRouter
-var flowerRouter = new app.Router();
+var animalRouter = new app.Router();
 
 //
 Backbone.history.start();

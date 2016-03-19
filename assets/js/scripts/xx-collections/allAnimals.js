@@ -1,4 +1,4 @@
-console.log("allFlower");
+console.log("allAnimals");
 
 // Une collection est un groupe d'instances de modèles
 
@@ -6,8 +6,8 @@ console.log("allFlower");
 // Namespace our flowerApp
 var app = app || {};
 
-app.FlowersCollection = Backbone.Collection.extend({
+app.AnimalsCollection = Backbone.Collection.extend({
 
-  model: app.singleFlower
+  model: app.singleAnimal
 
 });

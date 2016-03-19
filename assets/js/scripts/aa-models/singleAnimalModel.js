@@ -1,4 +1,4 @@
-console.log("singleFlowerModel");
+console.log("singleAnimalModel");
 
 
 // Namespace our app
@@ -6,7 +6,7 @@ console.log("singleFlowerModel");
 var app = app || {};
 
 //Création d'une variable
-app.singleFlower = Backbone.Model.extend({
+app.singleAnimal = Backbone.Model.extend({
 
 //Chaque instance de modèles auront leurs propres propriétés
   defaults: {
