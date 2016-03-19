@@ -6,21 +6,6 @@ console.log("singleAnimalModel");
 var app = app || {};
 
 //Création d'une variable
-app.creators = Backbone.Model.extend({
-
-  urlRoot: 'http://localhost:8888/PolygonalAnimalsApiDebug.com/public/creators'
-
-});
-
-
-console.log("singleAnimalModel");
-
-
-// Namespace our app
-// || veut dire "OR"
-var app = app || {};
-
-//Création d'une variable
 app.singleAnimal = Backbone.Model.extend({
 
 //Chaque instance de modèles auront leurs propres propriétés
@@ -52,19 +37,20 @@ app.singleAnimal = Backbone.Model.extend({
 });
 
 
-console.log("allAnimals");
+console.log("singleCreator");
 
-// Une collection est un groupe d'instances de modèles
 
-   
-// Namespace our flowerApp
+// Namespace our app
+// || veut dire "OR"
 var app = app || {};
 
-app.AnimalsCollection = Backbone.Collection.extend({
+//Création d'une variable
+app.singleCreator = Backbone.Model.extend({
 
-  model: app.singleAnimal
+  urlRoot: 'http://localhost:8888/PolygonalAnimalsApiDebug.com/public/creators'
 
 });
+
 
 console.log("allAnimalsView");
 
@@ -84,6 +70,27 @@ app.allAnimalsView = Backbone.View.extend({
  addAnimal: function(animal) {
         var animalView = new app.singleAnimalView ({ model: animal });
         this.$el.append(animalView.render().el);
+ }
+
+});
+console.log("allCreatorsView");
+
+// Namespace our flowerApp
+var app = app || {};
+
+// The view for all the flowers
+app.allCreatorsView = Backbone.View.extend({
+
+  tagName: "section",
+
+  render: function() {
+      this.collection.each(this.addCreator, this);
+        return this;
+  },
+
+ addCreator: function(creator) {
+        var creatorView = new app.singleCreatorView ({ model: creator });
+        this.$el.append(creatorView.render().el);
  }
 
 });
@@ -130,6 +137,58 @@ app.singleAnimalView = Backbone.View.extend({
   }
 
 });
+console.log("singleCreatorView");
+
+// Namespace our flowerApp
+var app = app || {};
+
+// The view for all the flowers
+app.singleCreatorView = Backbone.View.extend({
+
+  model: app.creators,
+  template: _.template( $("#flowerElement").html() ),
+
+    /*initialize: function() {
+			this.template = _.template($('#creatorsTemplate').html());
+			this.listenTo(this.model, 'change', this.render);
+	},*/
+
+  render: function(){
+			var creatorTemplate = this.$el.html(this.template(this.model.attributes));
+			this.$el.html(creatorTemplate);
+    		return this;
+	},
+
+
+});
+console.log("allAnimals");
+
+// Une collection est un groupe d'instances de modèles
+
+   
+// Namespace our flowerApp
+var app = app || {};
+
+app.AnimalsCollection = Backbone.Collection.extend({
+
+  model: app.singleAnimal
+
+});
+
+console.log("allAnimals");
+
+// Une collection est un groupe d'instances de modèles
+
+   
+// Namespace our flowerApp
+var app = app || {};
+
+app.CreatorsCollection = Backbone.Collection.extend({
+
+  model: app.singleCreator
+
+});
+
 console.log("router");
 
 // Namespace our flowerApp
@@ -198,14 +257,30 @@ var panda = new app.singleAnimal({
   img: "images/panda.svg",
   link: "panda"
 });
-
+/*
 var animalGroup = new app.AnimalsCollection([
   wolf, owl, panda
 ]);
 
 var animalGroupView = new app.allAnimalsView({ collection: animalGroup});
 
-$("#allFlowers").html(animalGroupView.render().el);
+$("#allFlowers").html(animalGroupView.render().el);*/
+
+var creator = new app.singleCreator({id:1});
+creator.fetch();
+
+var creatorGroup = new app.CreatorsCollection();
+//creatorsGroup.fetch();
+
+var creatorGroupView = new app.allCreatorsView({ collection: creatorGroup});
+
+$("#allFlowers").html(creatorGroupView.render().el);
+
+/*
+var hello = new creatorsView({
+      el: $('#creatorsTemplate').first(),
+      model: creatorsModel
+    });*/
 
 //Création d'une nouvelle instance de router 
 //nommée flowerRouter

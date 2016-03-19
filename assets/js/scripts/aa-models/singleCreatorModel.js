@@ -1,4 +1,4 @@
-console.log("singleAnimalModel");
+console.log("singleCreator");
 
 
 // Namespace our app
@@ -6,7 +6,7 @@ console.log("singleAnimalModel");
 var app = app || {};
 
 //Création d'une variable
-app.creators = Backbone.Model.extend({
+app.singleCreator = Backbone.Model.extend({
 
   urlRoot: 'http://localhost:8888/PolygonalAnimalsApiDebug.com/public/creators'
 

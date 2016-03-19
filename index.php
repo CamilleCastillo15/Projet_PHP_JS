@@ -18,6 +18,8 @@
 
     <div id="copy"></div>
 
+    <div id="creatorsTemplate" ></div>
+
   </div>  
 
 <!-- id de script définit le nom définit dans la partie view ?

@@ -28,14 +28,30 @@ var panda = new app.singleAnimal({
   img: "images/panda.svg",
   link: "panda"
 });
-
+/*
 var animalGroup = new app.AnimalsCollection([
   wolf, owl, panda
 ]);
 
 var animalGroupView = new app.allAnimalsView({ collection: animalGroup});
 
-$("#allFlowers").html(animalGroupView.render().el);
+$("#allFlowers").html(animalGroupView.render().el);*/
+
+var creator = new app.singleCreator({id:1});
+creator.fetch();
+
+var creatorGroup = new app.CreatorsCollection();
+//creatorsGroup.fetch();
+
+var creatorGroupView = new app.allCreatorsView({ collection: creatorGroup});
+
+$("#allFlowers").html(creatorGroupView.render().el);
+
+/*
+var hello = new creatorsView({
+      el: $('#creatorsTemplate').first(),
+      model: creatorsModel
+    });*/
 
 //Création d'une nouvelle instance de router 
 //nommée flowerRouter
