@@ -6,7 +6,9 @@ var app = app || {};
 // The view for all the flowers
 app.singleCreatorView = Backbone.View.extend({
 
-  model: app.creators,
+  tagName: "article",
+  className: "flowerListItem",
+
   template: _.template( $("#flowerElement").html() ),
 
     /*initialize: function() {

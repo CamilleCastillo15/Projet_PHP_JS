@@ -52,6 +52,34 @@ app.singleCreator = Backbone.Model.extend({
 });
 
 
+console.log("allAnimals");
+
+// Une collection est un groupe d'instances de modèles
+
+   
+// Namespace our flowerApp
+var app = app || {};
+
+app.AnimalsCollection = Backbone.Collection.extend({
+
+  model: app.singleAnimal
+
+});
+
+console.log("allAnimals");
+
+// Une collection est un groupe d'instances de modèles
+
+   
+// Namespace our flowerApp
+var app = app || {};
+
+app.CreatorsCollection = Backbone.Collection.extend({
+
+  model: app.singleCreator
+
+});
+
 console.log("allAnimalsView");
 
 // Namespace our flowerApp
@@ -145,7 +173,9 @@ var app = app || {};
 // The view for all the flowers
 app.singleCreatorView = Backbone.View.extend({
 
-  model: app.creators,
+  tagName: "article",
+  className: "flowerListItem",
+
   template: _.template( $("#flowerElement").html() ),
 
     /*initialize: function() {
@@ -161,34 +191,6 @@ app.singleCreatorView = Backbone.View.extend({
 
 
 });
-console.log("allAnimals");
-
-// Une collection est un groupe d'instances de modèles
-
-   
-// Namespace our flowerApp
-var app = app || {};
-
-app.AnimalsCollection = Backbone.Collection.extend({
-
-  model: app.singleAnimal
-
-});
-
-console.log("allAnimals");
-
-// Une collection est un groupe d'instances de modèles
-
-   
-// Namespace our flowerApp
-var app = app || {};
-
-app.CreatorsCollection = Backbone.Collection.extend({
-
-  model: app.singleCreator
-
-});
-
 console.log("router");
 
 // Namespace our flowerApp
@@ -272,9 +274,9 @@ creator.fetch();
 var creatorGroup = new app.CreatorsCollection();
 //creatorsGroup.fetch();
 
-var creatorGroupView = new app.allCreatorsView({ collection: creatorGroup});
+var creatorView = new app.singleCreatorView({ model: creator});
 
-$("#allFlowers").html(creatorGroupView.render().el);
+$("#allFlowers").html(creatorView.render().el);
 
 /*
 var hello = new creatorsView({
