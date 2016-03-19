@@ -1,4 +1,4 @@
-console.log("allCreatorsView");
+//console.log("allCreatorsView");
 
 // Namespace our flowerApp
 var app = app || {};

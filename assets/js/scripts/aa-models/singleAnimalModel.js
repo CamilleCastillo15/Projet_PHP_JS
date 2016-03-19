@@ -1,5 +1,4 @@
-console.log("singleAnimalModel");
-
+//console.log("singleAnimalModel");
 
 // Namespace our app
 // || veut dire "OR"
@@ -8,12 +7,40 @@ var app = app || {};
 //Création d'une variable
 app.singleAnimal = Backbone.Model.extend({
 
-urlRoot: 'http://localhost/dev/PolygonalAnimalsApi_2/public/polygonalanimals',
 //Chaque instance de modèles auront leurs propres propriétés
   defaults: {
+    link: "test",
+    name: "lol",
+    price: "4.5",
     color: "pink",
     img: "images/placeholder.jpg"
-  }
+  },
+
+urlRoot: 'http://localhost/dev/PolygonalAnimalsApi_2/public/polygonalanimals',
+parse: function(response) {
+       console.log(response,response.data,response.data[0].name,response.data[0].price);
+       return {
+        link: response.data[4].link,
+        name:response.data[4].name,
+        price:response.data[4].price,
+        color:response.data[4].color,
+        img:response.data[4].img
+      }
+  },
+
+  initialize: function() {
+     console.log("A model instance named " + this.get("name") +  " has been created and it costs " + this.get("price"));
+   
+     // Cut and paste this inside our initialize method
+     //Cela permet d'écouter les changements du modèle ?
+     // Modèle : les fleurs
+     this.on('change', function(){
+       console.log("Something in our model has changed");
+     });
+
+     this.fetch();
+ 
+   }
 
   /*
   initialize: function() {

@@ -1,4 +1,4 @@
-console.log("main");
+//console.log("main");
 $("#kk");
 
 // 3 instances de fleurs sont crées 
@@ -6,7 +6,7 @@ $("#kk");
 // vont avoir des propriétés spécifiques
 // sauf par exemple rose arc - en - ciel qui aura li'mage
 
-var wolf = new app.singleAnimal({
+/*var wolf = new app.singleAnimal({
   name: "Polygon Wolf",
   price: 39.95,
   color: "Red",
@@ -27,7 +27,7 @@ var panda = new app.singleAnimal({
   price: 19.95,
   img: "images/panda.svg",
   link: "panda"
-});
+});*/
 
 //$("#allFlowers").html(animalGroupView.render().el);
 

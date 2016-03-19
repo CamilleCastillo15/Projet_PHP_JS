@@ -1,4 +1,4 @@
-console.log("allAnimalsView");
+//console.log("allAnimalsView");
 
 // Namespace our flowerApp
 var app = app || {};

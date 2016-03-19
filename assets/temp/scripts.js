@@ -1,5 +1,4 @@
-console.log("singleAnimalModel");
-
+//console.log("singleAnimalModel");
 
 // Namespace our app
 // || veut dire "OR"
@@ -8,12 +7,40 @@ var app = app || {};
 //Création d'une variable
 app.singleAnimal = Backbone.Model.extend({
 
-urlRoot: 'http://localhost/dev/PolygonalAnimalsApi_2/public/polygonalanimals',
 //Chaque instance de modèles auront leurs propres propriétés
   defaults: {
+    link: "test",
+    name: "lol",
+    price: "4.5",
     color: "pink",
     img: "images/placeholder.jpg"
-  }
+  },
+
+urlRoot: 'http://localhost/dev/PolygonalAnimalsApi_2/public/polygonalanimals',
+parse: function(response) {
+       console.log(response,response.data,response.data[0].name,response.data[0].price);
+       return {
+        link: response.data[4].link,
+        name:response.data[4].name,
+        price:response.data[4].price,
+        color:response.data[4].color,
+        img:response.data[4].img
+      }
+  },
+
+  initialize: function() {
+     console.log("A model instance named " + this.get("name") +  " has been created and it costs " + this.get("price"));
+   
+     // Cut and paste this inside our initialize method
+     //Cela permet d'écouter les changements du modèle ?
+     // Modèle : les fleurs
+     this.on('change', function(){
+       console.log("Something in our model has changed");
+     });
+
+     this.fetch();
+ 
+   }
 
   /*
   initialize: function() {
@@ -38,7 +65,7 @@ urlRoot: 'http://localhost/dev/PolygonalAnimalsApi_2/public/polygonalanimals',
 });
 
 
-console.log("singleCreator");
+//console.log("singleCreator");
 
 
 // Namespace our app
@@ -53,14 +80,28 @@ app.singleCreator = Backbone.Model.extend({
 			return this.urlRoot;
 		},*/
 		defaults: {
-		    "name":  "defaults",
-		    "phone": "defaults"
-		  }
+			link: "test",
+			img: "images/placeholder.jpg",
+		    name:  "defaults",
+		    phone: "defaults"
+		  },
+
+  initialize: function() {
+     console.log("A model instance named " + this.get("name") +  " has been created and it costs " + this.get("phone"));
+   
+     // Cut and paste this inside our initialize method
+     //Cela permet d'écouter les changements du modèle ?
+     // Modèle : les fleurs
+     this.on('change', function(){
+       console.log("Something in our model has changed");
+     });
+ 
+   }
 
 });
 
 
-console.log("allAnimalsView");
+//console.log("allAnimalsView");
 
 // Namespace our flowerApp
 var app = app || {};
@@ -81,7 +122,7 @@ app.allAnimalsView = Backbone.View.extend({
  }
 
 });
-console.log("allCreatorsView");
+//console.log("allCreatorsView");
 
 // Namespace our flowerApp
 var app = app || {};
@@ -102,13 +143,21 @@ app.allCreatorsView = Backbone.View.extend({
  }
 
 });
-console.log("singleAnimalView");
+//console.log("singleAnimalView");
 
 // Namespace our flowerApp
 var app = app || {};
 
 // The view for a single model view, which is one flower
 app.singleAnimalView = Backbone.View.extend({
+
+url: 'http://localhost/dev/PolygonalAnimalsApi_2/public/polygonalanimals',
+model:app.singleAnimal,
+
+initialize: function() {
+    this.model.fetch();
+    this.model.bind('change', this.render, this);
+  },
 
 //tagname définit le nom de la balise HTML dans lequelles les données vont être insérées
 //className définit la classe du tagName (optionnel)
@@ -145,7 +194,7 @@ app.singleAnimalView = Backbone.View.extend({
   }
 
 });
-console.log("singleCreatorView");
+//console.log("singleCreatorView");
 
 // Namespace our flowerApp
 var app = app || {};
@@ -171,7 +220,7 @@ app.singleCreatorView = Backbone.View.extend({
 
 
 });
-console.log("allAnimals");
+//console.log("allAnimals");
 
 // Une collection est un groupe d'instances de modèles
 
@@ -185,7 +234,7 @@ app.AnimalsCollection = Backbone.Collection.extend({
 
 });
 
-console.log("allAnimals");
+//console.log("allAnimals");
 
 // Une collection est un groupe d'instances de modèles
 
@@ -199,7 +248,7 @@ app.CreatorsCollection = Backbone.Collection.extend({
 
 });
 
-console.log("router");
+//console.log("router");
 
 // Namespace our flowerApp
 var app = app || {};
@@ -259,17 +308,34 @@ app.Router = Backbone.Router.extend({
 
 	  var animal = new app.singleAnimal();
 
-	  var animalGroup = new app.AnimalsCollection([
+	  /*animal.fetch({
+	    success: function (animal) {
+	        alert(JSON.stringify(animal));
+	        console.log(animal.attributes.color)
+	        return {
+
+	        	color: animal.attributes.color,
+        		name: animal.attributes.name
+
+	        	}
+
+		    }
+
+		})*/
+
+	  /*var animalGroup = new app.AnimalsCollection([
 		  wolf, owl, panda
 		]);
 
-	  var animalGroupView = new app.allAnimalsView({ collection: animalGroup});
+	  var animalGroup = new app.AnimalsCollection(animal);*/
 
-	  $("#allFlowers").html(animalGroupView.render().el);
+	  var animalView = new app.singleAnimalView({ model: animal});
+
+	  $("#allFlowers").html(animalView.render().el);
 	}
 
 });
-console.log("main");
+//console.log("main");
 $("#kk");
 
 // 3 instances de fleurs sont crées 
@@ -277,7 +343,7 @@ $("#kk");
 // vont avoir des propriétés spécifiques
 // sauf par exemple rose arc - en - ciel qui aura li'mage
 
-var wolf = new app.singleAnimal({
+/*var wolf = new app.singleAnimal({
   name: "Polygon Wolf",
   price: 39.95,
   color: "Red",
@@ -298,7 +364,7 @@ var panda = new app.singleAnimal({
   price: 19.95,
   img: "images/panda.svg",
   link: "panda"
-});
+});*/
 
 //$("#allFlowers").html(animalGroupView.render().el);
 

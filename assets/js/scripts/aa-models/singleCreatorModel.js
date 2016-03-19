@@ -1,4 +1,4 @@
-console.log("singleCreator");
+//console.log("singleCreator");
 
 
 // Namespace our app
@@ -13,9 +13,23 @@ app.singleCreator = Backbone.Model.extend({
 			return this.urlRoot;
 		},*/
 		defaults: {
-		    "name":  "defaults",
-		    "phone": "defaults"
-		  }
+			link: "test",
+			img: "images/placeholder.jpg",
+		    name:  "defaults",
+		    phone: "defaults"
+		  },
+
+  initialize: function() {
+     console.log("A model instance named " + this.get("name") +  " has been created and it costs " + this.get("phone"));
+   
+     // Cut and paste this inside our initialize method
+     //Cela permet d'écouter les changements du modèle ?
+     // Modèle : les fleurs
+     this.on('change', function(){
+       console.log("Something in our model has changed");
+     });
+ 
+   }
 
 });
 

@@ -1,4 +1,4 @@
-console.log("allAnimals");
+//console.log("allAnimals");
 
 // Une collection est un groupe d'instances de modèles
 

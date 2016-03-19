@@ -1,10 +1,18 @@
-console.log("singleAnimalView");
+//console.log("singleAnimalView");
 
 // Namespace our flowerApp
 var app = app || {};
 
 // The view for a single model view, which is one flower
 app.singleAnimalView = Backbone.View.extend({
+
+url: 'http://localhost/dev/PolygonalAnimalsApi_2/public/polygonalanimals',
+model:app.singleAnimal,
+
+initialize: function() {
+    this.model.fetch();
+    this.model.bind('change', this.render, this);
+  },
 
 //tagname définit le nom de la balise HTML dans lequelles les données vont être insérées
 //className définit la classe du tagName (optionnel)

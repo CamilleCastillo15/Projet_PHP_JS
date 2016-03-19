@@ -37,6 +37,7 @@
     </script>
 
   <script id="creatorElement" type="text/template">
+      <a href="#<%= link %>"><img src="<%= img %>" alt="<%= name %>" class="image" /></a>
       <ul>
         <li class="creatorInfo"><strong>Name:</strong> <%= name %></li>
         <li class="creatorInfo"><strong>Phone:</strong> <%= phone %></li>

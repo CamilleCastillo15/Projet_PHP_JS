@@ -1,4 +1,4 @@
-console.log("router");
+//console.log("router");
 
 // Namespace our flowerApp
 var app = app || {};
@@ -58,13 +58,30 @@ app.Router = Backbone.Router.extend({
 
 	  var animal = new app.singleAnimal();
 
-	  var animalGroup = new app.AnimalsCollection([
+	  /*animal.fetch({
+	    success: function (animal) {
+	        alert(JSON.stringify(animal));
+	        console.log(animal.attributes.color)
+	        return {
+
+	        	color: animal.attributes.color,
+        		name: animal.attributes.name
+
+	        	}
+
+		    }
+
+		})*/
+
+	  /*var animalGroup = new app.AnimalsCollection([
 		  wolf, owl, panda
 		]);
 
-	  var animalGroupView = new app.allAnimalsView({ collection: animalGroup});
+	  var animalGroup = new app.AnimalsCollection(animal);*/
 
-	  $("#allFlowers").html(animalGroupView.render().el);
+	  var animalView = new app.singleAnimalView({ model: animal});
+
+	  $("#allFlowers").html(animalView.render().el);
 	}
 
 });
