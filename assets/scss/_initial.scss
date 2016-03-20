@@ -27,6 +27,29 @@ body {
   margin: 75px auto 0;
 }
 
+.button-container{
+
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+    font-size: 15px;
+
+}
+
+.form {
+
+  //visibility:hidden;
+  display: block;
+  padding: 20px;
+  margin: 110px auto 0;
+  width: 750px;
+  background-color: #E0E0E0;
+  border: 1px solid grey;
+  text-align: center;
+  font-size: 15px;
+
+}
+
 .logo {
   padding: 5px;
   @include font-size(30);
@@ -64,6 +87,15 @@ body {
 }
 
 #allFlowers {
+  padding: 20px;
+  margin: 110px auto 0 auto;
+  text-align: center;
+  width: 750px;
+  background-color: #E0E0E0;
+  border: 1px solid grey;
+}
+
+#allCreators {
   padding: 20px;
   margin: 110px auto 0 auto;
   text-align: center;

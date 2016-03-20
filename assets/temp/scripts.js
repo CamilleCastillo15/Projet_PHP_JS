@@ -261,18 +261,35 @@ app.Router = Backbone.Router.extend({
 	routes :{
 	  //Définit une route pour index.html
 	  //La méthode noCopy sera appelée
-	  "": "noCopy",
+	  "": "default",
 	  //Les méthodes appelées pour :
 	  //#heirloomRose, #rainbowRose, #redRose
 	  "wolf" : "wolfMessage",
 	  "owl": "owlMessage",
 	  "panda" : "pandaMessage",
 	  "creators" : "creatorPage",
-	  "animals" : "animalPage"
+	  "animals" : "animalPage",
+	  "put-animal" : "putAnimalPage",
+	  "update-animal" : "updateAnimalPage",
+	  "delete-animal" : "deleteAnimalPage",
+	  "put-creator" : "putCreatorPage",
+	  "update-creator" : "updateCreatorPage",
+	  "delete-creator" : "deleteCreatorPage"
 	},
 
-	noCopy: function() {
+	initialize: function() {
+        $(".form-container").hide();
+        $(".form-creator-update").hide();
+		$(".form-creator-delete").hide();
+		$(".form-creator-create").hide();
+    },
+
+	default: function() {
   	  $("#copy").html("");
+  	  $(".form-container").hide();
+  	  $(".form-creator-update").hide();
+	  $(".form-creator-delete").hide();
+	  $(".form-creator-create").hide();
 	},
 
 	wolfMessage: function() {
@@ -298,14 +315,21 @@ app.Router = Backbone.Router.extend({
 	var creatorView = new app.singleCreatorView({ model: creator});
 	var creatorGroupView = new app.allCreatorsView({ collection: creatorGroup});
 
-	  $("#allFlowers").empty();
+	  $("#allFlowers").hide();
+	  $("#allCreators").show();
+	  $(".form-container").hide();
+	  $(".animal-buttons").hide();
+	  $(".creators-buttons").show();
 	  $("#allCreators").html(creatorGroupView.render().el);
 	},
 
 	animalPage: function() {
 
-	  $("#allCreators").empty();
-
+	  $("#allCreators").hide();
+	  $("#allFlowers").show();
+	  $(".form-container").hide();
+	  $(".creators-buttons").hide();
+	  $(".animal-buttons").show();
 	  var animal = new app.singleAnimal();
 
 	  /*animal.fetch({
@@ -332,6 +356,54 @@ app.Router = Backbone.Router.extend({
 	  var animalView = new app.singleAnimalView({ model: animal});
 
 	  $("#allFlowers").html(animalView.render().el);
+	},
+
+	putAnimalPage: function(){
+
+		$(".animal-buttons").hide();
+
+	},
+
+	updateAnimalPage: function(){
+
+		$(".animal-buttons").hide();
+		
+	},
+
+	deleteAnimalPage: function(){
+
+		$(".animal-buttons").hide();
+		
+	},
+
+	putCreatorPage: function(){
+
+		$("#allCreators").hide();
+		$(".form-container").show();
+		$(".form-creator-update").hide();
+		$(".form-creator-delete").hide();
+		$(".form-creator-create").show();
+
+	},
+
+	updateCreatorPage: function(){
+
+		$("#allCreators").hide();
+		$(".form-container").show();
+		$(".form-creator-create").hide();
+		$(".form-creator-delete").hide();
+		$(".form-creator-update").show();
+		
+	},
+
+	deleteCreatorPage: function(){
+
+		$("#allCreators").hide();
+		$(".form-container").show();
+		$(".form-creator-create").hide();
+		$(".form-creator-update").hide();
+		$(".form-creator-delete").show();
+		
 	}
 
 });
@@ -380,7 +452,7 @@ var hello = new creatorsView({
 //nommée flowerRouter
 var animalRouter = new app.Router();
 
-//
+$(".form-container").hide();
 Backbone.history.start();
 
 

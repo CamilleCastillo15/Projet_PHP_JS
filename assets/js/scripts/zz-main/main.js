@@ -43,7 +43,7 @@ var hello = new creatorsView({
 //nommée flowerRouter
 var animalRouter = new app.Router();
 
-//
+$(".form-container").hide();
 Backbone.history.start();
 
 

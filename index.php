@@ -20,7 +20,42 @@
 
     <div id="allCreators"></div>
 
-    <div id="copy"></div>
+    <div class="form-container">   
+
+      <form action="#" class="form form-creator-create">
+             Name: <input type="text" name="name" name="name"><br>
+             Phone: <input type="text" name="phone" name="phone"><br>
+            <button class="save">Edit</button>
+            <button class="cancel">Cancel</button>
+        </form>
+
+        <form action="#" class="form form-creator-update">
+             Id: <input type="text" name="id" name="id"><br>
+             Name: <input type="text" name="name" name="name"><br>
+             Phone: <input type="text" name="phone" name="phone"><br>
+            <button class="save">Update</button>
+            <button class="cancel">Cancel</button>
+        </form>
+
+        <form action="#" class="form form-creator-delete">
+             Id: <input type="text" name="id" name="id"><br>
+            <button class="save">Delete</button>
+            <button class="cancel">Cancel</button>
+        </form>
+
+      </div>
+
+    <div class="button-container animal-buttons">
+      <button class="button put" type="button"><a href="#put-animal">PUT</a></button>
+      <button class="button update" type="button"><a href="#update-animal">UPDATE</a></button>
+      <button class="button delete" type="button"><a href="#delete-animal">DELETE</a></button>
+    </div>
+
+    <div class="button-container creators-buttons">
+      <button class="button put" type="button"><a href="#put-creator">PUT</a></button>
+      <button class="button update" type="button"><a href="#update-creator">UPDATE</a></button>
+      <button class="button delete" type="button"><a href="#delete-creator">DELETE</a></button>
+    </div>
 
   </div>  
 
@@ -43,16 +78,6 @@
         <li class="creatorInfo"><strong>Phone:</strong> <%= phone %></li>
       </ul>
     </script>
-
-
-<!--  <script id="flowerElement" type="text/template">
-    <a href="#<%= link %>"><img src="<%= img %>" alt="<%= name %>" class="image" /></a>
-    <ul>
-      <li class="flowerInfo">Name:<%= name %></li>
-      <li class="flowerInfo">Price:<%= price %></li>
-      <li class="flowerInfo">Color:<%= color %></li>
-    </ul>
-  </script> -->
 
   <script src="include/js/lib/vendor.min.js"></script>
   <script src="include/js/scripts/scripts.min.js"></script>
