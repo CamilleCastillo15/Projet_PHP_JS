@@ -96,6 +96,13 @@ app.Router = Backbone.Router.extend({
 
 	  var animal = new app.singleAnimal();
 
+	  animal.fetch({
+	    success: function (animal) {
+	        alert(JSON.stringify(animal));
+		    }
+
+		});
+
 	  var animalView = new app.singleAnimalView({ model: animal});
 
 	  $("#allFlowers").html(animalView.render().el);
@@ -103,23 +110,22 @@ app.Router = Backbone.Router.extend({
 	  /*animal.fetch({
 	    success: function (animal) {
 	        alert(JSON.stringify(animal));
-	        console.log(animal.attributes.color)
-	        return {
-
-	        	color: animal.attributes.color,
-        		name: animal.attributes.name
-
-	        	}
-
 		    }
 
-		})
+		});*/
 
-	  var animalGroup = new app.AnimalsCollection([
+/*	  var animalGroup = new app.AnimalsCollection([
 		  wolf, owl, panda
-		]);
+		]);*/
 
-	  var animalGroup = new app.AnimalsCollection(animal);*/
+	  //var animalGroup = new app.AnimalsCollection(animal);
+
+	  //var animalGroup = new app.AnimalsCollection([wolf, owl]);
+	  //console.log(animalGroup);
+
+	  /*var animalGroupView = new app.allAnimalsView({ model: animal});
+
+	  $("#allFlowers").html(animalGroupView.render().el);*/
 
 	},
 

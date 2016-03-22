@@ -6,6 +6,15 @@ var app = app || {};
 // The view for all the flowers
 app.allAnimalsView = Backbone.View.extend({
 
+  url: 'http://localhost:8888/PolygonalAnimalsApiDebug.com/public/polygonalanimals',
+  model:app.singleAnimal,
+
+initialize: function() {
+    this.model.fetch();
+    this.model.bind('change', this.render, this);
+  },
+
+  model:app.singleAnimal,
   tagName: "section",
 
   render: function() {

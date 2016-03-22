@@ -27,7 +27,9 @@ initialize: function() {
   //Elle récupère les données crées précedemment
   //$el ?
   render: function() {
-    var animalTemplate = this.template(this.model.toJSON());
+    var JSON = this.model.toJSON();
+    console.log(JSON);
+    var animalTemplate = this.template({Objects: JSON});
     this.$el.html(animalTemplate);
     return this;
   },

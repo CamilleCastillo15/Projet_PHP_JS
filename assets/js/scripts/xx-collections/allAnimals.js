@@ -8,6 +8,7 @@ var app = app || {};
 
 app.AnimalsCollection = Backbone.Collection.extend({
 
-  model: app.singleAnimal
+  url: 'http://localhost:8888/PolygonalAnimalsApiDebug.com/public/polygonalanimals',
+  model:app.singleAnimal
 
 });

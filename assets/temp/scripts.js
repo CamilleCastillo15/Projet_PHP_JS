@@ -1,96 +1,3 @@
-//console.log("singleAnimalModel");
-
-// Namespace our app
-// || veut dire "OR"
-var app = app || {};
-
-//Création d'une variable
-app.singleAnimal = Backbone.Model.extend({
-
-//Chaque instance de modèles auront leurs propres propriétés
-  defaults: {
-    link: "test",
-    name: "lol",
-    price: "4.5",
-    color: "pink",
-    img: "images/placeholder.jpg"
-  },
-
-urlRoot: 'http://localhost:8888/PolygonalAnimalsApiDebug.com/public/polygonalanimals',
-
-parse: function(response) {
-       //console.log(response,response.data,response.data[0].name,response.data[0].price);
-       return {
-        link: response.data[4].link,
-        name:response.data[4].name,
-        price:response.data[4].price,
-        color:response.data[4].color,
-        img:response.data[4].img
-      }
-  },
-  
-  initialize: function() {
-    console.log("A model instance named " + this.get("name") +  " has been created and it costs " + this.get("price"));
-  
-    // Cut and paste this inside our initialize method
-    //Cela permet d'écouter les changements du modèle ?
-    // Modèle : les fleurs
-    this.on('change', function(){
-      console.log("Something in our model has changed");
-    });
-
-    // Cut and paste this inside our initialize method
-    //Création d'une fonction, qui, à chaque fois que le prix change, va, va afficher le nom de l'instance du modèle, et le prix modifié
-    // La fonction sera appelée à chaque fois que le modèle est modifié
-    this.on('change:price', function(){
-      console.log("The price for the " + this.get("name") + " model just changed to $" + this.get("price") + " dollars");
-    });
-
-  }
-
-});
-
-
-//console.log("singleCreator");
-
-
-// Namespace our app
-// || veut dire "OR"
-var app = app || {};
-
-//Création d'une variable
-app.singleCreator = Backbone.Model.extend({
-
-		defaults: {
-			  name: "test",
-			  phone: "00-00-00-00-00",
-		  },
-
-      urlRoot: 'http://localhost:8888/PolygonalAnimalsApiDebug.com/public/creators',
-
-      parse: function(response) {
-           //console.log("parse");
-           //console.log(response,response.data,response.data[4]);
-           return {
-            name: response.data[4].name,
-            phone:response.data[4].phone,
-          }
-      },
-
-  initialize: function() {
-     console.log("A model instance named " + this.get("name") +  " has been created and it's his phone " + this.get("phone"));
-
-     this.on('change', function(){
-       console.log("Something in our model has changed");
-     });
-
-     this.fetch();
- 
-   }
-
-});
-
-
 //console.log("allAnimalsView");
 
 // Namespace our flowerApp
@@ -99,6 +6,15 @@ var app = app || {};
 // The view for all the flowers
 app.allAnimalsView = Backbone.View.extend({
 
+  url: 'http://localhost:8888/PolygonalAnimalsApiDebug.com/public/polygonalanimals',
+  model:app.singleAnimal,
+
+initialize: function() {
+    this.model.fetch();
+    this.model.bind('change', this.render, this);
+  },
+
+  model:app.singleAnimal,
   tagName: "section",
 
   render: function() {
@@ -162,7 +78,9 @@ initialize: function() {
   //Elle récupère les données crées précedemment
   //$el ?
   render: function() {
-    var animalTemplate = this.template(this.model.toJSON());
+    var JSON = this.model.toJSON();
+    console.log(JSON);
+    var animalTemplate = this.template({Objects: JSON});
     this.$el.html(animalTemplate);
     return this;
   },
@@ -218,34 +136,6 @@ initialize: function() {
 
 
 });
-//console.log("allAnimals");
-
-// Une collection est un groupe d'instances de modèles
-
-   
-// Namespace our flowerApp
-var app = app || {};
-
-app.AnimalsCollection = Backbone.Collection.extend({
-
-  model: app.singleAnimal
-
-});
-
-//console.log("allAnimals");
-
-// Une collection est un groupe d'instances de modèles
-
-   
-// Namespace our flowerApp
-var app = app || {};
-
-app.CreatorsCollection = Backbone.Collection.extend({
-
-  model: app.singleCreator
-
-});
-
 //console.log("router");
 
 // Namespace our flowerApp
@@ -344,6 +234,13 @@ app.Router = Backbone.Router.extend({
 
 	  var animal = new app.singleAnimal();
 
+	  animal.fetch({
+	    success: function (animal) {
+	        alert(JSON.stringify(animal));
+		    }
+
+		});
+
 	  var animalView = new app.singleAnimalView({ model: animal});
 
 	  $("#allFlowers").html(animalView.render().el);
@@ -351,23 +248,22 @@ app.Router = Backbone.Router.extend({
 	  /*animal.fetch({
 	    success: function (animal) {
 	        alert(JSON.stringify(animal));
-	        console.log(animal.attributes.color)
-	        return {
-
-	        	color: animal.attributes.color,
-        		name: animal.attributes.name
-
-	        	}
-
 		    }
 
-		})
+		});*/
 
-	  var animalGroup = new app.AnimalsCollection([
+/*	  var animalGroup = new app.AnimalsCollection([
 		  wolf, owl, panda
-		]);
+		]);*/
 
-	  var animalGroup = new app.AnimalsCollection(animal);*/
+	  //var animalGroup = new app.AnimalsCollection(animal);
+
+	  //var animalGroup = new app.AnimalsCollection([wolf, owl]);
+	  //console.log(animalGroup);
+
+	  /*var animalGroupView = new app.allAnimalsView({ model: animal});
+
+	  $("#allFlowers").html(animalGroupView.render().el);*/
 
 	},
 
@@ -420,6 +316,179 @@ app.Router = Backbone.Router.extend({
 	}
 
 });
+//console.log("singleAnimalModel");
+
+// Namespace our app
+// || veut dire "OR"
+var app = app || {};
+
+//Création d'une variable
+app.singleAnimal = Backbone.Model.extend({
+
+//Chaque instance de modèles auront leurs propres propriétés
+/*  defaults: {
+    link: "test",
+    name: "lol",
+    price: "4.5",
+    color: "pink",
+    img: "images/placeholder.jpg"
+  },*/
+
+urlRoot: 'http://localhost:8888/PolygonalAnimalsApiDebug.com/public/polygonalanimals',
+
+parse: function(response) {
+       //console.log(response,response.data,response.data[0].name,response.data[0].price);
+       /*console.log(response.data);
+       console.log(response.COLUMNS);*/
+
+       var values = response.data;
+       var animalArray = [{}];
+
+       //console.log(response.data);
+
+       for (var i = 1, length = values.length; i < 4; i++) {
+
+          var animalArrayDetail_i = {};
+          animalArrayDetail_i.link = response.data[i].link;
+          animalArrayDetail_i.name = response.data[i].name;
+          animalArrayDetail_i.price = response.data[i].price;
+          animalArrayDetail_i.color = response.data[i].color;
+          animalArrayDetail_i.img = response.data[i].img;
+          //console.log(animalArrayDetail_i);
+          animalArray.push(animalArrayDetail_i);
+          
+          //console.log(response.data[i]);
+
+      }
+
+      console.log(response.data);
+
+       return values;
+
+
+            /*console.log(i);
+            console.log(response.data[i].price);
+
+            var link = response.data[i].link;
+            animalArrayDetail.push("link:"+link);
+
+            var name = response.data[i].name;
+            animalArrayDetail.push("name:"+name);
+
+            var price = response.data[i].price;
+            animalArrayDetail.push("price:"+price);
+
+            var color = response.data[i].color;
+            animalArrayDetail.push("color:"+color);
+
+            var img = response.data[i].img;
+            animalArrayDetail.push("img:"+img);
+
+            animalArrayDetail.push(response.data[i]);*/
+            //animalArray.push(animalArrayDetail);
+
+         //}
+       //console.log(animalArray);
+       /*{
+        link: response.data[4].link,
+        name:response.data[4].name,
+        price:response.data[4].price,
+        color:response.data[4].color,
+        img:response.data[4].img
+      }*/
+  },
+  
+  initialize: function() {
+    console.log("A model instance named " + this.get("name") +  " has been created and it costs " + this.get("price"));
+  
+    // Cut and paste this inside our initialize method
+    //Cela permet d'écouter les changements du modèle ?
+    // Modèle : les fleurs
+    this.on('change', function(){
+      console.log("Something in our model has changed");
+    });
+
+    // Cut and paste this inside our initialize method
+    //Création d'une fonction, qui, à chaque fois que le prix change, va, va afficher le nom de l'instance du modèle, et le prix modifié
+    // La fonction sera appelée à chaque fois que le modèle est modifié
+    this.on('change:price', function(){
+      console.log("The price for the " + this.get("name") + " model just changed to $" + this.get("price") + " dollars");
+    });
+
+  }
+
+});
+
+
+//console.log("singleCreator");
+
+
+// Namespace our app
+// || veut dire "OR"
+var app = app || {};
+
+//Création d'une variable
+app.singleCreator = Backbone.Model.extend({
+
+		defaults: {
+			  name: "test",
+			  phone: "00-00-00-00-00",
+		  },
+
+      urlRoot: 'http://localhost:8888/PolygonalAnimalsApiDebug.com/public/creators',
+
+      parse: function(response) {
+           //console.log("parse");
+           //console.log(response,response.data,response.data[4]);
+           return {
+            name: response.data[4].name,
+            phone:response.data[4].phone,
+          }
+      },
+
+  initialize: function() {
+     console.log("A model instance named " + this.get("name") +  " has been created and it's his phone " + this.get("phone"));
+
+     this.on('change', function(){
+       console.log("Something in our model has changed");
+     });
+
+     this.fetch();
+ 
+   }
+
+});
+
+
+//console.log("allAnimals");
+
+// Une collection est un groupe d'instances de modèles
+
+   
+// Namespace our flowerApp
+var app = app || {};
+
+app.AnimalsCollection = Backbone.Collection.extend({
+
+  url: 'http://localhost:8888/PolygonalAnimalsApiDebug.com/public/polygonalanimals',
+  model:app.singleAnimal
+
+});
+
+//console.log("allAnimals");
+
+// Une collection est un groupe d'instances de modèles
+
+   
+// Namespace our flowerApp
+var app = app || {};
+
+app.CreatorsCollection = Backbone.Collection.extend({
+
+  model: app.singleCreator
+
+});
+
 //console.log("main");
 $("#kk");
 

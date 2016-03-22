@@ -62,13 +62,25 @@
 <!-- id de script définit le nom définit dans la partie view ?
 < % = référence la façon d'appeler le template underscore.js
 -->
-   <script id="flowerElement" type="text/template">
+
+<!--    <script id="flowerElement" type="text/template">
       <a href="#<%= link %>"><img src="<%= img %>" alt="<%= name %>" class="image" /></a>
       <ul>
         <li class="flowerInfo"><strong>Name:</strong> <%= name %></li>
         <li class="flowerInfo"><strong>Price:</strong> <%= price %></li>
         <li class="flowerInfo"><strong>Color:</strong> <%= color %></li>
       </ul>
+    </script> -->
+
+    <script id="flowerElement" type="text/template">
+      <% _.each(Objects, function(data) { %>
+          <a href="#<%= data.link %>"><img src="<%= data.img %>" alt="<%= data.name %>" class="image" /></a>
+        <ul>
+          <li class="flowerInfo"><strong>Name:</strong> <%= data.name %></li>
+          <li class="flowerInfo"><strong>Price:</strong> <%= data.price %></li>
+          <li class="flowerInfo"><strong>Color:</strong> <%= data.color %></li>
+        </ul>
+      <% }); %>
     </script>
 
   <script id="creatorElement" type="text/template">
