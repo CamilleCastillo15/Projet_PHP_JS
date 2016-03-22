@@ -14,7 +14,7 @@ initialize: function() {
     this.model.bind('change', this.render, this);
   },
 
-  tagName: "article",
+  tagName: "articleCreator",
   className: "creatorListItem",
 
   template: _.template( $("#creatorElement").html() ),
@@ -24,11 +24,11 @@ initialize: function() {
 			this.listenTo(this.model, 'change', this.render);
 	},*/
 
-  render: function(){
-			var creatorTemplate = this.$el.html(this.template(this.model.attributes));
-			this.$el.html(creatorTemplate);
-    		return this;
-	},
+   render: function() {
+    var creatorTemplate = this.template(this.model.toJSON());
+    this.$el.html(creatorTemplate);
+    return this;
+  },
 
 
 });

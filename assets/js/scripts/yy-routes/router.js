@@ -73,9 +73,16 @@ app.Router = Backbone.Router.extend({
 
 	var creator = new app.singleCreator();
 
-	//var creatorView = new app.singleCreatorView({ model: creator});
+	creator.fetch({
+	    success: function (creator) {
+	        alert(JSON.stringify(creator));
+		    }
 
-	//$("#allCreators").html(creatorView.render().el);
+		});
+
+	var creatorView = new app.singleCreatorView({ model: creator});
+
+	$("#allCreators").html(creatorView.render().el);
 
 	},
 
@@ -108,7 +115,7 @@ app.Router = Backbone.Router.extend({
 
 		})
 
-	  /*var animalGroup = new app.AnimalsCollection([
+	  var animalGroup = new app.AnimalsCollection([
 		  wolf, owl, panda
 		]);
 

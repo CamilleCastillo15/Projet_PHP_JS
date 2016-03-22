@@ -17,8 +17,7 @@ app.singleCreator = Backbone.Model.extend({
 
       parse: function(response) {
            //console.log("parse");
-           console.log(response,response.data,response.data[4]);
-           
+           //console.log(response,response.data,response.data[4]);
            return {
             name: response.data[4].name,
             phone:response.data[4].phone,
