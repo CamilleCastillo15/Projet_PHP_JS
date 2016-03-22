@@ -56,21 +56,27 @@ app.Router = Backbone.Router.extend({
 
 	creatorPage: function() {
 
-	var creator = new app.singleCreator();
-	creator.fetch();
+	//creator.fetch();
 
-	var creatorGroup = new app.CreatorsCollection(creator);
+	//var creatorGroup = new app.CreatorsCollection(creator);
 	//creatorsGroup.fetch();
 
-	var creatorView = new app.singleCreatorView({ model: creator});
-	var creatorGroupView = new app.allCreatorsView({ collection: creatorGroup});
+	//var creatorGroupView = new app.allCreatorsView({ collection: creatorGroup});
 
-	  $("#allFlowers").hide();
-	  $("#allCreators").show();
-	  $(".form-container").hide();
-	  $(".animal-buttons").hide();
-	  $(".creators-buttons").show();
-	  $("#allCreators").html(creatorGroupView.render().el);
+	//("#allCreators").html(creatorGroupView.render().el);
+
+	$("#allFlowers").hide();
+  	$("#allCreators").show();
+  	$(".form-container").hide();
+  	$(".animal-buttons").hide();
+  	$(".creators-buttons").show();
+
+	var creator = new app.singleCreator();
+
+	//var creatorView = new app.singleCreatorView({ model: creator});
+
+	//$("#allCreators").html(creatorView.render().el);
+
 	},
 
 	animalPage: function() {
@@ -80,7 +86,12 @@ app.Router = Backbone.Router.extend({
 	  $(".form-container").hide();
 	  $(".creators-buttons").hide();
 	  $(".animal-buttons").show();
+
 	  var animal = new app.singleAnimal();
+
+	  var animalView = new app.singleAnimalView({ model: animal});
+
+	  $("#allFlowers").html(animalView.render().el);
 
 	  /*animal.fetch({
 	    success: function (animal) {
@@ -95,7 +106,7 @@ app.Router = Backbone.Router.extend({
 
 		    }
 
-		})*/
+		})
 
 	  /*var animalGroup = new app.AnimalsCollection([
 		  wolf, owl, panda
@@ -103,9 +114,6 @@ app.Router = Backbone.Router.extend({
 
 	  var animalGroup = new app.AnimalsCollection(animal);*/
 
-	  var animalView = new app.singleAnimalView({ model: animal});
-
-	  $("#allFlowers").html(animalView.render().el);
 	},
 
 	putAnimalPage: function(){

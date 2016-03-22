@@ -8,26 +8,31 @@ var app = app || {};
 //Création d'une variable
 app.singleCreator = Backbone.Model.extend({
 
-  urlRoot: 'http://localhost/dev/PolygonalAnimalsApi_2/public/creators',
-		/*url: function() {
-			return this.urlRoot;
-		},*/
 		defaults: {
-			link: "test",
-			img: "images/placeholder.jpg",
-		    name:  "defaults",
-		    phone: "defaults"
+			  name: "test",
+			  phone: "00-00-00-00-00",
 		  },
 
+      urlRoot: 'http://localhost:8888/PolygonalAnimalsApiDebug.com/public/creators',
+
+      parse: function(response) {
+           //console.log("parse");
+           console.log(response,response.data,response.data[4]);
+           
+           return {
+            name: response.data[4].name,
+            phone:response.data[4].phone,
+          }
+      },
+
   initialize: function() {
-     console.log("A model instance named " + this.get("name") +  " has been created and it costs " + this.get("phone"));
-   
-     // Cut and paste this inside our initialize method
-     //Cela permet d'écouter les changements du modèle ?
-     // Modèle : les fleurs
+     console.log("A model instance named " + this.get("name") +  " has been created and it's his phone " + this.get("phone"));
+
      this.on('change', function(){
        console.log("Something in our model has changed");
      });
+
+     this.fetch();
  
    }
 

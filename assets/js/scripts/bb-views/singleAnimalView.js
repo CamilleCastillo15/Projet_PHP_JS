@@ -6,7 +6,7 @@ var app = app || {};
 // The view for a single model view, which is one flower
 app.singleAnimalView = Backbone.View.extend({
 
-url: 'http://localhost/dev/PolygonalAnimalsApi_2/public/polygonalanimals',
+url: 'http://localhost:8888/PolygonalAnimalsApiDebug.com/public/polygonalanimals',
 model:app.singleAnimal,
 
 initialize: function() {
