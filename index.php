@@ -23,8 +23,8 @@
     <div class="form-container">   
 
       <form action="#" class="form form-creator-create">
-             Name: <input type="text" name="name" name="name"><br>
-             Phone: <input type="text" name="phone" name="phone"><br>
+             Name: <input type="text" name="name" class="name-create"><br>
+             Phone: <input type="text" name="phone" class="phone-create"><br>
             <button class="save">Edit</button>
             <button class="cancel">Cancel</button>
         </form>
@@ -74,20 +74,26 @@
 
     <script id="flowerElement" type="text/template">
       <% _.each(Objects, function(data) { %>
-          <a href="#<%= data.link %>"><img src="<%= data.img %>" alt="<%= data.name %>" class="image" /></a>
-        <ul>
-          <li class="flowerInfo"><strong>Name:</strong> <%= data.name %></li>
-          <li class="flowerInfo"><strong>Price:</strong> <%= data.price %></li>
-          <li class="flowerInfo"><strong>Color:</strong> <%= data.color %></li>
-        </ul>
+      <div class="AnimalEachElement">
+            <a href="#<%= data.link %>"><img src="<%= data.img %>" alt="<%= data.name %>" class="image" /></a>
+          <ul>
+            <li class="flowerInfo"><strong>Name:</strong> <%= data.name %></li>
+            <li class="flowerInfo"><strong>Price:</strong> <%= data.price %></li>
+            <li class="flowerInfo"><strong>Color:</strong> <%= data.color %></li>
+          </ul>
+        </div>
       <% }); %>
     </script>
 
-  <script id="creatorElement" type="text/template">
-      <ul>
-        <li class="creatorInfo"><strong>Name:</strong> <%= name %></li>
-        <li class="creatorInfo"><strong>Phone:</strong> <%= phone %></li>
-      </ul>
+    <script id="creatorElement" type="text/template">
+      <% _.each(Objects, function(data) { %>
+      <div class="CreatorEachElement">
+          <ul>
+            <li class="flowerInfo"><strong>Name:</strong> <%= data.name %></li>
+            <li class="flowerInfo"><strong>Price:</strong> <%= data.phone %></li>
+          </ul>
+        </div>
+      <% }); %>
     </script>
 
   <script src="include/js/lib/vendor.min.js"></script>

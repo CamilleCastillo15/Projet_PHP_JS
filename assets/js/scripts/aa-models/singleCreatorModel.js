@@ -8,20 +8,19 @@ var app = app || {};
 //Création d'une variable
 app.singleCreator = Backbone.Model.extend({
 
-		defaults: {
+		/*defaults: {
 			  name: "test",
 			  phone: "00-00-00-00-00",
-		  },
+		  },*/
 
       urlRoot: 'http://localhost:8888/PolygonalAnimalsApiDebug.com/public/creators',
 
       parse: function(response) {
            //console.log("parse");
            //console.log(response,response.data,response.data[4]);
-           return {
-            name: response.data[4].name,
-            phone:response.data[4].phone,
-          }
+           var values = response.data;
+
+            return values;
       },
 
   initialize: function() {

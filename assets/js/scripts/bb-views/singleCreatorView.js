@@ -25,7 +25,9 @@ initialize: function() {
 	},*/
 
    render: function() {
-    var creatorTemplate = this.template(this.model.toJSON());
+    var JSON = this.model.toJSON();
+    console.log(JSON);
+    var creatorTemplate = this.template({Objects: JSON});
     this.$el.html(creatorTemplate);
     return this;
   },

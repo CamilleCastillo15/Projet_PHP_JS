@@ -73,12 +73,12 @@ app.Router = Backbone.Router.extend({
 
 	var creator = new app.singleCreator();
 
-	creator.fetch({
+	/*creator.fetch({
 	    success: function (creator) {
 	        alert(JSON.stringify(creator));
 		    }
 
-		});
+		});*/
 
 	var creatorView = new app.singleCreatorView({ model: creator});
 
@@ -96,12 +96,12 @@ app.Router = Backbone.Router.extend({
 
 	  var animal = new app.singleAnimal();
 
-	  animal.fetch({
+	  /*animal.fetch({
 	    success: function (animal) {
 	        alert(JSON.stringify(animal));
 		    }
 
-		});
+		});*/
 
 	  var animalView = new app.singleAnimalView({ model: animal});
 
@@ -155,6 +155,10 @@ app.Router = Backbone.Router.extend({
 		$(".form-creator-delete").hide();
 		$(".form-creator-create").show();
 
+		$(".form-creator-create" ).submit(function( event ) {
+		  alert( "Handler for .submit() called." );
+		  event.preventDefault();
+		});
 	},
 
 	updateCreatorPage: function(){

@@ -24,60 +24,8 @@ parse: function(response) {
        console.log(response.COLUMNS);*/
 
        var values = response.data;
-       var animalArray = [{}];
-
-       //console.log(response.data);
-
-       for (var i = 1, length = values.length; i < 4; i++) {
-
-          var animalArrayDetail_i = {};
-          animalArrayDetail_i.link = response.data[i].link;
-          animalArrayDetail_i.name = response.data[i].name;
-          animalArrayDetail_i.price = response.data[i].price;
-          animalArrayDetail_i.color = response.data[i].color;
-          animalArrayDetail_i.img = response.data[i].img;
-          //console.log(animalArrayDetail_i);
-          animalArray.push(animalArrayDetail_i);
-          
-          //console.log(response.data[i]);
-
-      }
-
-      console.log(response.data);
 
        return values;
-
-
-            /*console.log(i);
-            console.log(response.data[i].price);
-
-            var link = response.data[i].link;
-            animalArrayDetail.push("link:"+link);
-
-            var name = response.data[i].name;
-            animalArrayDetail.push("name:"+name);
-
-            var price = response.data[i].price;
-            animalArrayDetail.push("price:"+price);
-
-            var color = response.data[i].color;
-            animalArrayDetail.push("color:"+color);
-
-            var img = response.data[i].img;
-            animalArrayDetail.push("img:"+img);
-
-            animalArrayDetail.push(response.data[i]);*/
-            //animalArray.push(animalArrayDetail);
-
-         //}
-       //console.log(animalArray);
-       /*{
-        link: response.data[4].link,
-        name:response.data[4].name,
-        price:response.data[4].price,
-        color:response.data[4].color,
-        img:response.data[4].img
-      }*/
   },
   
   initialize: function() {

@@ -445,7 +445,12 @@ body {
   text-align: center;
   width: 750px;
   background-color: #E0E0E0;
-  border: 1px solid grey; }
+  border: 1px solid grey;
+  font-size: 13px; }
+
+.AnimalEachElement {
+  float: left;
+  padding: 16px; }
 
 #allCreators {
   padding: 20px;
@@ -453,7 +458,13 @@ body {
   text-align: center;
   width: 750px;
   background-color: #E0E0E0;
-  border: 1px solid grey; }
+  border: 1px solid grey;
+  font-size: 13px;
+  height: 200px; }
+
+.CreatorEachElement {
+  float: left;
+  padding: 25px; }
 
 .bgColorImage {
   background-color: #CEBDBD; }
