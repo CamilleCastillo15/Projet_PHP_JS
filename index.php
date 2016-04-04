@@ -16,7 +16,7 @@
       <p>Polygon Animals Shop</p>
     </div>
 
-    <div id="allFlowers"></div>
+    <div id="allAnimals"></div>
 
     <div id="allCreators"></div>
 
@@ -94,14 +94,14 @@
       </ul>
     </script> -->
 
-    <script id="flowerElement" type="text/template">
+    <script id="animalElement" type="text/template">
       <% _.each(Objects, function(data) { %>
       <div class="AnimalEachElement">
             <a href="#<%= data.link %>"><img src="<%= data.img %>" alt="<%= data.name %>" class="image" /></a>
           <ul>
-            <li class="flowerInfo"><strong>Name:</strong> <%= data.name %></li>
-            <li class="flowerInfo"><strong>Price:</strong> <%= data.price %></li>
-            <li class="flowerInfo"><strong>Color:</strong> <%= data.color %></li>
+            <li class="animalInfo"><strong>Name:</strong> <%= data.name %></li>
+            <li class="animalInfo"><strong>Price:</strong> <%= data.price %></li>
+            <li class="animalInfo"><strong>Color:</strong> <%= data.color %></li>
             
           </ul>
         </div>
@@ -112,8 +112,8 @@
       <% _.each(Objects, function(data) { %>
       <div class="CreatorEachElement">
           <ul>
-            <li class="flowerInfo"><strong>Name:</strong> <%= data.name %></li>
-            <li class="flowerInfo"><strong>Phone:</strong> <%= data.phone %></li>
+            <li class="creatorInfo"><strong>Name:</strong> <%= data.name %></li>
+            <li class="creatorInfo"><strong>Phone:</strong> <%= data.phone %></li>
           </ul>
         </div>
       <% }); %>

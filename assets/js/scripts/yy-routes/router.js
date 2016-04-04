@@ -27,7 +27,7 @@ app.Router = Backbone.Router.extend({
 
 	initialize: function() {
         $(".form-container").hide();
-        $("#allFlowers").hide();
+        $("#allAnimals").hide();
         $("#allCreators").hide();
         $(".creators-buttons").hide();
         $(".animal-buttons").hide();
@@ -41,7 +41,7 @@ app.Router = Backbone.Router.extend({
 
 	default: function() {
   	  $("#copy").html("");
-  	  $("#allFlowers").hide();
+  	  $("#allAnimals").hide();
   	  $("#allCreators").hide();
   	  $(".creators-buttons").hide();
   	  $(".animal-buttons").hide();
@@ -68,7 +68,7 @@ app.Router = Backbone.Router.extend({
 
 	creatorPage: function() {
 
-	$("#allFlowers").hide();
+	$("#allAnimals").hide();
   	$("#allCreators").show();
   	$(".form-container").hide();
   	$(".form-container_2").hide();
@@ -86,7 +86,7 @@ app.Router = Backbone.Router.extend({
 	animalPage: function() {
 
 	  $("#allCreators").hide();
-	  $("#allFlowers").show();
+	  $("#allAnimals").show();
 	  $(".form-container").hide();
 	  $(".form-container_2").hide();
 	  $(".creators-buttons").hide();
@@ -96,13 +96,13 @@ app.Router = Backbone.Router.extend({
 
 	  var animalView = new app.singleAnimalView({ model: animal});
 
-	  $("#allFlowers").html(animalView.render().el);
+	  $("#allAnimals").html(animalView.render().el);
 
 	},
 
 	putAnimalPage: function(){
 
-		$("#allFlowers").hide();
+		$("#allAnimals").hide();
 		$(".form-container_2").show();
 		$(".form-animal-update").hide();
 		$(".form-animal-delete").hide();
@@ -144,7 +144,7 @@ app.Router = Backbone.Router.extend({
 	updateAnimalPage: function(){
 
 		$(".animal-buttons").hide();
-		$("#allFlowers").hide();
+		$("#allAnimals").hide();
 		$(".form-container_2").show();
 		$(".form-animal-update").show();
 		$(".form-animal-delete").hide();
@@ -194,7 +194,7 @@ app.Router = Backbone.Router.extend({
 	deleteAnimalPage: function(){
 
 		$(".animal-buttons").hide();
-		$("#allFlowers").hide();
+		$("#allAnimals").hide();
 		$(".form-container_2").show();
 		$(".form-animal-update").hide();
 		$(".form-animal-delete").show();

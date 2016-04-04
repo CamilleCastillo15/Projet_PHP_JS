@@ -18,10 +18,10 @@ initialize: function() {
 //className définit la classe du tagName (optionnel)
 //tagName est aussi optionnel, mais Backbonne définira par défaut la balise div
   tagName: "article",
-  className: "flowerListItem",
+  className: "animalListItem",
 
   //Indique la balise html où seront insérées les données (avec JQuery - plus rapide-)
-  template: _.template( $("#flowerElement").html() ),
+  template: _.template( $("#animalElement").html() ),
 
   //render construit les élémnts html
   //Elle récupère les données crées précedemment
