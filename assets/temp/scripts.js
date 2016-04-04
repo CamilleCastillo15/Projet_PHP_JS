@@ -1,93 +1,31 @@
-//console.log("singleAnimalModel");
+//console.log("allAnimals");
 
-// Namespace our app
-// || veut dire "OR"
+// Une collection est un groupe d'instances de modèles
+
+   
+// Namespace our flowerApp
 var app = app || {};
 
-//Création d'une variable
-app.singleAnimal = Backbone.Model.extend({
+app.AnimalsCollection = Backbone.Collection.extend({
 
-//Chaque instance de modèles auront leurs propres propriétés
-/*  defaults: {
-    link: "test",
-    name: "lol",
-    price: "4.5",
-    color: "pink",
-    img: "images/placeholder.jpg"
-  },*/
-
-urlRoot: 'http://localhost:8888/PolygonalAnimalsApiDebug.com/public/polygonalanimals',
-
-parse: function(response) {
-       //console.log(response,response.data,response.data[0].name,response.data[0].price);
-       /*console.log(response.data);
-       console.log(response.COLUMNS);*/
-
-       var values = response.data;
-
-       return values;
-  },
-  
-  initialize: function() {
-    console.log("A model instance named " + this.get("name") +  " has been created and it costs " + this.get("price"));
-  
-    // Cut and paste this inside our initialize method
-    //Cela permet d'écouter les changements du modèle ?
-    // Modèle : les fleurs
-    this.on('change', function(){
-      console.log("Something in our model has changed");
-    });
-
-    // Cut and paste this inside our initialize method
-    //Création d'une fonction, qui, à chaque fois que le prix change, va, va afficher le nom de l'instance du modèle, et le prix modifié
-    // La fonction sera appelée à chaque fois que le modèle est modifié
-    this.on('change:price', function(){
-      console.log("The price for the " + this.get("name") + " model just changed to $" + this.get("price") + " dollars");
-    });
-
-  }
+  url: 'http://localhost:8888/PolygonalAnimalsApiDebug.com/public/polygonalanimals',
+  model:app.singleAnimal
 
 });
 
+//console.log("allAnimals");
 
-//console.log("singleCreator");
+// Une collection est un groupe d'instances de modèles
 
-
-// Namespace our app
-// || veut dire "OR"
+   
+// Namespace our flowerApp
 var app = app || {};
 
-//Création d'une variable
-app.singleCreator = Backbone.Model.extend({
+app.CreatorsCollection = Backbone.Collection.extend({
 
-		/*defaults: {
-			  name: "test",
-			  phone: "00-00-00-00-00",
-		  },*/
-
-      urlRoot: 'http://localhost:8888/PolygonalAnimalsApiDebug.com/public/creators',
-
-      parse: function(response) {
-           //console.log("parse");
-           //console.log(response,response.data,response.data[4]);
-           var values = response.data;
-
-            return values;
-      },
-
-  initialize: function() {
-     console.log("A model instance named " + this.get("name") +  " has been created and it's his phone " + this.get("phone"));
-
-     this.on('change', function(){
-       console.log("Something in our model has changed");
-     });
-
-     this.fetch();
- 
-   }
+  model: app.singleCreator
 
 });
-
 
 //console.log("allAnimalsView");
 
@@ -170,7 +108,7 @@ initialize: function() {
   //$el ?
   render: function() {
     var JSON = this.model.toJSON();
-    console.log(JSON);
+    //console.log(JSON);
     var animalTemplate = this.template({Objects: JSON});
     this.$el.html(animalTemplate);
     return this;
@@ -221,7 +159,6 @@ initialize: function() {
 
    render: function() {
     var JSON = this.model.toJSON();
-    console.log(JSON);
     var creatorTemplate = this.template({Objects: JSON});
     this.$el.html(creatorTemplate);
     return this;
@@ -229,34 +166,457 @@ initialize: function() {
 
 
 });
-//console.log("allAnimals");
+//console.log("router");
 
-// Une collection est un groupe d'instances de modèles
-
-   
 // Namespace our flowerApp
 var app = app || {};
 
-app.AnimalsCollection = Backbone.Collection.extend({
+//Création d'un routeur
+//Sur le modèle clé / valeur
+//La route est sur la gauche
+app.Router = Backbone.Router.extend({
 
-  url: 'http://localhost:8888/PolygonalAnimalsApiDebug.com/public/polygonalanimals',
-  model:app.singleAnimal
+	routes :{
+	  //Définit une route pour index.html
+	  //La méthode noCopy sera appelée
+	  "": "default",
+	  "wolf" : "wolfMessage",
+	  "owl": "owlMessage",
+	  "panda" : "pandaMessage",
+	  "creators" : "creatorPage",
+	  "animals" : "animalPage",
+	  "put-animal" : "putAnimalPage",
+	  "update-animal" : "updateAnimalPage",
+	  "delete-animal" : "deleteAnimalPage",
+	  "put-creator" : "putCreatorPage",
+	  "update-creator" : "updateCreatorPage",
+	  "delete-creator" : "deleteCreatorPage"
+	},
+
+	initialize: function() {
+        $(".form-container").hide();
+        $("#allFlowers").hide();
+        $("#allCreators").hide();
+        $(".creators-buttons").hide();
+        $(".animal-buttons").hide();
+        $(".form-creator-update").hide();
+		$(".form-creator-delete").hide();
+		$(".form-creator-create").hide();
+		$(".form-animal-update").hide();
+		$(".form-animal-delete").hide();
+		$(".form-animal-create").hide();
+    },
+
+	default: function() {
+  	  $("#copy").html("");
+  	  $("#allFlowers").hide();
+  	  $("#allCreators").hide();
+  	  $(".creators-buttons").hide();
+  	  $(".animal-buttons").hide();
+  	  $(".form-container").hide();
+  	  $(".form-creator-update").hide();
+	  $(".form-creator-delete").hide();
+	  $(".form-creator-create").hide();
+	  $(".form-animal-update").hide();
+	  $(".form-animal-delete").hide();
+	  $(".form-animal-create").hide();
+	},
+
+	wolfMessage: function() {
+	  $("#copy").html("Heirloom Roses are great Mother's Day flowers");
+	},
+
+	owlMessage: function() {
+	  $("#copy").html("Choose Rainbow Roses for your wedding");
+	},
+
+	pandaMessage: function() {
+	  $("#copy").html("On Valentine's Day, give that special someone Red Roses");
+	},
+
+	creatorPage: function() {
+
+	$("#allFlowers").hide();
+  	$("#allCreators").show();
+  	$(".form-container").hide();
+  	$(".form-container_2").hide();
+  	$(".animal-buttons").hide();
+  	$(".creators-buttons").show();
+
+	var creator = new app.singleCreator();
+
+	var creatorView = new app.singleCreatorView({ model: creator});
+
+	$("#allCreators").html(creatorView.render().el);
+
+	},
+
+	animalPage: function() {
+
+	  $("#allCreators").hide();
+	  $("#allFlowers").show();
+	  $(".form-container").hide();
+	  $(".form-container_2").hide();
+	  $(".creators-buttons").hide();
+	  $(".animal-buttons").show();
+
+	  var animal = new app.singleAnimal();
+
+	  var animalView = new app.singleAnimalView({ model: animal});
+
+	  $("#allFlowers").html(animalView.render().el);
+
+	},
+
+	putAnimalPage: function(){
+
+		$("#allFlowers").hide();
+		$(".form-container_2").show();
+		$(".form-animal-update").hide();
+		$(".form-animal-delete").hide();
+		$(".form-animal-create").show();
+
+		$(".form-animal-create" ).submit(function( event ) {
+		  //alert( "Handler for .submit() called." );
+		  event.preventDefault();
+
+		  var id = $(".form-animal-create .creatorId").val();
+
+		  var color = $(".form-animal-create .color").val();
+  		  var price = $(".form-animal-create .price").val();
+
+  		  var newAnimal = new app.AnimalsCreatorPut({id:id, 
+
+			color:color,
+			price:price});
+
+			  newAnimal.save(null ,{
+
+			  	type: 'POST',
+			  	 success: function () {
+				    alert(unescape(encodeURIComponent('L\'animal a été crée.')));
+				  },
+				  
+				  error: function(model, response) {
+			        alert(unescape(encodeURIComponent(response.responseText)));
+			      }
+
+
+			  });
+
+			
+			});
+
+		},
+
+	updateAnimalPage: function(){
+
+		$(".animal-buttons").hide();
+		$("#allFlowers").hide();
+		$(".form-container_2").show();
+		$(".form-animal-update").show();
+		$(".form-animal-delete").hide();
+		$(".form-animal-create").hide();
+
+		$(".form-animal-update" ).submit(function( event ) {
+
+			  //alert( "Handler for .submit() called." );
+			  event.preventDefault();
+
+			  var animalId = $(".form-animal-update .animalId").val();
+			  alert(animalId);
+
+			  var creatorId = $(".form-animal-update .creatorId").val();
+			  alert(creatorId);
+
+			  var color = $(".form-animal-update .color").val();
+			  alert(color);
+
+			  var price = $(".form-animal-update .price").val();
+			  alert(price);
+
+			  var newAnimal = new app.AnimalsCreator({
+			  	Creatorid:creatorId, 
+			  	id:animalId, 
+				color:color,
+				price:price});
+
+			  newAnimal.save(null, {
+
+			  	 success: function () {
+				    alert('L\'animal a été crée.');
+				  },
+				  
+				  error: function(model, response) {
+			        alert(response.responseText);
+			      }
+
+			  
+			  });
+
+			
+			});
+		
+		},
+
+	deleteAnimalPage: function(){
+
+		$(".animal-buttons").hide();
+		$("#allFlowers").hide();
+		$(".form-container_2").show();
+		$(".form-animal-update").hide();
+		$(".form-animal-delete").show();
+		$(".form-animal-create").hide();
+		
+	},
+
+	putCreatorPage: function(){
+
+		$("#allCreators").hide();
+		$(".form-container_2").hide();
+		$(".form-container").show();
+		$(".form-creator-update").hide();
+		$(".form-creator-delete").hide();
+		$(".form-creator-create").show();
+
+		$(".form-creator-create" ).submit(function( event ) {
+		  //alert( "Handler for .submit() called." );
+		  event.preventDefault();
+
+		  var name = $(".form-creator-create .name").val();
+		  var phone = $(".form-creator-create .phone").val();
+
+		  var newCreator = new app.singleCreator({
+
+		  	name:name,
+		  	phone:phone
+
+		  });
+
+		  newCreator.save(null, {
+
+
+		  		  success: function () {
+				    alert('Le creator a été crée.');
+				  },
+				  
+				  error: function(model, response) {
+			        alert(JSON.parse(response.responseText));
+			      }
+
+		  	});
+		  
+		});
+	},
+
+	updateCreatorPage: function(){
+
+		$("#allCreators").hide();
+		$(".form-container").show();
+		$(".form-container_2").hide();
+		$(".form-creator-create").hide();
+		$(".form-creator-delete").hide();
+		$(".form-creator-update").show();
+
+		$(".form-creator-update" ).submit(function( event ) {
+
+			  //alert( "Handler for .submit() called." );
+			  event.preventDefault();
+
+			  var id = $(".form-creator-update .id").val();
+			  alert(id);
+
+			  var name = $(".form-creator-update .name").val();
+			  alert(name);
+
+			  var phone = $(".form-creator-update .phone").val();
+			  alert(phone);
+
+			  var newCreator = new app.singleCreator({
+
+			  	id: id,
+			  	name:name,
+			  	phone:phone
+
+			  });
+
+			  newCreator.save(null, {
+
+
+		  		  success: function () {
+				    alert('Le creator a été modifié.');
+				  },
+				  
+				  error: function(model, response) {
+			        alert(JSON.stringify(response.responseText));
+			      }
+
+		  	});
+		  
+		});
+		
+	},
+
+	deleteCreatorPage: function(){
+
+		$("#allCreators").hide();
+		$(".form-container").show();
+		$(".form-container_2").hide();
+		$(".form-creator-create").hide();
+		$(".form-creator-update").hide();
+		$(".form-creator-delete").show();
+
+		$(".form-creator-delete" ).submit(function( event ) {
+
+			  event.preventDefault();
+
+			  var id = $(".form-creator-delete .id").val();
+
+			  var newCreator = new app.singleCreator({
+
+			  	id: id
+
+			  });
+
+			  newCreator.destroy({
+
+			  	 success: function () {
+				    alert(JSON.parse('Le creator a été détruit.'));
+				  },
+				  
+				  error: function(model, response) {
+				  	//JSON.parse(response.responseText);
+			        alert(decodeURIComponent(response.responseText));
+			      }
+
+			  });
+		  
+		});
+		
+	}
 
 });
-
-//console.log("allAnimals");
-
-// Une collection est un groupe d'instances de modèles
-
-   
-// Namespace our flowerApp
 var app = app || {};
 
-app.CreatorsCollection = Backbone.Collection.extend({
+//Création d'une variable
+app.AnimalsCreator = Backbone.Model.extend({
 
-  model: app.singleCreator
+   urlRoot: 'http://localhost:8888/PolygonalAnimalsApiDebug.com/public/creators',
+
+ initialize: function(options) {
+    this.Creatorid = options.Creatorid;
+    this.id = options.id;
+    //this.set({'Creatorid': Creatorid});
+  },
+
+  url: function() {
+    return 'http://localhost:8888/PolygonalAnimalsApiDebug.com/public/creators/' + this.Creatorid + '/polygonalanimals/' + this.id;
+  },
+
+  parse: function(response) {
+
+       var values = response.data;
+       return values;
+  },
 
 });
+
+var app = app || {};
+
+//Création d'une variable
+app.AnimalsCreatorPut = Backbone.Model.extend({
+
+   urlRoot: 'http://localhost:8888/PolygonalAnimalsApiDebug.com/public/creators',
+
+ initialize: function(options) {
+    this.id = options.id;
+  },
+
+  url: function() {
+    return 'http://localhost:8888/PolygonalAnimalsApiDebug.com/public/creators/' + this.id + '/polygonalanimals/';
+  },
+
+  parse: function(response) {
+
+       var values = response.data;
+       return values;
+  },
+
+});
+
+//console.log("singleAnimalModel");
+
+// Namespace our app
+// || veut dire "OR"
+var app = app || {};
+
+//Création d'une variable
+app.singleAnimal = Backbone.Model.extend({
+
+urlRoot: 'http://localhost:8888/PolygonalAnimalsApiDebug.com/public/polygonalanimals',
+
+parse: function(response) {
+
+       var values = response.data;
+       return values;
+  },
+  
+  initialize: function() {
+
+    //Cela permet d'écouter les changements du modèle 
+    this.on('change', function(){
+    });
+
+    // Création d'une fonction, qui, à chaque fois que le prix change, 
+    // va afficher le nom de l'instance du modèle, et le prix modifié
+    // La fonction sera appelée à chaque fois que le modèle est modifié
+    this.on('change:price', function(){ 
+
+    });
+
+  }
+
+});
+
+
+//console.log("singleCreator");
+
+
+// Namespace our app
+// || veut dire "OR"
+var app = app || {};
+
+//Création d'une variable
+app.singleCreator = Backbone.Model.extend({
+
+		/*defaults: {
+			  name: "test",
+			  phone: "00-00-00-00-00",
+		  },*/
+
+      urlRoot: 'http://localhost:8888/PolygonalAnimalsApiDebug.com/public/creators',
+
+      parse: function(response) {
+           //console.log("parse");
+           //console.log(response,response.data,response.data[4]);
+           var values = response.data;
+
+            return values;
+      },
+
+  initialize: function() {
+     //console.log("A model instance named " + this.get("name") +  " has been created and it's his phone " + this.get("phone"));
+
+     this.on('change', function(){
+       //console.log("Something in our model has changed");
+     });
+
+     //this.fetch();
+ 
+   }
+
+});
+
 
 //console.log("main");
 $("#kk");
@@ -321,188 +681,3 @@ console.log(redRoses.toJSON()); */
    // Change the price
    // Le modèle est modifié (son prix)
    // rainbowRoses.set('price', 20);
-
-//console.log("router");
-
-// Namespace our flowerApp
-var app = app || {};
-
-//Création d'un routeur
-//Sur le modèle clé / valeur
-//La route est sur la gauche
-app.Router = Backbone.Router.extend({
-
-	routes :{
-	  //Définit une route pour index.html
-	  //La méthode noCopy sera appelée
-	  "": "default",
-	  //Les méthodes appelées pour :
-	  //#heirloomRose, #rainbowRose, #redRose
-	  "wolf" : "wolfMessage",
-	  "owl": "owlMessage",
-	  "panda" : "pandaMessage",
-	  "creators" : "creatorPage",
-	  "animals" : "animalPage",
-	  "put-animal" : "putAnimalPage",
-	  "update-animal" : "updateAnimalPage",
-	  "delete-animal" : "deleteAnimalPage",
-	  "put-creator" : "putCreatorPage",
-	  "update-creator" : "updateCreatorPage",
-	  "delete-creator" : "deleteCreatorPage"
-	},
-
-	initialize: function() {
-        $(".form-container").hide();
-        $(".form-creator-update").hide();
-		$(".form-creator-delete").hide();
-		$(".form-creator-create").hide();
-    },
-
-	default: function() {
-  	  $("#copy").html("");
-  	  $(".form-container").hide();
-  	  $(".form-creator-update").hide();
-	  $(".form-creator-delete").hide();
-	  $(".form-creator-create").hide();
-	},
-
-	wolfMessage: function() {
-	  $("#copy").html("Heirloom Roses are great Mother's Day flowers");
-	},
-
-	owlMessage: function() {
-	  $("#copy").html("Choose Rainbow Roses for your wedding");
-	},
-
-	pandaMessage: function() {
-	  $("#copy").html("On Valentine's Day, give that special someone Red Roses");
-	},
-
-	creatorPage: function() {
-
-	//creator.fetch();
-
-	//var creatorGroup = new app.CreatorsCollection(creator);
-	//creatorsGroup.fetch();
-
-	//var creatorGroupView = new app.allCreatorsView({ collection: creatorGroup});
-
-	//("#allCreators").html(creatorGroupView.render().el);
-
-	$("#allFlowers").hide();
-  	$("#allCreators").show();
-  	$(".form-container").hide();
-  	$(".animal-buttons").hide();
-  	$(".creators-buttons").show();
-
-	var creator = new app.singleCreator();
-
-	/*creator.fetch({
-	    success: function (creator) {
-	        alert(JSON.stringify(creator));
-		    }
-
-		});*/
-
-	var creatorView = new app.singleCreatorView({ model: creator});
-
-	$("#allCreators").html(creatorView.render().el);
-
-	},
-
-	animalPage: function() {
-
-	  $("#allCreators").hide();
-	  $("#allFlowers").show();
-	  $(".form-container").hide();
-	  $(".creators-buttons").hide();
-	  $(".animal-buttons").show();
-
-	  var animal = new app.singleAnimal();
-
-	  /*animal.fetch({
-	    success: function (animal) {
-	        alert(JSON.stringify(animal));
-		    }
-
-		});*/
-
-	  var animalView = new app.singleAnimalView({ model: animal});
-
-	  $("#allFlowers").html(animalView.render().el);
-
-	  /*animal.fetch({
-	    success: function (animal) {
-	        alert(JSON.stringify(animal));
-		    }
-
-		});*/
-
-/*	  var animalGroup = new app.AnimalsCollection([
-		  wolf, owl, panda
-		]);*/
-
-	  //var animalGroup = new app.AnimalsCollection(animal);
-
-	  //var animalGroup = new app.AnimalsCollection([wolf, owl]);
-	  //console.log(animalGroup);
-
-	  /*var animalGroupView = new app.allAnimalsView({ model: animal});
-
-	  $("#allFlowers").html(animalGroupView.render().el);*/
-
-	},
-
-	putAnimalPage: function(){
-
-		$(".animal-buttons").hide();
-
-	},
-
-	updateAnimalPage: function(){
-
-		$(".animal-buttons").hide();
-		
-	},
-
-	deleteAnimalPage: function(){
-
-		$(".animal-buttons").hide();
-		
-	},
-
-	putCreatorPage: function(){
-
-		$("#allCreators").hide();
-		$(".form-container").show();
-		$(".form-creator-update").hide();
-		$(".form-creator-delete").hide();
-		$(".form-creator-create").show();
-
-		$(".form-creator-create" ).submit(function( event ) {
-		  alert( "Handler for .submit() called." );
-		  event.preventDefault();
-		});
-	},
-
-	updateCreatorPage: function(){
-
-		$("#allCreators").hide();
-		$(".form-container").show();
-		$(".form-creator-create").hide();
-		$(".form-creator-delete").hide();
-		$(".form-creator-update").show();
-		
-	},
-
-	deleteCreatorPage: function(){
-
-		$("#allCreators").hide();
-		$(".form-container").show();
-		$(".form-creator-create").hide();
-		$(".form-creator-update").hide();
-		$(".form-creator-delete").show();
-		
-	}
-
-});

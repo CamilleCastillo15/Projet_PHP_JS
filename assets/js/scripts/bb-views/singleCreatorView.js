@@ -26,7 +26,6 @@ initialize: function() {
 
    render: function() {
     var JSON = this.model.toJSON();
-    console.log(JSON);
     var creatorTemplate = this.template({Objects: JSON});
     this.$el.html(creatorTemplate);
     return this;

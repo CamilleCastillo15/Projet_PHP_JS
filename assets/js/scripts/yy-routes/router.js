@@ -12,8 +12,6 @@ app.Router = Backbone.Router.extend({
 	  //Définit une route pour index.html
 	  //La méthode noCopy sera appelée
 	  "": "default",
-	  //Les méthodes appelées pour :
-	  //#heirloomRose, #rainbowRose, #redRose
 	  "wolf" : "wolfMessage",
 	  "owl": "owlMessage",
 	  "panda" : "pandaMessage",
@@ -29,17 +27,31 @@ app.Router = Backbone.Router.extend({
 
 	initialize: function() {
         $(".form-container").hide();
+        $("#allFlowers").hide();
+        $("#allCreators").hide();
+        $(".creators-buttons").hide();
+        $(".animal-buttons").hide();
         $(".form-creator-update").hide();
 		$(".form-creator-delete").hide();
 		$(".form-creator-create").hide();
+		$(".form-animal-update").hide();
+		$(".form-animal-delete").hide();
+		$(".form-animal-create").hide();
     },
 
 	default: function() {
   	  $("#copy").html("");
+  	  $("#allFlowers").hide();
+  	  $("#allCreators").hide();
+  	  $(".creators-buttons").hide();
+  	  $(".animal-buttons").hide();
   	  $(".form-container").hide();
   	  $(".form-creator-update").hide();
 	  $(".form-creator-delete").hide();
 	  $(".form-creator-create").hide();
+	  $(".form-animal-update").hide();
+	  $(".form-animal-delete").hide();
+	  $(".form-animal-create").hide();
 	},
 
 	wolfMessage: function() {
@@ -56,29 +68,14 @@ app.Router = Backbone.Router.extend({
 
 	creatorPage: function() {
 
-	//creator.fetch();
-
-	//var creatorGroup = new app.CreatorsCollection(creator);
-	//creatorsGroup.fetch();
-
-	//var creatorGroupView = new app.allCreatorsView({ collection: creatorGroup});
-
-	//("#allCreators").html(creatorGroupView.render().el);
-
 	$("#allFlowers").hide();
   	$("#allCreators").show();
   	$(".form-container").hide();
+  	$(".form-container_2").hide();
   	$(".animal-buttons").hide();
   	$(".creators-buttons").show();
 
 	var creator = new app.singleCreator();
-
-	/*creator.fetch({
-	    success: function (creator) {
-	        alert(JSON.stringify(creator));
-		    }
-
-		});*/
 
 	var creatorView = new app.singleCreatorView({ model: creator});
 
@@ -91,73 +88,156 @@ app.Router = Backbone.Router.extend({
 	  $("#allCreators").hide();
 	  $("#allFlowers").show();
 	  $(".form-container").hide();
+	  $(".form-container_2").hide();
 	  $(".creators-buttons").hide();
 	  $(".animal-buttons").show();
 
 	  var animal = new app.singleAnimal();
 
-	  /*animal.fetch({
-	    success: function (animal) {
-	        alert(JSON.stringify(animal));
-		    }
-
-		});*/
-
 	  var animalView = new app.singleAnimalView({ model: animal});
 
 	  $("#allFlowers").html(animalView.render().el);
-
-	  /*animal.fetch({
-	    success: function (animal) {
-	        alert(JSON.stringify(animal));
-		    }
-
-		});*/
-
-/*	  var animalGroup = new app.AnimalsCollection([
-		  wolf, owl, panda
-		]);*/
-
-	  //var animalGroup = new app.AnimalsCollection(animal);
-
-	  //var animalGroup = new app.AnimalsCollection([wolf, owl]);
-	  //console.log(animalGroup);
-
-	  /*var animalGroupView = new app.allAnimalsView({ model: animal});
-
-	  $("#allFlowers").html(animalGroupView.render().el);*/
 
 	},
 
 	putAnimalPage: function(){
 
-		$(".animal-buttons").hide();
+		$("#allFlowers").hide();
+		$(".form-container_2").show();
+		$(".form-animal-update").hide();
+		$(".form-animal-delete").hide();
+		$(".form-animal-create").show();
 
-	},
+		$(".form-animal-create" ).submit(function( event ) {
+		  //alert( "Handler for .submit() called." );
+		  event.preventDefault();
+
+		  var id = $(".form-animal-create .creatorId").val();
+
+		  var color = $(".form-animal-create .color").val();
+  		  var price = $(".form-animal-create .price").val();
+
+  		  var newAnimal = new app.AnimalsCreatorPut({id:id, 
+
+			color:color,
+			price:price});
+
+			  newAnimal.save(null ,{
+
+			  	type: 'POST',
+			  	 success: function () {
+				    alert(unescape(encodeURIComponent('L\'animal a été crée.')));
+				  },
+				  
+				  error: function(model, response) {
+			        alert(unescape(encodeURIComponent(response.responseText)));
+			      }
+
+
+			  });
+
+			
+			});
+
+		},
 
 	updateAnimalPage: function(){
 
 		$(".animal-buttons").hide();
+		$("#allFlowers").hide();
+		$(".form-container_2").show();
+		$(".form-animal-update").show();
+		$(".form-animal-delete").hide();
+		$(".form-animal-create").hide();
+
+		$(".form-animal-update" ).submit(function( event ) {
+
+			  //alert( "Handler for .submit() called." );
+			  event.preventDefault();
+
+			  var animalId = $(".form-animal-update .animalId").val();
+			  alert(animalId);
+
+			  var creatorId = $(".form-animal-update .creatorId").val();
+			  alert(creatorId);
+
+			  var color = $(".form-animal-update .color").val();
+			  alert(color);
+
+			  var price = $(".form-animal-update .price").val();
+			  alert(price);
+
+			  var newAnimal = new app.AnimalsCreator({
+			  	Creatorid:creatorId, 
+			  	id:animalId, 
+				color:color,
+				price:price});
+
+			  newAnimal.save(null, {
+
+			  	 success: function () {
+				    alert('L\'animal a été crée.');
+				  },
+				  
+				  error: function(model, response) {
+			        alert(response.responseText);
+			      }
+
+			  
+			  });
+
+			
+			});
 		
-	},
+		},
 
 	deleteAnimalPage: function(){
 
 		$(".animal-buttons").hide();
+		$("#allFlowers").hide();
+		$(".form-container_2").show();
+		$(".form-animal-update").hide();
+		$(".form-animal-delete").show();
+		$(".form-animal-create").hide();
 		
 	},
 
 	putCreatorPage: function(){
 
 		$("#allCreators").hide();
+		$(".form-container_2").hide();
 		$(".form-container").show();
 		$(".form-creator-update").hide();
 		$(".form-creator-delete").hide();
 		$(".form-creator-create").show();
 
 		$(".form-creator-create" ).submit(function( event ) {
-		  alert( "Handler for .submit() called." );
+		  //alert( "Handler for .submit() called." );
 		  event.preventDefault();
+
+		  var name = $(".form-creator-create .name").val();
+		  var phone = $(".form-creator-create .phone").val();
+
+		  var newCreator = new app.singleCreator({
+
+		  	name:name,
+		  	phone:phone
+
+		  });
+
+		  newCreator.save(null, {
+
+
+		  		  success: function () {
+				    alert('Le creator a été crée.');
+				  },
+				  
+				  error: function(model, response) {
+			        alert(JSON.parse(response.responseText));
+			      }
+
+		  	});
+		  
 		});
 	},
 
@@ -165,9 +245,47 @@ app.Router = Backbone.Router.extend({
 
 		$("#allCreators").hide();
 		$(".form-container").show();
+		$(".form-container_2").hide();
 		$(".form-creator-create").hide();
 		$(".form-creator-delete").hide();
 		$(".form-creator-update").show();
+
+		$(".form-creator-update" ).submit(function( event ) {
+
+			  //alert( "Handler for .submit() called." );
+			  event.preventDefault();
+
+			  var id = $(".form-creator-update .id").val();
+			  alert(id);
+
+			  var name = $(".form-creator-update .name").val();
+			  alert(name);
+
+			  var phone = $(".form-creator-update .phone").val();
+			  alert(phone);
+
+			  var newCreator = new app.singleCreator({
+
+			  	id: id,
+			  	name:name,
+			  	phone:phone
+
+			  });
+
+			  newCreator.save(null, {
+
+
+		  		  success: function () {
+				    alert('Le creator a été modifié.');
+				  },
+				  
+				  error: function(model, response) {
+			        alert(JSON.stringify(response.responseText));
+			      }
+
+		  	});
+		  
+		});
 		
 	},
 
@@ -175,9 +293,37 @@ app.Router = Backbone.Router.extend({
 
 		$("#allCreators").hide();
 		$(".form-container").show();
+		$(".form-container_2").hide();
 		$(".form-creator-create").hide();
 		$(".form-creator-update").hide();
 		$(".form-creator-delete").show();
+
+		$(".form-creator-delete" ).submit(function( event ) {
+
+			  event.preventDefault();
+
+			  var id = $(".form-creator-delete .id").val();
+
+			  var newCreator = new app.singleCreator({
+
+			  	id: id
+
+			  });
+
+			  newCreator.destroy({
+
+			  	 success: function () {
+				    alert(JSON.parse('Le creator a été détruit.'));
+				  },
+				  
+				  error: function(model, response) {
+				  	//JSON.parse(response.responseText);
+			        alert(decodeURIComponent(response.responseText));
+			      }
+
+			  });
+		  
+		});
 		
 	}
 

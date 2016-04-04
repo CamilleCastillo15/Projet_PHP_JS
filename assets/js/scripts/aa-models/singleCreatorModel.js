@@ -24,13 +24,13 @@ app.singleCreator = Backbone.Model.extend({
       },
 
   initialize: function() {
-     console.log("A model instance named " + this.get("name") +  " has been created and it's his phone " + this.get("phone"));
+     //console.log("A model instance named " + this.get("name") +  " has been created and it's his phone " + this.get("phone"));
 
      this.on('change', function(){
-       console.log("Something in our model has changed");
+       //console.log("Something in our model has changed");
      });
 
-     this.fetch();
+     //this.fetch();
  
    }
 

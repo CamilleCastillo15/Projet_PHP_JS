@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <title>Projet PHP + JS</title>
   <link rel="stylesheet" href="css/import.min.css">
 </head>
@@ -23,24 +23,46 @@
     <div class="form-container">   
 
       <form action="#" class="form form-creator-create">
-             Name: <input type="text" name="name" class="name-create"><br>
-             Phone: <input type="text" name="phone" class="phone-create"><br>
-            <button class="save">Edit</button>
-            <button class="cancel">Cancel</button>
+             Name: <input type="text" name="name" class="name"><br>
+             Phone: <input type="text" name="phone" class="phone"><br>
+            <button class="save">Envoyer</button>
         </form>
 
         <form action="#" class="form form-creator-update">
-             Id: <input type="text" name="id" name="id"><br>
-             Name: <input type="text" name="name" name="name"><br>
-             Phone: <input type="text" name="phone" name="phone"><br>
-            <button class="save">Update</button>
-            <button class="cancel">Cancel</button>
+             Id: <input type="text" name="id" class="id"><br>
+             Name: <input type="text" name="name" class="name"><br>
+             Phone: <input type="text" name="phone" class="phone"><br>
+            <button class="save">Envoyer</button>
         </form>
 
         <form action="#" class="form form-creator-delete">
-             Id: <input type="text" name="id" name="id"><br>
-            <button class="save">Delete</button>
-            <button class="cancel">Cancel</button>
+             Id: <input type="text" class="id" name="id"><br>
+            <button class="save">Envoyer</button>
+        </form>
+
+      </div>
+
+      <div class="form-container_2">   
+
+        <form action="#" class="form form-animal-create">
+             ID du Creator associé : <input type="text" name="creatorId" class="creatorId"><br>
+             Color : <input type="text" name="color" class="color"><br>
+             Price : <input type="text" name="price" class="price"><br>
+            <button class="save">Envoyer</button>
+        </form>
+
+        <form action="#" class="form form-animal-update">
+             ID du Creator associé : <input type="text" name="creatorId" class="creatorId"><br>
+             ID de l'Animal : <input type="text" name="animalId" class="animalId"><br>
+             Color : <input type="text" name="color" class="color"><br>
+             Price : <input type="text" name="price" class="price"><br>
+            <button class="save">Envoyer</button>
+        </form>
+
+        <form action="#" class="form form-animal-delete">
+             ID du Creator associé : <input type="text" name="creatorId" class="creatorId"><br>
+             ID de l'Animal : <input type="text" name="animalId" class="animalId"><br>
+            <button class="save">Envoyer</button>
         </form>
 
       </div>
@@ -80,6 +102,7 @@
             <li class="flowerInfo"><strong>Name:</strong> <%= data.name %></li>
             <li class="flowerInfo"><strong>Price:</strong> <%= data.price %></li>
             <li class="flowerInfo"><strong>Color:</strong> <%= data.color %></li>
+            
           </ul>
         </div>
       <% }); %>
@@ -90,7 +113,7 @@
       <div class="CreatorEachElement">
           <ul>
             <li class="flowerInfo"><strong>Name:</strong> <%= data.name %></li>
-            <li class="flowerInfo"><strong>Price:</strong> <%= data.phone %></li>
+            <li class="flowerInfo"><strong>Phone:</strong> <%= data.phone %></li>
           </ul>
         </div>
       <% }); %>
@@ -98,8 +121,6 @@
 
   <script src="include/js/lib/vendor.min.js"></script>
   <script src="include/js/scripts/scripts.min.js"></script>
-
-  <h1>LOLILOL</h1>
 
   <!-- <script src="js/libs/jquery.js"></script>
   <script src="js/libs/underscore.js"></script>

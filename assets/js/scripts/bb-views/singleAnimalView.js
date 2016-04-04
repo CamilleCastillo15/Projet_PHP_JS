@@ -28,7 +28,7 @@ initialize: function() {
   //$el ?
   render: function() {
     var JSON = this.model.toJSON();
-    console.log(JSON);
+    //console.log(JSON);
     var animalTemplate = this.template({Objects: JSON});
     this.$el.html(animalTemplate);
     return this;

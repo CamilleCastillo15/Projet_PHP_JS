@@ -7,42 +7,25 @@ var app = app || {};
 //Création d'une variable
 app.singleAnimal = Backbone.Model.extend({
 
-//Chaque instance de modèles auront leurs propres propriétés
-/*  defaults: {
-    link: "test",
-    name: "lol",
-    price: "4.5",
-    color: "pink",
-    img: "images/placeholder.jpg"
-  },*/
-
 urlRoot: 'http://localhost:8888/PolygonalAnimalsApiDebug.com/public/polygonalanimals',
 
 parse: function(response) {
-       //console.log(response,response.data,response.data[0].name,response.data[0].price);
-       /*console.log(response.data);
-       console.log(response.COLUMNS);*/
 
        var values = response.data;
-
        return values;
   },
   
   initialize: function() {
-    console.log("A model instance named " + this.get("name") +  " has been created and it costs " + this.get("price"));
-  
-    // Cut and paste this inside our initialize method
-    //Cela permet d'écouter les changements du modèle ?
-    // Modèle : les fleurs
+
+    //Cela permet d'écouter les changements du modèle 
     this.on('change', function(){
-      console.log("Something in our model has changed");
     });
 
-    // Cut and paste this inside our initialize method
-    //Création d'une fonction, qui, à chaque fois que le prix change, va, va afficher le nom de l'instance du modèle, et le prix modifié
+    // Création d'une fonction, qui, à chaque fois que le prix change, 
+    // va afficher le nom de l'instance du modèle, et le prix modifié
     // La fonction sera appelée à chaque fois que le modèle est modifié
-    this.on('change:price', function(){
-      console.log("The price for the " + this.get("name") + " model just changed to $" + this.get("price") + " dollars");
+    this.on('change:price', function(){ 
+
     });
 
   }

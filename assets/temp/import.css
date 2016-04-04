@@ -377,7 +377,7 @@ body {
 .msg {
   background-color: #fff;
   border: 1px solid;
-  width: 960px;
+  width: 80%;
   min-height: 50px;
   margin: 50px auto 0;
   font-size: 20px;
@@ -387,12 +387,12 @@ body {
 .site {
   background-color: #fff;
   border: 1px solid;
-  width: 960px;
-  min-height: 630px;
-  margin: 75px auto 0; }
+  height: 100%;
+  width: 80%;
+  margin: 64px auto 26px auto; }
 
 .button-container {
-  margin: 0 auto;
+  margin: 50px auto;
   display: block;
   text-align: center;
   font-size: 15px; }
@@ -443,28 +443,24 @@ body {
   padding: 20px;
   margin: 110px auto 0 auto;
   text-align: center;
-  width: 750px;
   background-color: #E0E0E0;
   border: 1px solid grey;
   font-size: 13px; }
 
 .AnimalEachElement {
-  float: left;
+  display: inline-block;
   padding: 16px; }
 
 #allCreators {
-  padding: 20px;
   margin: 110px auto 0 auto;
   text-align: center;
-  width: 750px;
   background-color: #E0E0E0;
   border: 1px solid grey;
-  font-size: 13px;
-  height: 200px; }
+  font-size: 13px; }
 
 .CreatorEachElement {
-  float: left;
-  padding: 25px; }
+  padding: 25px;
+  display: inline-block; }
 
 .bgColorImage {
   background-color: #CEBDBD; }
