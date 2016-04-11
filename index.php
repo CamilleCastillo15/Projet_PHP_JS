@@ -8,6 +8,8 @@
 
 <body>
 
+  <div class="msg"><a href="#identificationPage">S'identifier </a> </div>
+
   <div class="msg"><a href="#creators">Voir les Creators</a> | <a href="#animals">Voir les Animals</a></div>
 
   <div class="site">
@@ -19,6 +21,16 @@
     <div id="allAnimals"></div>
 
     <div id="allCreators"></div>
+
+      <div class="form-container-auth">   
+
+        <form action="#" class="form form-auth" enctype="multipart/form-data">
+               Login: <input type="text" name="login" class="login"><br>
+               Pass: <input type="text" name="pass" class="pass"><br>
+              <button class="save">Envoyer</button>
+          </form>
+
+      </div>
 
     <div class="form-container">   
 

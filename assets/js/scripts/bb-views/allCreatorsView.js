@@ -1,9 +1,6 @@
-//console.log("allCreatorsView");
-
-// Namespace our flowerApp
 var app = app || {};
 
-// The view for all the flowers
+// La vue pour tous les Creators
 app.allCreatorsView = Backbone.View.extend({
 
   tagName: "section",

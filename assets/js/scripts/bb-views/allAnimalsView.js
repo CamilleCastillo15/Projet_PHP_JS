@@ -1,30 +1,33 @@
-//console.log("allAnimalsView");
-
-// Namespace our flowerApp
 var app = app || {};
 
-// The view for all the flowers
+// La vue pour tous les animaux
 app.allAnimalsView = Backbone.View.extend({
 
-  url: 'http://localhost:8888/PolygonalAnimalsApiDebug.com/public/polygonalanimals',
+//L'url interrogée ainsi que le modèle utilisé sont spécifiés
+  url: 'PolygonalAnimalsApi.com/public/polygonalanimals',
   model:app.singleAnimal,
 
+//initialize est aussi appelée au lancement de la vue
+//Le modèle va se synchroniser avec les données en ligne avec la fonction fetch()
+//La vue va se modifier quand un changement en ligne sera notifié
 initialize: function() {
     this.model.fetch();
     this.model.bind('change', this.render, this);
   },
 
-  model:app.singleAnimal,
+//La balise dans laquelle les données pourront être affichées se nommera "section"
   tagName: "section",
 
+//Chaque objet de la collection sera ajoutée
   render: function() {
       this.collection.each(this.addAnimal, this);
         return this;
   },
 
- addAnimal: function(animal) {
-        var animalView = new app.singleAnimalView ({ model: animal });
-        this.$el.append(animalView.render().el);
- }
+  //Et affiché dans le template
+   addAnimal: function(animal) {
+          var animalView = new app.singleAnimalView ({ model: animal });
+          this.$el.append(animalView.render().el);
+   }
 
 });

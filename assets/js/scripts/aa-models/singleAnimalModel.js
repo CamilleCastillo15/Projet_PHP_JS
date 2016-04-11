@@ -1,14 +1,12 @@
-//console.log("singleAnimalModel");
-
-// Namespace our app
-// || veut dire "OR"
 var app = app || {};
 
-//Création d'une variable
 app.singleAnimal = Backbone.Model.extend({
 
-urlRoot: 'http://localhost:8888/PolygonalAnimalsApiDebug.com/public/polygonalanimals',
+//urlRoot définit la racine de l'URL interrogée dans ce modèle
+urlRoot: 'PolygonalAnimalsApi.com/public/polygonalanimals',
 
+//La fonction parse sélectionne les données JSON récupérées de l'URL
+//Car elles sont encapsulées dans un tableau "data"
 parse: function(response) {
 
        var values = response.data;

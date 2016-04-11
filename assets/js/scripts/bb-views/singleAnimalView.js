@@ -1,22 +1,22 @@
-//console.log("singleAnimalView");
-
-// Namespace our flowerApp
 var app = app || {};
 
-// The view for a single model view, which is one flower
+//La vue pour un seul des Animals
 app.singleAnimalView = Backbone.View.extend({
 
-url: 'http://localhost:8888/PolygonalAnimalsApiDebug.com/public/polygonalanimals',
+url: 'PolygonalAnimalsApi.com/public/polygonalanimals',
 model:app.singleAnimal,
 
+//initialize est aussi appelée au lancement de la vue
+//Le modèle va se synchroniser avec les données en ligne avec la fonction fetch()
+//La vue va se modifier quand un changement en ligne sera notifié
 initialize: function() {
     this.model.fetch();
     this.model.bind('change', this.render, this);
   },
 
-//tagname définit le nom de la balise HTML dans lequelles les données vont être insérées
+//tagname définit le nom de la balise HTML dans laquelle les données vont être insérées
 //className définit la classe du tagName (optionnel)
-//tagName est aussi optionnel, mais Backbonne définira par défaut la balise div
+//tagName est aussi optionnel, mais Backbone définira par défaut la balise div
   tagName: "article",
   className: "animalListItem",
 
@@ -25,6 +25,7 @@ initialize: function() {
 
   //render construit les élémnts html
   //Elle récupère les données crées précedemment
+  //Les injecte dans le template sous forme d'objects de type JSON
   //$el ?
   render: function() {
     var JSON = this.model.toJSON();
@@ -40,8 +41,8 @@ initialize: function() {
     'mouseout': 'removeBgColor'
   },
 
-  //Ajout au template, à la balise #allFlower est modifiée ?
-  //balise article (référence)
+  //Le rendu du template est modifié
+  //Les éléments voient leurs couleurs changer quand on leur passe la souris dessus
   addBgColor: function() {
     this.$el.addClass("bgColorImage");
   },

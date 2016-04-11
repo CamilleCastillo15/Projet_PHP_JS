@@ -1,22 +1,19 @@
 var app = app || {};
 
-//Création d'une variable
+//Le modèle AnimalsCreatorPut permet de ne passer qu'un seul paramètre dans l'URL
+//Dans le cas d'une requête PUT pour créer un Animal
 app.AnimalsCreatorPut = Backbone.Model.extend({
 
-   urlRoot: 'http://localhost:8888/PolygonalAnimalsApiDebug.com/public/creators',
+  initialize: function(options) {
 
- initialize: function(options) {
     this.id = options.id;
+
   },
 
   url: function() {
-    return 'http://localhost:8888/PolygonalAnimalsApiDebug.com/public/creators/' + this.id + '/polygonalanimals/';
-  },
 
-  parse: function(response) {
-
-       var values = response.data;
-       return values;
-  },
+    return 'PolygonalAnimalsApi.com/public/creators/' + this.id + '/polygonalanimals';
+  
+  }
 
 });

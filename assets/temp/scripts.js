@@ -1,62 +1,200 @@
 var app = app || {};
 
-//Création d'une variable
-app.AnimalsCreator = Backbone.Model.extend({
+// La vue pour tous les animaux
+app.allAnimalsView = Backbone.View.extend({
 
-   urlRoot: 'http://localhost:8888/PolygonalAnimalsApiDebug.com/public/creators',
+//L'url interrogée ainsi que le modèle utilisé sont spécifiés
+  url: 'PolygonalAnimalsApi.com/public/polygonalanimals',
+  model:app.singleAnimal,
 
- initialize: function(options) {
-    this.Creatorid = options.Creatorid;
-    this.id = options.id;
-    //this.set({'Creatorid': Creatorid});
+//initialize est aussi appelée au lancement de la vue
+//Le modèle va se synchroniser avec les données en ligne avec la fonction fetch()
+//La vue va se modifier quand un changement en ligne sera notifié
+initialize: function() {
+    this.model.fetch();
+    this.model.bind('change', this.render, this);
   },
 
-  url: function() {
-    return 'http://localhost:8888/PolygonalAnimalsApiDebug.com/public/creators/' + this.Creatorid + '/polygonalanimals/' + this.id;
+//La balise dans laquelle les données pourront être affichées se nommera "section"
+  tagName: "section",
+
+//Chaque objet de la collection sera ajoutée
+  render: function() {
+      this.collection.each(this.addAnimal, this);
+        return this;
   },
 
-  parse: function(response) {
-
-       var values = response.data;
-       return values;
-  },
+  //Et affiché dans le template
+   addAnimal: function(animal) {
+          var animalView = new app.singleAnimalView ({ model: animal });
+          this.$el.append(animalView.render().el);
+   }
 
 });
-
 var app = app || {};
 
-//Création d'une variable
-app.AnimalsCreatorPut = Backbone.Model.extend({
+// La vue pour tous les Creators
+app.allCreatorsView = Backbone.View.extend({
 
-   urlRoot: 'http://localhost:8888/PolygonalAnimalsApiDebug.com/public/creators',
+  tagName: "section",
 
- initialize: function(options) {
-    this.id = options.id;
+  render: function() {
+      this.collection.each(this.addCreator, this);
+        return this;
   },
 
-  url: function() {
-    return 'http://localhost:8888/PolygonalAnimalsApiDebug.com/public/creators/' + this.id + '/polygonalanimals/';
-  },
-
-  parse: function(response) {
-
-       var values = response.data;
-       return values;
-  },
+ addCreator: function(creator) {
+        var creatorView = new app.singleCreatorView ({ model: creator });
+        this.$el.append(creatorView.render().el);
+ }
 
 });
+var app = app || {};
 
-//console.log("singleAnimalModel");
+//La vue pour un seul des Animals
+app.singleAnimalView = Backbone.View.extend({
 
-// Namespace our app
+url: 'PolygonalAnimalsApi.com/public/polygonalanimals',
+model:app.singleAnimal,
+
+//initialize est aussi appelée au lancement de la vue
+//Le modèle va se synchroniser avec les données en ligne avec la fonction fetch()
+//La vue va se modifier quand un changement en ligne sera notifié
+initialize: function() {
+    this.model.fetch();
+    this.model.bind('change', this.render, this);
+  },
+
+//tagname définit le nom de la balise HTML dans laquelle les données vont être insérées
+//className définit la classe du tagName (optionnel)
+//tagName est aussi optionnel, mais Backbone définira par défaut la balise div
+  tagName: "article",
+  className: "animalListItem",
+
+  //Indique la balise html où seront insérées les données (avec JQuery - plus rapide-)
+  template: _.template( $("#animalElement").html() ),
+
+  //render construit les élémnts html
+  //Elle récupère les données crées précedemment
+  //Les injecte dans le template sous forme d'objects de type JSON
+  //$el ?
+  render: function() {
+    var JSON = this.model.toJSON();
+    //console.log(JSON);
+    var animalTemplate = this.template({Objects: JSON});
+    this.$el.html(animalTemplate);
+    return this;
+  },
+
+  //Evènements spécifiques à Backbone
+  events: {
+    'mouseover': 'addBgColor',
+    'mouseout': 'removeBgColor'
+  },
+
+  //Le rendu du template est modifié
+  //Les éléments voient leurs couleurs changer quand on leur passe la souris dessus
+  addBgColor: function() {
+    this.$el.addClass("bgColorImage");
+  },
+
+  removeBgColor: function() {
+    this.$el.removeClass("bgColorImage");
+  }
+
+});
+var app = app || {};
+
+// La vue pour un seul des Creators
+app.singleCreatorView = Backbone.View.extend({
+
+  url: 'PolygonalAnimalsApi.com/public/creators',
+  model:app.singleCreator,
+
+//initialize est aussi appelée au lancement de la vue
+//Le modèle va se synchroniser avec les données en ligne avec la fonction fetch()
+//La vue va se modifier quand un changement en ligne sera notifié
+initialize: function() {
+    this.model.fetch();
+    this.model.bind('change', this.render, this);
+  },
+
+//tagname définit le nom de la balise HTML dans laquelle les données vont être insérées
+//className définit la classe du tagName (optionnel)
+//tagName est aussi optionnel, mais Backbone définira par défaut la balise div
+  tagName: "articleCreator",
+  className: "creatorListItem",
+
+//Indique la balise html où seront insérées les données (avec JQuery - plus rapide-)
+
+  template: _.template( $("#creatorElement").html() ),
+
+//render construit les élémnts html
+//Elle récupère les données crées précedemment
+//Les injecte dans le template sous forme d'objects de type JSON
+//$el ?
+   render: function() {
+    var JSON = this.model.toJSON();
+    var creatorTemplate = this.template({Objects: JSON});
+    this.$el.html(creatorTemplate);
+    return this;
+  },
+
+
+});
 // || veut dire "OR"
 var app = app || {};
 
 //Création d'une variable
+app.AnimalsCreator = Backbone.Model.extend({
+
+   //urlRoot: 'PolygonalAnimalsApi.com/public/creators',
+
+ //La fonction initialize avec le paramètre options
+ //permet ici de créer des variables qui peuvent être passées dans l'URL interrogée
+ initialize: function(options) {
+    this.Creatorid = options.Creatorid;
+    this.id = options.id;
+  },
+
+  //La fonction url spécifie l'url interrogée ainsi que l'emplacement des paramètres
+  url: function() {
+
+    return 'PolygonalAnimalsApi.com/public/creators/' + this.Creatorid + '/polygonalanimals/' + this.id;
+  
+  }
+
+});
+
+var app = app || {};
+
+//Le modèle AnimalsCreatorPut permet de ne passer qu'un seul paramètre dans l'URL
+//Dans le cas d'une requête PUT pour créer un Animal
+app.AnimalsCreatorPut = Backbone.Model.extend({
+
+  initialize: function(options) {
+
+    this.id = options.id;
+
+  },
+
+  url: function() {
+
+    return 'PolygonalAnimalsApi.com/public/creators/' + this.id + '/polygonalanimals';
+  
+  }
+
+});
+
+var app = app || {};
+
 app.singleAnimal = Backbone.Model.extend({
 
-urlRoot: 'http://localhost:8888/PolygonalAnimalsApiDebug.com/public/polygonalanimals',
+//urlRoot définit la racine de l'URL interrogée dans ce modèle
+urlRoot: 'PolygonalAnimalsApi.com/public/polygonalanimals',
 
+//La fonction parse sélectionne les données JSON récupérées de l'URL
+//Car elles sont encapsulées dans un tableau "data"
 parse: function(response) {
 
        var values = response.data;
@@ -81,221 +219,39 @@ parse: function(response) {
 });
 
 
-//console.log("singleCreator");
-
-
-// Namespace our app
-// || veut dire "OR"
 var app = app || {};
 
 //Création d'une variable
 app.singleCreator = Backbone.Model.extend({
 
-		/*defaults: {
-			  name: "test",
-			  phone: "00-00-00-00-00",
-		  },*/
-
-      urlRoot: 'http://localhost:8888/PolygonalAnimalsApiDebug.com/public/creators',
+      urlRoot: 'PolygonalAnimalsApi.com/public/creators',
 
       parse: function(response) {
-           //console.log("parse");
-           //console.log(response,response.data,response.data[4]);
-           var values = response.data;
 
+           var values = response.data;
             return values;
       },
 
   initialize: function() {
-     //console.log("A model instance named " + this.get("name") +  " has been created and it's his phone " + this.get("phone"));
+
+     console.log("A model instance named " + this.get("name") +  
+      " has been created and it's his phone " + this.get("phone"));
 
      this.on('change', function(){
-       //console.log("Something in our model has changed");
+       console.log("Something in our model has changed");
      });
-
-     //this.fetch();
  
    }
 
 });
 
 
-//console.log("allAnimalsView");
-
-// Namespace our flowerApp
-var app = app || {};
-
-// The view for all the flowers
-app.allAnimalsView = Backbone.View.extend({
-
-  url: 'http://localhost:8888/PolygonalAnimalsApiDebug.com/public/polygonalanimals',
-  model:app.singleAnimal,
-
-initialize: function() {
-    this.model.fetch();
-    this.model.bind('change', this.render, this);
-  },
-
-  model:app.singleAnimal,
-  tagName: "section",
-
-  render: function() {
-      this.collection.each(this.addAnimal, this);
-        return this;
-  },
-
- addAnimal: function(animal) {
-        var animalView = new app.singleAnimalView ({ model: animal });
-        this.$el.append(animalView.render().el);
- }
-
-});
-//console.log("allCreatorsView");
-
-// Namespace our flowerApp
-var app = app || {};
-
-// The view for all the flowers
-app.allCreatorsView = Backbone.View.extend({
-
-  tagName: "section",
-
-  render: function() {
-      this.collection.each(this.addCreator, this);
-        return this;
-  },
-
- addCreator: function(creator) {
-        var creatorView = new app.singleCreatorView ({ model: creator });
-        this.$el.append(creatorView.render().el);
- }
-
-});
-//console.log("singleAnimalView");
-
-// Namespace our flowerApp
-var app = app || {};
-
-// The view for a single model view, which is one flower
-app.singleAnimalView = Backbone.View.extend({
-
-url: 'http://localhost:8888/PolygonalAnimalsApiDebug.com/public/polygonalanimals',
-model:app.singleAnimal,
-
-initialize: function() {
-    this.model.fetch();
-    this.model.bind('change', this.render, this);
-  },
-
-//tagname définit le nom de la balise HTML dans lequelles les données vont être insérées
-//className définit la classe du tagName (optionnel)
-//tagName est aussi optionnel, mais Backbonne définira par défaut la balise div
-  tagName: "article",
-  className: "animalListItem",
-
-  //Indique la balise html où seront insérées les données (avec JQuery - plus rapide-)
-  template: _.template( $("#animalElement").html() ),
-
-  //render construit les élémnts html
-  //Elle récupère les données crées précedemment
-  //$el ?
-  render: function() {
-    var JSON = this.model.toJSON();
-    //console.log(JSON);
-    var animalTemplate = this.template({Objects: JSON});
-    this.$el.html(animalTemplate);
-    return this;
-  },
-
-  //Evènements spécifiques à Backbone
-  events: {
-    'mouseover': 'addBgColor',
-    'mouseout': 'removeBgColor'
-  },
-
-  //Ajout au template, à la balise #allFlower est modifiée ?
-  //balise article (référence)
-  addBgColor: function() {
-    this.$el.addClass("bgColorImage");
-  },
-
-  removeBgColor: function() {
-    this.$el.removeClass("bgColorImage");
-  }
-
-});
-//console.log("singleCreatorView");
-
-// Namespace our flowerApp
-var app = app || {};
-
-// The view for all the flowers
-app.singleCreatorView = Backbone.View.extend({
-
-  url: 'http://localhost:8888/PolygonalAnimalsApiDebug.com/public/creators',
-  model:app.singleCreator,
-
-initialize: function() {
-    this.model.fetch();
-    this.model.bind('change', this.render, this);
-  },
-
-  tagName: "articleCreator",
-  className: "creatorListItem",
-
-  template: _.template( $("#creatorElement").html() ),
-
-/*  initialize: function() {
-			this.template = _.template($('#creatorsTemplate').html());
-			this.listenTo(this.model, 'change', this.render);
-	},*/
-
-   render: function() {
-    var JSON = this.model.toJSON();
-    var creatorTemplate = this.template({Objects: JSON});
-    this.$el.html(creatorTemplate);
-    return this;
-  },
-
-
-});
-//console.log("allAnimals");
-
-// Une collection est un groupe d'instances de modèles
-
-   
-// Namespace our flowerApp
-var app = app || {};
-
-app.AnimalsCollection = Backbone.Collection.extend({
-
-  url: 'http://localhost:8888/PolygonalAnimalsApiDebug.com/public/polygonalanimals',
-  model:app.singleAnimal
-
-});
-
-//console.log("allAnimals");
-
-// Une collection est un groupe d'instances de modèles
-
-   
-// Namespace our flowerApp
-var app = app || {};
-
-app.CreatorsCollection = Backbone.Collection.extend({
-
-  model: app.singleCreator
-
-});
-
-//console.log("router");
-
-// Namespace our flowerApp
 var app = app || {};
 
 //Création d'un routeur
 //Sur le modèle clé / valeur
 //La route est sur la gauche
+//La fonction appelée sur la droite
 app.Router = Backbone.Router.extend({
 
 	routes :{
@@ -312,11 +268,14 @@ app.Router = Backbone.Router.extend({
 	  "delete-animal" : "deleteAnimalPage",
 	  "put-creator" : "putCreatorPage",
 	  "update-creator" : "updateCreatorPage",
-	  "delete-creator" : "deleteCreatorPage"
+	  "delete-creator" : "deleteCreatorPage",
+	  "identificationPage" : "identificationPage"
 	},
 
+//L'état du DOM au lancement du site
 	initialize: function() {
         $(".form-container").hide();
+        $(".form-auth").hide();
         $("#allAnimals").hide();
         $("#allCreators").hide();
         $(".creators-buttons").hide();
@@ -329,6 +288,7 @@ app.Router = Backbone.Router.extend({
 		$(".form-animal-create").hide();
     },
 
+//L'état du DOM par défaut (sans route spécifiée)
 	default: function() {
   	  $("#copy").html("");
   	  $("#allAnimals").hide();
@@ -336,6 +296,7 @@ app.Router = Backbone.Router.extend({
   	  $(".creators-buttons").hide();
   	  $(".animal-buttons").hide();
   	  $(".form-container").hide();
+  	  $(".form-auth").hide();
   	  $(".form-creator-update").hide();
 	  $(".form-creator-delete").hide();
 	  $(".form-creator-create").hide();
@@ -344,6 +305,8 @@ app.Router = Backbone.Router.extend({
 	  $(".form-animal-create").hide();
 	},
 
+//Ces 3 routes définissent un message qui va s'afficher quand l'utilisateur va cliquer sur un élément
+//de type Polygonalanimal 
 	wolfMessage: function() {
 	  $("#copy").html("Heirloom Roses are great Mother's Day flowers");
 	},
@@ -356,28 +319,97 @@ app.Router = Backbone.Router.extend({
 	  $("#copy").html("On Valentine's Day, give that special someone Red Roses");
 	},
 
+//Le JS de la route identificationPage (page d'identification)
+	identificationPage: function(){
+
+//Plusieurs balises sans rapport avec la page vont être cachées (grâce à .hide())
+	$("#allAnimals").hide();
+	$("#allCreators").hide();
+	$(".form-container_2").hide();
+	$(".form-auth").show();
+
+//Le formulaire .form-auth va exécuter des actions quand l'utilisateur clique dessus
+	$(".form-auth" ).submit(function( event ) {
+	  
+	 //Ses actions de bases (envoyer) vont être stoppées grâce à event.preventDefault();
+	 event.preventDefault();
+
+	 //Les valeurs rentrées par l'utilisateur (login et password) vont être récupérées
+	  var login = $(".form-auth .login").val();
+	  var password = $(".form-auth .pass").val();
+
+//Une fonction va être crée : elle permet d'envoyer des reqrêtes de type xhr = XmlHttpRequest
+//Elles permettent de placer des données en Entête de requête
+//Le but ici est de s'identifier grâce au service Basic auth crée sur Laravel (dans mon cas)
+	  sendAuthentication = function (xhr) {
+		  var user = login;// your actual username
+		  var pass = password;// your actual password
+		  var token = user.concat(":", pass);
+		  xhr.setRequestHeader('Authorization', ("Basic ".concat(btoa(token))));
+		}
+
+//Pour envoyer une requête avec Backbone il faut aussi créer un modèle "fantôme"
+		  var newAuth = new app.singleCreator({
+
+		  	name:"test",
+		  	phone:9999
+
+		  });
+
+//Le paramètre beforeSend permettra de passer les paramètres de la requête
+		  newAuth.save(null, {
+
+		  	beforeSend: sendAuthentication,
+
+//Si la requête est passée, un message va être retourné
+		  	success: function() {
+			        alert("Vous êtes identifié.");
+			      },
+
+//Sinon le message d'erreur renvoyé par le serveur sera affiché	  
+			  error: function(model, response) {
+		        alert(response.responseText);
+		      }
+
+		  });
+
+		
+		});
+
+	},
+
+//La fonction de la page creatorPage
+//Elle permet d'afficher les éléments de type Creators
 	creatorPage: function() {
 
 	$("#allAnimals").hide();
   	$("#allCreators").show();
   	$(".form-container").hide();
+  	$(".form-auth").hide();
   	$(".form-container_2").hide();
   	$(".animal-buttons").hide();
   	$(".creators-buttons").show();
 
+//Pour cela il faut créer un modèle de type singleCreator
+//qui permet d'interroger la bonne URl et de récupérer les informations
 	var creator = new app.singleCreator();
 
+//Ensuite une vue sera crée, qui prendra pour modèle creator précédemment instancié
 	var creatorView = new app.singleCreatorView({ model: creator});
 
+//La balise allCreators récupera les données de la vue qui vont être crées
 	$("#allCreators").html(creatorView.render().el);
 
 	},
 
+//La fonction de la page creatorPage
+//Elle permet d'afficher les éléments de type Animals
 	animalPage: function() {
 
 	  $("#allCreators").hide();
 	  $("#allAnimals").show();
 	  $(".form-container").hide();
+	  $(".form-auth").hide();
 	  $(".form-container_2").hide();
 	  $(".creators-buttons").hide();
 	  $(".animal-buttons").show();
@@ -390,38 +422,48 @@ app.Router = Backbone.Router.extend({
 
 	},
 
+//La fonction de la page putAnimalPage
+//Elle permet de créer des éléments de type Animals
 	putAnimalPage: function(){
 
 		$("#allAnimals").hide();
 		$(".form-container_2").show();
+		$(".form-auth").hide();
 		$(".form-animal-update").hide();
 		$(".form-animal-delete").hide();
 		$(".form-animal-create").show();
 
 		$(".form-animal-create" ).submit(function( event ) {
-		  //alert( "Handler for .submit() called." );
+
 		  event.preventDefault();
 
-		  var id = $(".form-animal-create .creatorId").val();
-
+		  //Creatorid représente l'id du Creator associé à l'Animal
+		  //Car chaque Animal a un Creator associé.
+		  //Creatorid est donc la clé étrangère permettant de relier 
+		  //l'Animal au Creator
+		  var Creatorid = $(".form-animal-create .creatorId").val();
 		  var color = $(".form-animal-create .color").val();
   		  var price = $(".form-animal-create .price").val();
 
-  		  var newAnimal = new app.AnimalsCreatorPut({id:id, 
+  		  var newAnimal = new app.AnimalsCreatorPut({
 
+  		  	id:Creatorid, 
 			color:color,
-			price:price});
+			price:price
+
+		});
 
 			  newAnimal.save(null ,{
 
 			  	type: 'POST',
 			  	 success: function () {
-				    alert(unescape(encodeURIComponent('L\'animal a été crée.')));
+				    alert('L\'animal a été crée.');
 				  },
 				  
 				  error: function(model, response) {
-			        alert(unescape(encodeURIComponent(response.responseText)));
-			      }
+			        alert(response.responseText);	      
+
+				}
 
 
 			  });
@@ -431,11 +473,13 @@ app.Router = Backbone.Router.extend({
 
 		},
 
+//updateAnimalPage permet de mettre à jour des informations sur un Animal
 	updateAnimalPage: function(){
 
 		$(".animal-buttons").hide();
 		$("#allAnimals").hide();
 		$(".form-container_2").show();
+		$(".form-auth").hide();
 		$(".form-animal-update").show();
 		$(".form-animal-delete").hide();
 		$(".form-animal-create").hide();
@@ -446,16 +490,9 @@ app.Router = Backbone.Router.extend({
 			  event.preventDefault();
 
 			  var animalId = $(".form-animal-update .animalId").val();
-			  alert(animalId);
-
 			  var creatorId = $(".form-animal-update .creatorId").val();
-			  alert(creatorId);
-
 			  var color = $(".form-animal-update .color").val();
-			  alert(color);
-
 			  var price = $(".form-animal-update .price").val();
-			  alert(price);
 
 			  var newAnimal = new app.AnimalsCreator({
 			  	Creatorid:creatorId, 
@@ -466,7 +503,7 @@ app.Router = Backbone.Router.extend({
 			  newAnimal.save(null, {
 
 			  	 success: function () {
-				    alert('L\'animal a été crée.');
+				    alert('L\'animal a été mis à jour.');
 				  },
 				  
 				  error: function(model, response) {
@@ -481,21 +518,57 @@ app.Router = Backbone.Router.extend({
 		
 		},
 
+//deleteAnimalPage permet de détruire un élément Animal
 	deleteAnimalPage: function(){
 
 		$(".animal-buttons").hide();
 		$("#allAnimals").hide();
 		$(".form-container_2").show();
+		$(".form-auth").hide();
 		$(".form-animal-update").hide();
 		$(".form-animal-delete").show();
 		$(".form-animal-create").hide();
+
+		$(".form-animal-delete" ).submit(function( event ) {
+
+			  event.preventDefault();
+
+			  var animalId = $(".form-animal-delete .animalId").val();
+			  var creatorId = $(".form-animal-delete .creatorId").val();
+
+			  var newAnimal = new app.AnimalsCreator({
+
+			  	id: animalId,
+			  	Creatorid: creatorId
+
+			  });
+
+			  newAnimal.destroy({
+
+			  	 success: function() {
+
+				    alert('This animal has been deleted.');
+
+				  },
+				  
+				  error: function(model, response) {
+
+			        alert(response.responseText);
+
+			      }
+
+			  });
+		  
+		});
 		
 	},
 
+//putCreatorPage permet de créer un élément Creator
 	putCreatorPage: function(){
 
 		$("#allCreators").hide();
 		$(".form-container_2").hide();
+		$(".form-auth").hide();
 		$(".form-container").show();
 		$(".form-creator-update").hide();
 		$(".form-creator-delete").hide();
@@ -507,6 +580,7 @@ app.Router = Backbone.Router.extend({
 
 		  var name = $(".form-creator-create .name").val();
 		  var phone = $(".form-creator-create .phone").val();
+		  alert(phone);
 
 		  var newCreator = new app.singleCreator({
 
@@ -523,7 +597,7 @@ app.Router = Backbone.Router.extend({
 				  },
 				  
 				  error: function(model, response) {
-			        alert(JSON.parse(response.responseText));
+			        alert(response.responseText);
 			      }
 
 		  	});
@@ -531,11 +605,13 @@ app.Router = Backbone.Router.extend({
 		});
 	},
 
+//updateCreatorPage permet de mettre à jour un élément Creator
 	updateCreatorPage: function(){
 
 		$("#allCreators").hide();
 		$(".form-container").show();
 		$(".form-container_2").hide();
+		$(".form-auth").hide();
 		$(".form-creator-create").hide();
 		$(".form-creator-delete").hide();
 		$(".form-creator-update").show();
@@ -546,13 +622,8 @@ app.Router = Backbone.Router.extend({
 			  event.preventDefault();
 
 			  var id = $(".form-creator-update .id").val();
-			  alert(id);
-
 			  var name = $(".form-creator-update .name").val();
-			  alert(name);
-
 			  var phone = $(".form-creator-update .phone").val();
-			  alert(phone);
 
 			  var newCreator = new app.singleCreator({
 
@@ -570,7 +641,7 @@ app.Router = Backbone.Router.extend({
 				  },
 				  
 				  error: function(model, response) {
-			        alert(JSON.stringify(response.responseText));
+			        alert(response.responseText);
 			      }
 
 		  	});
@@ -579,11 +650,13 @@ app.Router = Backbone.Router.extend({
 		
 	},
 
+//deleteCreatorPage permet de détuire un élément Creator
 	deleteCreatorPage: function(){
 
 		$("#allCreators").hide();
 		$(".form-container").show();
 		$(".form-container_2").hide();
+		$(".form-auth").hide();
 		$(".form-creator-create").hide();
 		$(".form-creator-update").hide();
 		$(".form-creator-delete").show();
@@ -603,12 +676,12 @@ app.Router = Backbone.Router.extend({
 			  newCreator.destroy({
 
 			  	 success: function () {
-				    alert(JSON.parse('Le creator a été détruit.'));
+				    alert('This creator has been deleted.');
 				  },
 				  
 				  error: function(model, response) {
 				  	//JSON.parse(response.responseText);
-			        alert(decodeURIComponent(response.responseText));
+			        alert(response.responseText);
 			      }
 
 			  });
@@ -618,6 +691,25 @@ app.Router = Backbone.Router.extend({
 	}
 
 });
+// Une collection est un groupe d'instances de modèles
+var app = app || {};
+
+app.AnimalsCollection = Backbone.Collection.extend({
+
+  url: 'PolygonalAnimalsApi.com/public/polygonalanimals',
+  model:app.singleAnimal
+
+});
+
+// Une collection est un groupe d'instances de modèles
+var app = app || {};
+
+app.CreatorsCollection = Backbone.Collection.extend({
+
+  model: app.singleCreator
+
+});
+
 //console.log("main");
 $("#kk");
 
