@@ -1,0 +1,26 @@
+2016-02-02 12:04:46,184 CRIT Supervisor running as root (no user in config file)
+2016-02-02 12:04:46,222 INFO RPC interface 'supervisor' initialized
+2016-02-02 12:04:46,222 CRIT Server 'unix_http_server' running without any HTTP authentication checking
+2016-02-02 12:04:46,222 INFO daemonizing the supervisord process
+2016-02-02 12:04:46,223 INFO supervisord started with pid 8809
+2016-02-02 12:14:57,838 CRIT Supervisor running as root (no user in config file)
+2016-02-02 12:14:57,838 INFO RPC interface 'supervisor' initialized
+2016-02-02 12:14:57,838 CRIT Server 'unix_http_server' running without any HTTP authentication checking
+2016-02-02 12:14:57,839 INFO supervisord started with pid 8809
+2016-02-02 12:15:16,075 CRIT Supervisor running as root (no user in config file)
+2016-02-02 12:15:16,075 INFO RPC interface 'supervisor' initialized
+2016-02-02 12:15:16,075 CRIT Server 'unix_http_server' running without any HTTP authentication checking
+2016-02-02 12:15:16,075 INFO supervisord started with pid 8809
+2016-02-02 12:15:18,194 CRIT Supervisor running as root (no user in config file)
+2016-02-02 12:15:18,194 INFO RPC interface 'supervisor' initialized
+2016-02-02 12:15:18,194 CRIT Server 'unix_http_server' running without any HTTP authentication checking
+2016-02-02 12:15:18,194 INFO supervisord started with pid 8809
+2016-02-02 12:16:20,425 CRIT Supervisor running as root (no user in config file)
+2016-02-02 12:16:20,425 INFO RPC interface 'supervisor' initialized
+2016-02-02 12:16:20,426 CRIT Server 'unix_http_server' running without any HTTP authentication checking
+2016-02-02 12:16:20,426 INFO supervisord started with pid 8809
+2016-02-02 15:13:52,437 CRIT Supervisor running as root (no user in config file)
+2016-02-02 15:13:52,437 INFO RPC interface 'supervisor' initialized
+2016-02-02 15:13:52,437 CRIT Server 'unix_http_server' running without any HTTP authentication checking
+2016-02-02 15:13:52,437 INFO supervisord started with pid 8809
+2016-02-03 09:49:16,910 WARN received SIGTERM indicating exit request

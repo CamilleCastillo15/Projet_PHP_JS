@@ -1,0 +1,46 @@
+#!/bin/sh
+if [ "1" = "1" ]; then
+	# Copy config file to /etc/webmin or /etc/usermin
+	os_type=`grep "^os_type=" /etc/webmin/config | sed -e 's/os_type=//g'`
+	os_version=`grep "^os_version=" /etc/webmin/config | sed -e 's/os_version=//g'`
+	/usr/bin/perl /usr/share/webmin/copyconfig.pl $os_type $os_version /usr/share/webmin /etc/webmin virtual-server
+
+	# Update the ACL for the root user, or the first user in the ACL
+	grep "^root:" /etc/webmin/webmin.acl >/dev/null
+	if [ "$?" = "0" ]; then
+		user=root
+	else
+		user=`head -1 /etc/webmin/webmin.acl | cut -f 1 -d :`
+	fi
+	mods=`grep $user: /etc/webmin/webmin.acl | cut -f 2 -d :`
+	echo $mods | grep " virtual-server" >/dev/null
+	if [ "$?" != "0" ]; then
+		grep -v ^$user: /etc/webmin/webmin.acl > /tmp/webmin.acl.tmp
+		echo $user: $mods virtual-server > /etc/webmin/webmin.acl
+		cat /tmp/webmin.acl.tmp >> /etc/webmin/webmin.acl
+		rm -f /tmp/webmin.acl.tmp
+	fi
+fi
+if [ "" != "" -a "" = "1" ]; then
+	# Activate this theme
+	grep -v "^preroot=" /etc/webmin/miniserv.conf >/etc/webmin/miniserv.conf.tmp
+	(cat /etc/webmin/miniserv.conf.tmp ; echo preroot=virtual-server) > /etc/webmin/miniserv.conf
+	rm -f /etc/webmin/miniserv.conf.tmp
+	grep -v "^theme=" /etc/webmin/config >/etc/webmin/config.tmp
+	(cat /etc/webmin/config.tmp ; echo theme=virtual-server) > /etc/webmin/config
+	rm -f /etc/webmin/config.tmp
+	(/etc/webmin/stop && /etc/webmin/start) >/dev/null 2>&1
+fi
+rm -f /etc/webmin/module.infos.cache
+
+# Run post-install function
+if [ "webmin" = "webmin" ]; then
+	cd /usr/share/webmin
+	WEBMIN_CONFIG=/etc/webmin WEBMIN_VAR=/var/webmin /usr/share/webmin/run-postinstalls.pl virtual-server
+fi
+
+# Run post-install shell script
+if [ -r "/usr/share/webmin/virtual-server/postinstall.sh" ]; then
+	cd /usr/share/webmin
+	WEBMIN_CONFIG=/etc/webmin WEBMIN_VAR=/var/webmin /usr/share/webmin/virtual-server/postinstall.sh
+fi

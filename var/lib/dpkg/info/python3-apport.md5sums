@@ -1,0 +1,16 @@
+cd831064e10313e5d3ead45b64b892c7  usr/lib/python3/dist-packages/apport/REThread.py
+99bdb973bc840a9a4f2de4293bef7a11  usr/lib/python3/dist-packages/apport/__init__.py
+41550b849910449c9c5840b7ae9bd5eb  usr/lib/python3/dist-packages/apport/crashdb.py
+d41d8cd98f00b204e9800998ecf8427e  usr/lib/python3/dist-packages/apport/crashdb_impl/__init__.py
+330f259245678c2a87fe1e890591559c  usr/lib/python3/dist-packages/apport/crashdb_impl/debian.py
+5c4e9a2eae7d7aaded58844aef845f89  usr/lib/python3/dist-packages/apport/crashdb_impl/launchpad.py
+5300d43fbb7415fa262925e73c61e73a  usr/lib/python3/dist-packages/apport/crashdb_impl/memory.py
+4186417524b8dc2d97741e47d3e2e1da  usr/lib/python3/dist-packages/apport/fileutils.py
+f67c9dea3a61416d67c36c3504d7cd33  usr/lib/python3/dist-packages/apport/hookutils.py
+d874da8197a4daa73a9983de1fddfc69  usr/lib/python3/dist-packages/apport/packaging.py
+e553d16912b74b8e37026ef4fd2aacb1  usr/lib/python3/dist-packages/apport/packaging_impl.py
+b283f9bf2a55588de42318bd1cdd5124  usr/lib/python3/dist-packages/apport/report.py
+758043692643407dcef6739b54745c1e  usr/lib/python3/dist-packages/apport/sandboxutils.py
+77b72db3ab754d304968bddc05cba442  usr/lib/python3/dist-packages/apport/ui.py
+f09640f702d53ecc1c50bff4b682f68e  usr/lib/python3/dist-packages/apport_python_hook.py
+b904b3596c724d5e2fb986f7bb0436ee  usr/share/doc/python3-apport/copyright

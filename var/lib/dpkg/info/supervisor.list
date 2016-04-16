@@ -1,0 +1,10 @@
+/var
+/var/log
+/var/log/supervisor
+/etc
+/etc/supervisor
+/etc/supervisor/supervisord.conf
+/etc/init.d
+/etc/init.d/supervisor
+/etc/default
+/etc/default/supervisor

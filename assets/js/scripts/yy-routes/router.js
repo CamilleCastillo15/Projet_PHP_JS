@@ -90,6 +90,10 @@ app.Router = Backbone.Router.extend({
 	  var login = $(".form-auth .login").val();
 	  var password = $(".form-auth .pass").val();
 
+	  //Valeur
+	  // var name = $(".form-creator-create .name").val();
+	  // var phone = $(".form-creator-create .phone").val();
+
 //Une fonction va être crée : elle permet d'envoyer des reqrêtes de type xhr = XmlHttpRequest
 //Elles permettent de placer des données en Entête de requête
 //Le but ici est de s'identifier grâce au service Basic auth crée sur Laravel (dans mon cas)

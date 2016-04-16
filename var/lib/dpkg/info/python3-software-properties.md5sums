@@ -1,0 +1,11 @@
+7cca1b88995ec6570cbf979b3704ad1d  usr/lib/python3/dist-packages/softwareproperties/AptAuth.py
+38194faef9ae3053387ef8f94d9c3ad5  usr/lib/python3/dist-packages/softwareproperties/CountryInformation.py
+ff38c8d575de724abcfe1ec75678e45a  usr/lib/python3/dist-packages/softwareproperties/MirrorTest.py
+e2299e940e461d055dfed8c93b02677d  usr/lib/python3/dist-packages/softwareproperties/SoftwareProperties.py
+3b8904c7cabcf447b054111ea22955d9  usr/lib/python3/dist-packages/softwareproperties/__init__.py
+82330451ce165fb602f95ec570588095  usr/lib/python3/dist-packages/softwareproperties/cloudarchive.py
+2362d74d21a1af443b44595abe3315b6  usr/lib/python3/dist-packages/softwareproperties/distro.py
+8d2214b155226cf23312887e70c4fe91  usr/lib/python3/dist-packages/softwareproperties/ppa.py
+b3e83b8c2170b437803a63d7a41bc874  usr/lib/python3/dist-packages/softwareproperties/shortcuts.py
+972eab455695236b63c4d792be256135  usr/share/doc/python3-software-properties/changelog.gz
+c4a52dbcd4545f975c9789c8356a3746  usr/share/doc/python3-software-properties/copyright

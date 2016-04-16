@@ -1,0 +1,13 @@
+-- Deployed Let's Encrypt Certificate --
+Created ssl vhost at /etc/apache2/sites-available/mail.dinde.pro-le-ssl.conf
+Changed vhost at /etc/apache2/sites-available/mail.dinde.pro-le-ssl.conf with addresses of *:443
+	SSLCertificateFile /etc/letsencrypt/live/mail.dinde.pro/cert.pem
+	SSLCertificateKeyFile /etc/letsencrypt/live/mail.dinde.pro/privkey.pem
+	SSLCertificateChainFile /etc/letsencrypt/live/mail.dinde.pro/chain.pem
+Enabled site /etc/apache2/sites-available/mail.dinde.pro-le-ssl.conf
+Created ssl vhost at /etc/apache2/sites-available/dav.dinde.pro-le-ssl.conf
+Changed vhost at /etc/apache2/sites-available/dav.dinde.pro-le-ssl.conf with addresses of *:443
+	SSLCertificateFile /etc/letsencrypt/live/mail.dinde.pro/cert.pem
+	SSLCertificateKeyFile /etc/letsencrypt/live/mail.dinde.pro/privkey.pem
+	SSLCertificateChainFile /etc/letsencrypt/live/mail.dinde.pro/chain.pem
+Enabled site /etc/apache2/sites-available/dav.dinde.pro-le-ssl.conf

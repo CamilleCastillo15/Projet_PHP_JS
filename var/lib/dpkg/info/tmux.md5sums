@@ -1,0 +1,16 @@
+360a2525d27b6c6a80d635ef2f7dbb4f  usr/bin/tmux
+f996503c6d772ad4392a4e156b4a536a  usr/share/doc/tmux/FAQ.gz
+bc286e08ea085a9d590a0ef72a5d8f87  usr/share/doc/tmux/NEWS.Debian.gz
+b86da4dbfba5054c89f2348cbe08a48d  usr/share/doc/tmux/README
+857925ce252ff84f721ad226ebaf8821  usr/share/doc/tmux/TODO.gz
+c83d05191e78c53e339cdd2fa2f01e0d  usr/share/doc/tmux/changelog.Debian.gz
+0ba6836829610e3faaadbd0fe6b30bb2  usr/share/doc/tmux/copyright
+8d19a4f61b5922a27c694ba1e336478c  usr/share/doc/tmux/examples/bash_completion_tmux.sh
+f60bcd2f3e51f70784742cd489b810bf  usr/share/doc/tmux/examples/h-boetes.conf
+84fd0add7ed3ccc2a486cabc0fa77ce0  usr/share/doc/tmux/examples/n-marriott.conf
+235fb543d5cc4450a1be3a94ecf9ac52  usr/share/doc/tmux/examples/screen-keys.conf
+9b517339c46dc3be9deb6a8dbf14defc  usr/share/doc/tmux/examples/t-williams.conf
+1bf72692e06745ce257602d0a6b61054  usr/share/doc/tmux/examples/tmux.vim.gz
+e2a097dae273a552928bcc3130c24c50  usr/share/doc/tmux/examples/tmux_backup.sh
+53b53faaf87ff90626408d3e02bc8ae8  usr/share/doc/tmux/examples/vim-keys.conf
+7f4f3710cc59427e1b1fbcad41837675  usr/share/man/man1/tmux.1.gz

@@ -1,0 +1,21 @@
+$ttl 38400
+@	IN	SOA	ns319966.ip-91-121-76.eu. root.ns319966.ip-91-121-76.eu. (
+			1460459665
+			10800
+			3600
+			604800
+			38400 )
+@	IN	NS	ns319966.ip-91-121-76.eu.
+polygonalanimalshop-camille-castillo.dinde.pro.	IN	A	91.121.76.99
+www.polygonalanimalshop-camille-castillo.dinde.pro.	IN	A	91.121.76.99
+ftp.polygonalanimalshop-camille-castillo.dinde.pro.	IN	A	91.121.76.99
+m.polygonalanimalshop-camille-castillo.dinde.pro.	IN	A	91.121.76.99
+localhost.polygonalanimalshop-camille-castillo.dinde.pro.	IN	A	127.0.0.1
+webmail.polygonalanimalshop-camille-castillo.dinde.pro.	IN	A	91.121.76.99
+admin.polygonalanimalshop-camille-castillo.dinde.pro.	IN	A	91.121.76.99
+polygonalanimalshop-camille-castillo.dinde.pro.	IN	AAAA	2001:41d0:1:8163::1
+www.polygonalanimalshop-camille-castillo.dinde.pro.	IN	AAAA	2001:41d0:1:8163::1
+ftp.polygonalanimalshop-camille-castillo.dinde.pro.	IN	AAAA	2001:41d0:1:8163::1
+m.polygonalanimalshop-camille-castillo.dinde.pro.	IN	AAAA	2001:41d0:1:8163::1
+webmail.polygonalanimalshop-camille-castillo.dinde.pro.	IN	AAAA	2001:41d0:1:8163::1
+admin.polygonalanimalshop-camille-castillo.dinde.pro.	IN	AAAA	2001:41d0:1:8163::1

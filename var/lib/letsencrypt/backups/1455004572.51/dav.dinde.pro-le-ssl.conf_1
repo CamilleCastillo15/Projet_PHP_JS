@@ -1,0 +1,26 @@
+<IfModule mod_ssl.c>
+<VirtualHost *:80>
+	ServerName dav.dinde.pro	
+	ServerAlias dav.dinde.pro
+	ServerAlias webmail.dav.dinde.pro
+	ServerAlias admin.dav.dinde.pro
+DocumentRoot /home/dav/html/
+ErrorLog /var/log/virtualmin/dav.dinde.pro_error_log
+CustomLog /var/log/virtualmin/dav.dinde.pro_access_log combined
+ScriptAlias /cgi-bin/ /home/dav/cgi-bin/
+DirectoryIndex index.html index.htm index.php index.php4 index.php5
+<Directory /home/dav/html>
+Options -Indexes +IncludesNOEXEC +SymLinksIfOwnerMatch
+allow from all
+AllowOverride All Options=ExecCGI,Includes,IncludesNOEXEC,Indexes,MultiViews,SymLinksIfOwnerMatch
+Require all granted
+</Directory>
+<Directory /home/dav/cgi-bin>
+allow from all
+AllowOverride All Options=ExecCGI,Includes,IncludesNOEXEC,Indexes,MultiViews,SymLinksIfOwnerMatch
+Require all granted
+</Directory>
+RewriteEngine on
+php_value memory_limit 32M
+</VirtualHost>
+</IfModule>

@@ -1,0 +1,5 @@
+ * Starting domain name service... bind9       [80G [74G[ OK ]
+ * Starting Postfix Mail Transport Agent postfix       [80G [74G[ OK ]
+ * Starting MD monitoring service mdadm --monitor       [80G [74G[ OK ]
+ * Starting ftp server proftpd       [80G [74G[ OK ]
+ * 

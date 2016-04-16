@@ -1,0 +1,20 @@
+#!/bin/sh
+# De-activate this theme, if in use and if we are not upgrading
+if [ "" = "1" -a "$1" != "upgrade" ]; then
+	grep "^preroot=virtual-server" /etc/webmin/miniserv.conf >/dev/null
+	if [ "$?" = "0" ]; then
+		grep -v "^preroot=virtual-server" /etc/webmin/miniserv.conf >/etc/webmin/miniserv.conf.tmp
+		(cat /etc/webmin/miniserv.conf.tmp) > /etc/webmin/miniserv.conf
+		rm -f /etc/webmin/miniserv.conf.tmp
+		grep -v "^theme=virtual-server" /etc/webmin/config >/etc/webmin/config.tmp
+		(cat /etc/webmin/config.tmp) > /etc/webmin/config
+		rm -f /etc/webmin/config.tmp
+		(/etc/webmin/stop && /etc/webmin/start) >/dev/null 2>&1
+	fi
+fi
+# Run the pre-uninstall script, if we are not upgrading
+if [ "webmin" = "webmin" -a "$1" = "0" -a -r "/usr/share/webmin/virtual-server/uninstall.pl" ]; then
+	cd /usr/share/webmin
+	WEBMIN_CONFIG=/etc/webmin WEBMIN_VAR=/var/webmin /usr/share/webmin/run-uninstalls.pl virtual-server
+fi
+/bin/true

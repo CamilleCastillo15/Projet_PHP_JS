@@ -1,0 +1,178 @@
+# Logfile created on 2016-04-01 12:31:59 +0200 by logger.rb/44203
+[2016-04-01T12:31:59+02:00] INFO: Started chef-zero at chefzero://localhost:8889 with repository at /opt/gitlab/embedded
+  One version per cookbook
+
+[2016-04-01T12:31:59+02:00] INFO: Forking chef instance to converge...
+[2016-04-01T12:31:59+02:00] INFO: *** Chef 12.6.0 ***
+[2016-04-01T12:31:59+02:00] INFO: Chef-client pid: 681
+[2016-04-01T12:31:59+02:00] INFO: HTTP Request Returned 404 Not Found: Object not found: chefzero://localhost:8889/nodes/ns319966.ip-91-121-76.eu
+[2016-04-01T12:32:00+02:00] INFO: Setting the run_list to ["recipe[gitlab]"] from CLI options
+[2016-04-01T12:32:00+02:00] INFO: Run List is [recipe[gitlab]]
+[2016-04-01T12:32:00+02:00] INFO: Run List expands to [gitlab]
+[2016-04-01T12:32:00+02:00] INFO: Starting Chef Run for ns319966.ip-91-121-76.eu
+[2016-04-01T12:32:00+02:00] INFO: Running start handlers
+[2016-04-01T12:32:00+02:00] INFO: Start handlers complete.
+[2016-04-01T12:32:00+02:00] INFO: HTTP Request Returned 404 Not Found: Object not found: 
+[2016-04-01T12:32:00+02:00] INFO: Loading cookbooks [gitlab@0.0.1, runit@0.14.2, package@0.0.0]
+[2016-04-01T12:32:00+02:00] INFO: Removing cookbooks/gitlab/recipes/gitlab-ci_disable.rb from the cache; its is no longer in the cookbook manifest.
+[2016-04-01T12:32:00+02:00] INFO: Removing cookbooks/gitlab/recipes/gitlab-ci.rb from the cache; its is no longer in the cookbook manifest.
+[2016-04-01T12:32:00+02:00] INFO: Removing cookbooks/gitlab/templates/default/application.yml.erb from the cache; its is no longer in the cookbook manifest.
+[2016-04-01T12:32:00+02:00] INFO: Storing updated cookbooks/gitlab/recipes/gitlab-shell.rb in the cache.
+[2016-04-01T12:32:00+02:00] INFO: Storing updated cookbooks/gitlab/recipes/gitlab-workhorse.rb in the cache.
+[2016-04-01T12:32:00+02:00] INFO: Storing updated cookbooks/gitlab/recipes/postgresql.rb in the cache.
+[2016-04-01T12:32:00+02:00] INFO: Storing updated cookbooks/gitlab/recipes/default.rb in the cache.
+[2016-04-01T12:32:00+02:00] INFO: Storing updated cookbooks/gitlab/recipes/database_migrations.rb in the cache.
+[2016-04-01T12:32:00+02:00] INFO: Storing updated cookbooks/gitlab/recipes/gitlab-pages_disable.rb in the cache.
+[2016-04-01T12:32:00+02:00] INFO: Storing updated cookbooks/gitlab/recipes/gitlab-pages.rb in the cache.
+[2016-04-01T12:32:00+02:00] INFO: Storing updated cookbooks/gitlab/recipes/gitlab-rails.rb in the cache.
+[2016-04-01T12:32:00+02:00] INFO: Storing updated cookbooks/gitlab/recipes/gitlab-ci-proxying.rb in the cache.
+[2016-04-01T12:32:00+02:00] INFO: Storing updated cookbooks/gitlab/recipes/mailroom.rb in the cache.
+[2016-04-01T12:32:00+02:00] INFO: Storing updated cookbooks/gitlab/recipes/nginx.rb in the cache.
+[2016-04-01T12:32:00+02:00] INFO: Storing updated cookbooks/gitlab/definitions/unicorn_service.rb in the cache.
+[2016-04-01T12:32:00+02:00] INFO: Storing updated cookbooks/gitlab/definitions/unicorn_config.rb in the cache.
+[2016-04-01T12:32:00+02:00] INFO: Storing updated cookbooks/gitlab/definitions/template_symlink.rb in the cache.
+[2016-04-01T12:32:00+02:00] INFO: Storing updated cookbooks/gitlab/definitions/migrate_database.rb in the cache.
+[2016-04-01T12:32:00+02:00] INFO: Storing updated cookbooks/gitlab/libraries/helper.rb in the cache.
+[2016-04-01T12:32:00+02:00] INFO: Storing updated cookbooks/gitlab/libraries/gitlab.rb in the cache.
+[2016-04-01T12:32:00+02:00] INFO: Storing updated cookbooks/gitlab/templates/default/gitlab.yml.erb in the cache.
+[2016-04-01T12:32:00+02:00] INFO: Storing updated cookbooks/gitlab/templates/default/nginx-gitlab-mattermost-http.conf.erb in the cache.
+[2016-04-01T12:32:00+02:00] INFO: Storing updated cookbooks/gitlab/attributes/default.rb in the cache.
+[2016-04-01T12:32:00+02:00] INFO: Storing updated cookbooks/gitlab/templates/default/redis.conf.erb in the cache.
+[2016-04-01T12:32:00+02:00] INFO: Storing updated cookbooks/gitlab/templates/default/unicorn.rb.erb in the cache.
+[2016-04-01T12:32:00+02:00] INFO: Storing updated cookbooks/gitlab/templates/default/sv-gitlab-pages-log-config.erb in the cache.
+[2016-04-01T12:32:00+02:00] INFO: Storing updated cookbooks/gitlab/templates/default/config.json.erb in the cache.
+[2016-04-01T12:32:00+02:00] INFO: Storing updated cookbooks/gitlab/templates/default/logrotate-service.erb in the cache.
+[2016-04-01T12:32:00+02:00] INFO: Storing updated cookbooks/gitlab/templates/default/sv-gitlab-pages-log-run.erb in the cache.
+[2016-04-01T12:32:00+02:00] INFO: Storing updated cookbooks/gitlab/templates/default/sv-gitlab-workhorse-run.erb in the cache.
+[2016-04-01T12:32:00+02:00] INFO: Storing updated cookbooks/gitlab/templates/default/relative_url.rb.erb in the cache.
+[2016-04-01T12:32:00+02:00] INFO: Storing updated cookbooks/gitlab/templates/default/nginx-gitlab-http.conf.erb in the cache.
+[2016-04-01T12:32:00+02:00] INFO: Storing updated cookbooks/gitlab/templates/default/sv-gitlab-pages-run.erb in the cache.
+[2016-04-01T12:32:00+02:00] INFO: Storing updated cookbooks/gitlab/templates/default/nginx.conf.erb in the cache.
+[2016-04-01T12:32:00+02:00] INFO: Storing updated cookbooks/gitlab/templates/default/nginx-gitlab-pages-http.conf.erb in the cache.
+[2016-04-01T12:32:00+02:00] WARN: Cloning resource attributes for directory[/var/opt/gitlab] from prior resource (CHEF-3694)
+[2016-04-01T12:32:00+02:00] WARN: Previous directory[/var/opt/gitlab]: /opt/gitlab/embedded/cookbooks/cache/cookbooks/gitlab/recipes/default.rb:43:in `from_file'
+[2016-04-01T12:32:00+02:00] WARN: Current  directory[/var/opt/gitlab]: /opt/gitlab/embedded/cookbooks/cache/cookbooks/gitlab/recipes/users.rb:24:in `from_file'
+[2016-04-01T12:32:00+02:00] WARN: Selected upstart because /sbin/init --version is showing upstart.
+[2016-04-01T12:32:00+02:00] WARN: Cloning resource attributes for directory[/etc/sysctl.d] from prior resource (CHEF-3694)
+[2016-04-01T12:32:00+02:00] WARN: Previous directory[/etc/sysctl.d]: /opt/gitlab/embedded/cookbooks/cache/cookbooks/gitlab/definitions/sysctl.rb:22:in `block in from_file'
+[2016-04-01T12:32:00+02:00] WARN: Current  directory[/etc/sysctl.d]: /opt/gitlab/embedded/cookbooks/cache/cookbooks/gitlab/definitions/sysctl.rb:22:in `block in from_file'
+[2016-04-01T12:32:00+02:00] WARN: Cloning resource attributes for file[/etc/sysctl.d/90-postgresql.conf] from prior resource (CHEF-3694)
+[2016-04-01T12:32:00+02:00] WARN: Previous file[/etc/sysctl.d/90-postgresql.conf]: /opt/gitlab/embedded/cookbooks/cache/cookbooks/gitlab/definitions/sysctl.rb:45:in `block (2 levels) in from_file'
+[2016-04-01T12:32:00+02:00] WARN: Current  file[/etc/sysctl.d/90-postgresql.conf]: /opt/gitlab/embedded/cookbooks/cache/cookbooks/gitlab/definitions/sysctl.rb:45:in `block (2 levels) in from_file'
+[2016-04-01T12:32:00+02:00] WARN: Cloning resource attributes for file[/etc/sysctl.d/90-unicorn.conf] from prior resource (CHEF-3694)
+[2016-04-01T12:32:00+02:00] WARN: Previous file[/etc/sysctl.d/90-unicorn.conf]: /opt/gitlab/embedded/cookbooks/cache/cookbooks/gitlab/definitions/sysctl.rb:45:in `block (2 levels) in from_file'
+[2016-04-01T12:32:00+02:00] WARN: Current  file[/etc/sysctl.d/90-unicorn.conf]: /opt/gitlab/embedded/cookbooks/cache/cookbooks/gitlab/definitions/sysctl.rb:45:in `block (2 levels) in from_file'
+[2016-04-01T12:32:00+02:00] WARN: Cloning resource attributes for file[/opt/gitlab/embedded/etc/90-omnibus-gitlab.conf] from prior resource (CHEF-3694)
+[2016-04-01T12:32:00+02:00] WARN: Previous file[/opt/gitlab/embedded/etc/90-omnibus-gitlab.conf]: /opt/gitlab/embedded/cookbooks/cache/cookbooks/gitlab/definitions/sysctl.rb:45:in `block (2 levels) in from_file'
+[2016-04-01T12:32:00+02:00] WARN: Current  file[/opt/gitlab/embedded/etc/90-omnibus-gitlab.conf]: /opt/gitlab/embedded/cookbooks/cache/cookbooks/gitlab/definitions/sysctl.rb:45:in `block (2 levels) in from_file'
+[2016-04-01T12:32:00+02:00] WARN: Cloning resource attributes for file[/etc/sysctl.d/90-omnibus-gitlab.conf] from prior resource (CHEF-3694)
+[2016-04-01T12:32:00+02:00] WARN: Previous file[/etc/sysctl.d/90-omnibus-gitlab.conf]: /opt/gitlab/embedded/cookbooks/cache/cookbooks/gitlab/definitions/sysctl.rb:45:in `block (2 levels) in from_file'
+[2016-04-01T12:32:00+02:00] WARN: Current  file[/etc/sysctl.d/90-omnibus-gitlab.conf]: /opt/gitlab/embedded/cookbooks/cache/cookbooks/gitlab/definitions/sysctl.rb:45:in `block (2 levels) in from_file'
+[2016-04-01T12:32:00+02:00] WARN: Cloning resource attributes for execute[load sysctl conf] from prior resource (CHEF-3694)
+[2016-04-01T12:32:00+02:00] WARN: Previous execute[load sysctl conf]: /opt/gitlab/embedded/cookbooks/cache/cookbooks/gitlab/definitions/sysctl.rb:52:in `block in from_file'
+[2016-04-01T12:32:00+02:00] WARN: Current  execute[load sysctl conf]: /opt/gitlab/embedded/cookbooks/cache/cookbooks/gitlab/definitions/sysctl.rb:52:in `block in from_file'
+[2016-04-01T12:32:00+02:00] WARN: Cloning resource attributes for directory[/etc/sysctl.d] from prior resource (CHEF-3694)
+[2016-04-01T12:32:00+02:00] WARN: Previous directory[/etc/sysctl.d]: /opt/gitlab/embedded/cookbooks/cache/cookbooks/gitlab/definitions/sysctl.rb:22:in `block in from_file'
+[2016-04-01T12:32:00+02:00] WARN: Current  directory[/etc/sysctl.d]: /opt/gitlab/embedded/cookbooks/cache/cookbooks/gitlab/definitions/sysctl.rb:22:in `block in from_file'
+[2016-04-01T12:32:00+02:00] WARN: Cloning resource attributes for file[/etc/sysctl.d/90-postgresql.conf] from prior resource (CHEF-3694)
+[2016-04-01T12:32:00+02:00] WARN: Previous file[/etc/sysctl.d/90-postgresql.conf]: /opt/gitlab/embedded/cookbooks/cache/cookbooks/gitlab/definitions/sysctl.rb:45:in `block (2 levels) in from_file'
+[2016-04-01T12:32:00+02:00] WARN: Current  file[/etc/sysctl.d/90-postgresql.conf]: /opt/gitlab/embedded/cookbooks/cache/cookbooks/gitlab/definitions/sysctl.rb:45:in `block (2 levels) in from_file'
+[2016-04-01T12:32:00+02:00] WARN: Cloning resource attributes for file[/etc/sysctl.d/90-unicorn.conf] from prior resource (CHEF-3694)
+[2016-04-01T12:32:00+02:00] WARN: Previous file[/etc/sysctl.d/90-unicorn.conf]: /opt/gitlab/embedded/cookbooks/cache/cookbooks/gitlab/definitions/sysctl.rb:45:in `block (2 levels) in from_file'
+[2016-04-01T12:32:00+02:00] WARN: Current  file[/etc/sysctl.d/90-unicorn.conf]: /opt/gitlab/embedded/cookbooks/cache/cookbooks/gitlab/definitions/sysctl.rb:45:in `block (2 levels) in from_file'
+[2016-04-01T12:32:00+02:00] WARN: Cloning resource attributes for file[/opt/gitlab/embedded/etc/90-omnibus-gitlab.conf] from prior resource (CHEF-3694)
+[2016-04-01T12:32:00+02:00] WARN: Previous file[/opt/gitlab/embedded/etc/90-omnibus-gitlab.conf]: /opt/gitlab/embedded/cookbooks/cache/cookbooks/gitlab/definitions/sysctl.rb:45:in `block (2 levels) in from_file'
+[2016-04-01T12:32:00+02:00] WARN: Current  file[/opt/gitlab/embedded/etc/90-omnibus-gitlab.conf]: /opt/gitlab/embedded/cookbooks/cache/cookbooks/gitlab/definitions/sysctl.rb:45:in `block (2 levels) in from_file'
+[2016-04-01T12:32:00+02:00] WARN: Cloning resource attributes for file[/etc/sysctl.d/90-omnibus-gitlab.conf] from prior resource (CHEF-3694)
+[2016-04-01T12:32:00+02:00] WARN: Previous file[/etc/sysctl.d/90-omnibus-gitlab.conf]: /opt/gitlab/embedded/cookbooks/cache/cookbooks/gitlab/definitions/sysctl.rb:45:in `block (2 levels) in from_file'
+[2016-04-01T12:32:00+02:00] WARN: Current  file[/etc/sysctl.d/90-omnibus-gitlab.conf]: /opt/gitlab/embedded/cookbooks/cache/cookbooks/gitlab/definitions/sysctl.rb:45:in `block (2 levels) in from_file'
+[2016-04-01T12:32:00+02:00] WARN: Cloning resource attributes for execute[load sysctl conf] from prior resource (CHEF-3694)
+[2016-04-01T12:32:00+02:00] WARN: Previous execute[load sysctl conf]: /opt/gitlab/embedded/cookbooks/cache/cookbooks/gitlab/definitions/sysctl.rb:52:in `block in from_file'
+[2016-04-01T12:32:00+02:00] WARN: Current  execute[load sysctl conf]: /opt/gitlab/embedded/cookbooks/cache/cookbooks/gitlab/definitions/sysctl.rb:52:in `block in from_file'
+[2016-04-01T12:32:00+02:00] WARN: Cloning resource attributes for directory[/var/opt/gitlab/gitlab-rails/etc] from prior resource (CHEF-3694)
+[2016-04-01T12:32:00+02:00] WARN: Previous directory[/var/opt/gitlab/gitlab-rails/etc]: /opt/gitlab/embedded/cookbooks/cache/cookbooks/gitlab/recipes/gitlab-rails.rb:87:in `block in from_file'
+[2016-04-01T12:32:00+02:00] WARN: Current  directory[/var/opt/gitlab/gitlab-rails/etc]: /opt/gitlab/embedded/cookbooks/cache/cookbooks/gitlab/definitions/unicorn_config.rb:21:in `block in from_file'
+[2016-04-01T12:32:00+02:00] WARN: Cloning resource attributes for service[unicorn] from prior resource (CHEF-3694)
+[2016-04-01T12:32:00+02:00] WARN: Previous service[unicorn]: /opt/gitlab/embedded/cookbooks/cache/cookbooks/gitlab/recipes/default.rb:86:in `block in from_file'
+[2016-04-01T12:32:00+02:00] WARN: Current  service[unicorn]: /opt/gitlab/embedded/cookbooks/cache/cookbooks/runit/definitions/runit_service.rb:191:in `block in from_file'
+[2016-04-01T12:32:00+02:00] WARN: Cloning resource attributes for directory[/etc/sysctl.d] from prior resource (CHEF-3694)
+[2016-04-01T12:32:00+02:00] WARN: Previous directory[/etc/sysctl.d]: /opt/gitlab/embedded/cookbooks/cache/cookbooks/gitlab/definitions/sysctl.rb:22:in `block in from_file'
+[2016-04-01T12:32:00+02:00] WARN: Current  directory[/etc/sysctl.d]: /opt/gitlab/embedded/cookbooks/cache/cookbooks/gitlab/definitions/sysctl.rb:22:in `block in from_file'
+[2016-04-01T12:32:00+02:00] WARN: Cloning resource attributes for file[/etc/sysctl.d/90-postgresql.conf] from prior resource (CHEF-3694)
+[2016-04-01T12:32:00+02:00] WARN: Previous file[/etc/sysctl.d/90-postgresql.conf]: /opt/gitlab/embedded/cookbooks/cache/cookbooks/gitlab/definitions/sysctl.rb:45:in `block (2 levels) in from_file'
+[2016-04-01T12:32:00+02:00] WARN: Current  file[/etc/sysctl.d/90-postgresql.conf]: /opt/gitlab/embedded/cookbooks/cache/cookbooks/gitlab/definitions/sysctl.rb:45:in `block (2 levels) in from_file'
+[2016-04-01T12:32:00+02:00] WARN: Cloning resource attributes for file[/etc/sysctl.d/90-unicorn.conf] from prior resource (CHEF-3694)
+[2016-04-01T12:32:00+02:00] WARN: Previous file[/etc/sysctl.d/90-unicorn.conf]: /opt/gitlab/embedded/cookbooks/cache/cookbooks/gitlab/definitions/sysctl.rb:45:in `block (2 levels) in from_file'
+[2016-04-01T12:32:00+02:00] WARN: Current  file[/etc/sysctl.d/90-unicorn.conf]: /opt/gitlab/embedded/cookbooks/cache/cookbooks/gitlab/definitions/sysctl.rb:45:in `block (2 levels) in from_file'
+[2016-04-01T12:32:00+02:00] WARN: Cloning resource attributes for file[/opt/gitlab/embedded/etc/90-omnibus-gitlab.conf] from prior resource (CHEF-3694)
+[2016-04-01T12:32:00+02:00] WARN: Previous file[/opt/gitlab/embedded/etc/90-omnibus-gitlab.conf]: /opt/gitlab/embedded/cookbooks/cache/cookbooks/gitlab/definitions/sysctl.rb:45:in `block (2 levels) in from_file'
+[2016-04-01T12:32:00+02:00] WARN: Current  file[/opt/gitlab/embedded/etc/90-omnibus-gitlab.conf]: /opt/gitlab/embedded/cookbooks/cache/cookbooks/gitlab/definitions/sysctl.rb:45:in `block (2 levels) in from_file'
+[2016-04-01T12:32:00+02:00] WARN: Cloning resource attributes for file[/etc/sysctl.d/90-omnibus-gitlab.conf] from prior resource (CHEF-3694)
+[2016-04-01T12:32:00+02:00] WARN: Previous file[/etc/sysctl.d/90-omnibus-gitlab.conf]: /opt/gitlab/embedded/cookbooks/cache/cookbooks/gitlab/definitions/sysctl.rb:45:in `block (2 levels) in from_file'
+[2016-04-01T12:32:00+02:00] WARN: Current  file[/etc/sysctl.d/90-omnibus-gitlab.conf]: /opt/gitlab/embedded/cookbooks/cache/cookbooks/gitlab/definitions/sysctl.rb:45:in `block (2 levels) in from_file'
+[2016-04-01T12:32:00+02:00] WARN: Cloning resource attributes for execute[load sysctl conf] from prior resource (CHEF-3694)
+[2016-04-01T12:32:00+02:00] WARN: Previous execute[load sysctl conf]: /opt/gitlab/embedded/cookbooks/cache/cookbooks/gitlab/definitions/sysctl.rb:52:in `block in from_file'
+[2016-04-01T12:32:00+02:00] WARN: Current  execute[load sysctl conf]: /opt/gitlab/embedded/cookbooks/cache/cookbooks/gitlab/definitions/sysctl.rb:52:in `block in from_file'
+[2016-04-01T12:32:00+02:00] WARN: Cloning resource attributes for service[sidekiq] from prior resource (CHEF-3694)
+[2016-04-01T12:32:00+02:00] WARN: Previous service[sidekiq]: /opt/gitlab/embedded/cookbooks/cache/cookbooks/gitlab/recipes/default.rb:86:in `block in from_file'
+[2016-04-01T12:32:00+02:00] WARN: Current  service[sidekiq]: /opt/gitlab/embedded/cookbooks/cache/cookbooks/runit/definitions/runit_service.rb:191:in `block in from_file'
+[2016-04-01T12:32:00+02:00] INFO: directory[/opt/gitlab/embedded/service/gitlab-shell/hooks/] owner changed to 998
+[2016-04-01T12:32:00+02:00] INFO: directory[/opt/gitlab/embedded/service/gitlab-shell/hooks/] group changed to 998
+[2016-04-01T12:32:00+02:00] INFO: directory[/var/opt/gitlab/gitlab-rails/uploads] mode changed to 700
+[2016-04-01T12:32:00+02:00] INFO: template[/var/opt/gitlab/gitlab-rails/etc/gitlab.yml] backed up to /opt/gitlab/embedded/cookbooks/cache/backup/var/opt/gitlab/gitlab-rails/etc/gitlab.yml.chef-20160401123200.785892
+[2016-04-01T12:32:00+02:00] INFO: template[/var/opt/gitlab/gitlab-rails/etc/gitlab.yml] updated file contents /var/opt/gitlab/gitlab-rails/etc/gitlab.yml
+[2016-04-01T12:32:00+02:00] INFO: file[/opt/gitlab/embedded/service/gitlab-rails/db/schema.rb] owner changed to 998
+[2016-04-01T12:32:00+02:00] INFO: remote_file[/var/opt/gitlab/gitlab-rails/VERSION] backed up to /opt/gitlab/embedded/cookbooks/cache/backup/var/opt/gitlab/gitlab-rails/VERSION.chef-20160401123200.818711
+[2016-04-01T12:32:00+02:00] INFO: remote_file[/var/opt/gitlab/gitlab-rails/VERSION] updated file contents /var/opt/gitlab/gitlab-rails/VERSION
+[2016-04-01T12:32:00+02:00] INFO: remote_file[/var/opt/gitlab/gitlab-rails/VERSION] not queuing delayed action run on execute[clear the gitlab-rails cache] (delayed), as it's already been queued
+[2016-04-01T12:32:00+02:00] INFO: remote_file[/var/opt/gitlab/gitlab-rails/VERSION] not queuing delayed action restart on service[unicorn] (delayed), as it's already been queued
+[2016-04-01T12:32:00+02:00] INFO: remote_file[/var/opt/gitlab/gitlab-rails/VERSION] not queuing delayed action restart on service[sidekiq] (delayed), as it's already been queued
+[2016-04-01T12:32:00+02:00] INFO: file[/var/opt/gitlab/gitlab-rails/RUBY_VERSION] created file /var/opt/gitlab/gitlab-rails/RUBY_VERSION
+[2016-04-01T12:32:00+02:00] INFO: file[/var/opt/gitlab/gitlab-rails/RUBY_VERSION] updated file contents /var/opt/gitlab/gitlab-rails/RUBY_VERSION
+[2016-04-01T12:32:00+02:00] INFO: file[/var/opt/gitlab/gitlab-rails/RUBY_VERSION] not queuing delayed action restart on service[unicorn] (delayed), as it's already been queued
+[2016-04-01T12:32:00+02:00] INFO: execute[chown -R root:root /opt/gitlab/embedded/service/gitlab-rails/public] ran successfully
+[2016-04-01T12:32:00+02:00] INFO: execute[initctl reload-configuration] ran successfully
+[2016-04-01T12:32:00+02:00] INFO: execute[initctl status gitlab-runsvdir] ran successfully
+[2016-04-01T12:32:00+02:00] INFO: template[/var/opt/gitlab/redis/redis.conf] backed up to /opt/gitlab/embedded/cookbooks/cache/backup/var/opt/gitlab/redis/redis.conf.chef-20160401123200.909872
+[2016-04-01T12:32:00+02:00] INFO: template[/var/opt/gitlab/redis/redis.conf] updated file contents /var/opt/gitlab/redis/redis.conf
+[2016-04-01T12:32:00+02:00] INFO: template[/var/opt/gitlab/redis/redis.conf] sending restart action to service[redis] (immediate)
+[2016-04-01T12:32:01+02:00] INFO: service[redis] restarted
+[2016-04-01T12:32:01+02:00] INFO: file[/var/opt/gitlab/gitlab-workhorse/VERSION] backed up to /opt/gitlab/embedded/cookbooks/cache/backup/var/opt/gitlab/gitlab-workhorse/VERSION.chef-20160401123201.606705
+[2016-04-01T12:32:01+02:00] INFO: file[/var/opt/gitlab/gitlab-workhorse/VERSION] updated file contents /var/opt/gitlab/gitlab-workhorse/VERSION
+[2016-04-01T12:32:01+02:00] INFO: template[/var/opt/gitlab/nginx/conf/gitlab-http.conf] backed up to /opt/gitlab/embedded/cookbooks/cache/backup/var/opt/gitlab/nginx/conf/gitlab-http.conf.chef-20160401123201.618222
+[2016-04-01T12:32:01+02:00] INFO: template[/var/opt/gitlab/nginx/conf/gitlab-http.conf] updated file contents /var/opt/gitlab/nginx/conf/gitlab-http.conf
+[2016-04-01T12:32:01+02:00] INFO: template[/var/opt/gitlab/nginx/conf/nginx.conf] backed up to /opt/gitlab/embedded/cookbooks/cache/backup/var/opt/gitlab/nginx/conf/nginx.conf.chef-20160401123201.624738
+[2016-04-01T12:32:01+02:00] INFO: template[/var/opt/gitlab/nginx/conf/nginx.conf] updated file contents /var/opt/gitlab/nginx/conf/nginx.conf
+[2016-04-01T12:32:01+02:00] INFO: template[/var/opt/gitlab/nginx/conf/nginx.conf] not queuing delayed action restart on service[nginx] (delayed), as it's already been queued
+[2016-04-01T12:32:01+02:00] INFO: template[/var/opt/gitlab/logrotate/logrotate.conf] backed up to /opt/gitlab/embedded/cookbooks/cache/backup/var/opt/gitlab/logrotate/logrotate.conf.chef-20160401123201.647739
+[2016-04-01T12:32:01+02:00] INFO: template[/var/opt/gitlab/logrotate/logrotate.conf] updated file contents /var/opt/gitlab/logrotate/logrotate.conf
+[2016-04-01T12:32:01+02:00] INFO: template[/var/opt/gitlab/logrotate/logrotate.d/gitlab-workhorse] created file /var/opt/gitlab/logrotate/logrotate.d/gitlab-workhorse
+[2016-04-01T12:32:01+02:00] INFO: template[/var/opt/gitlab/logrotate/logrotate.d/gitlab-workhorse] updated file contents /var/opt/gitlab/logrotate/logrotate.d/gitlab-workhorse
+[2016-04-01T12:32:01+02:00] INFO: template[/var/opt/gitlab/logrotate/logrotate.d/gitlab-pages] created file /var/opt/gitlab/logrotate/logrotate.d/gitlab-pages
+[2016-04-01T12:32:01+02:00] INFO: template[/var/opt/gitlab/logrotate/logrotate.d/gitlab-pages] updated file contents /var/opt/gitlab/logrotate/logrotate.d/gitlab-pages
+[2016-04-01T12:32:01+02:00] INFO: execute[initialize gitlab-rails database] running why-run nothing action to support before action
+[2016-04-01T12:32:01+02:00] INFO: bash[migrate gitlab-rails database] running why-run nothing action to support before action
+[2016-04-01T12:32:01+02:00] INFO: template[/var/opt/gitlab/gitlab-rails/etc/gitlab.yml] sending run action to execute[clear the gitlab-rails cache] (delayed)
+[2016-04-01T12:32:08+02:00] INFO: execute[clear the gitlab-rails cache] ran successfully
+[2016-04-01T12:32:08+02:00] INFO: template[/var/opt/gitlab/gitlab-rails/etc/gitlab.yml] sending restart action to service[unicorn] (delayed)
+[2016-04-01T12:32:08+02:00] INFO: service[unicorn] restarted
+[2016-04-01T12:32:08+02:00] INFO: template[/var/opt/gitlab/gitlab-rails/etc/gitlab.yml] sending restart action to service[sidekiq] (delayed)
+[2016-04-01T12:32:09+02:00] INFO: service[sidekiq] restarted
+[2016-04-01T12:32:09+02:00] INFO: remote_file[/var/opt/gitlab/gitlab-rails/VERSION] sending run action to bash[migrate gitlab-rails database] (delayed)
+[2016-04-01T12:32:09+02:00] INFO: bash[migrate gitlab-rails database] running why-run run action to support before action
+[2016-04-01T12:32:09+02:00] INFO: bash[migrate gitlab-rails database] sending run action to execute[enable pg_trgm extension] (before)
+[2016-04-01T12:32:09+02:00] INFO: execute[enable pg_trgm extension] ran successfully
+[2016-04-01T12:32:20+02:00] INFO: bash[migrate gitlab-rails database] ran successfully
+[2016-04-01T12:32:20+02:00] INFO: bash[migrate gitlab-rails database] sending run action to execute[clear the gitlab-rails cache] (immediate)
+[2016-04-01T12:32:27+02:00] INFO: execute[clear the gitlab-rails cache] ran successfully
+[2016-04-01T12:32:27+02:00] INFO: bash[migrate gitlab-rails database] sending restart action to service[unicorn] (immediate)
+[2016-04-01T12:32:27+02:00] INFO: service[unicorn] restarted
+[2016-04-01T12:32:27+02:00] INFO: bash[migrate gitlab-rails database] sending restart action to service[sidekiq] (immediate)
+[2016-04-01T12:32:30+02:00] INFO: service[sidekiq] restarted
+[2016-04-01T12:32:30+02:00] INFO: file[/var/opt/gitlab/gitlab-workhorse/VERSION] sending restart action to service[gitlab-workhorse] (delayed)
+[2016-04-01T12:32:31+02:00] INFO: service[gitlab-workhorse] restarted
+[2016-04-01T12:32:31+02:00] INFO: template[/var/opt/gitlab/nginx/conf/gitlab-http.conf] sending restart action to service[nginx] (delayed)
+[2016-04-01T12:32:31+02:00] INFO: service[nginx] restarted
+[2016-04-01T12:32:31+02:00] INFO: Chef Run complete in 31.607858636 seconds
+[2016-04-01T12:32:31+02:00] INFO: Running report handlers
+[2016-04-01T12:32:31+02:00] INFO: Report handlers complete

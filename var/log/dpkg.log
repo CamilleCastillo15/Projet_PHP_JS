@@ -1,0 +1,635 @@
+2016-04-01 12:29:41 startup packages configure
+2016-04-01 12:29:43 startup archives unpack
+2016-04-01 12:29:43 upgrade bind9:amd64 1:9.9.5.dfsg-3ubuntu0.7 1:9.9.5.dfsg-3ubuntu0.8
+2016-04-01 12:29:43 status half-configured bind9:amd64 1:9.9.5.dfsg-3ubuntu0.7
+2016-04-01 12:29:44 status unpacked bind9:amd64 1:9.9.5.dfsg-3ubuntu0.7
+2016-04-01 12:29:44 status half-installed bind9:amd64 1:9.9.5.dfsg-3ubuntu0.7
+2016-04-01 12:29:44 status triggers-pending ureadahead:amd64 0.100.0-16
+2016-04-01 12:29:44 status half-installed bind9:amd64 1:9.9.5.dfsg-3ubuntu0.7
+2016-04-01 12:29:44 status triggers-pending ufw:all 0.34~rc-0ubuntu2
+2016-04-01 12:29:44 status half-installed bind9:amd64 1:9.9.5.dfsg-3ubuntu0.7
+2016-04-01 12:29:44 status triggers-pending man-db:amd64 2.6.7.1-1ubuntu1
+2016-04-01 12:29:44 status half-installed bind9:amd64 1:9.9.5.dfsg-3ubuntu0.7
+2016-04-01 12:29:44 status unpacked bind9:amd64 1:9.9.5.dfsg-3ubuntu0.8
+2016-04-01 12:29:44 status unpacked bind9:amd64 1:9.9.5.dfsg-3ubuntu0.8
+2016-04-01 12:29:44 upgrade bind9-host:amd64 1:9.9.5.dfsg-3ubuntu0.7 1:9.9.5.dfsg-3ubuntu0.8
+2016-04-01 12:29:44 status half-configured bind9-host:amd64 1:9.9.5.dfsg-3ubuntu0.7
+2016-04-01 12:29:44 status unpacked bind9-host:amd64 1:9.9.5.dfsg-3ubuntu0.7
+2016-04-01 12:29:44 status half-installed bind9-host:amd64 1:9.9.5.dfsg-3ubuntu0.7
+2016-04-01 12:29:44 status half-installed bind9-host:amd64 1:9.9.5.dfsg-3ubuntu0.7
+2016-04-01 12:29:44 status unpacked bind9-host:amd64 1:9.9.5.dfsg-3ubuntu0.8
+2016-04-01 12:29:44 status unpacked bind9-host:amd64 1:9.9.5.dfsg-3ubuntu0.8
+2016-04-01 12:29:45 upgrade dnsutils:amd64 1:9.9.5.dfsg-3ubuntu0.7 1:9.9.5.dfsg-3ubuntu0.8
+2016-04-01 12:29:45 status half-configured dnsutils:amd64 1:9.9.5.dfsg-3ubuntu0.7
+2016-04-01 12:29:45 status unpacked dnsutils:amd64 1:9.9.5.dfsg-3ubuntu0.7
+2016-04-01 12:29:45 status half-installed dnsutils:amd64 1:9.9.5.dfsg-3ubuntu0.7
+2016-04-01 12:29:45 status half-installed dnsutils:amd64 1:9.9.5.dfsg-3ubuntu0.7
+2016-04-01 12:29:45 status unpacked dnsutils:amd64 1:9.9.5.dfsg-3ubuntu0.8
+2016-04-01 12:29:45 status unpacked dnsutils:amd64 1:9.9.5.dfsg-3ubuntu0.8
+2016-04-01 12:29:45 upgrade libisc95:amd64 1:9.9.5.dfsg-3ubuntu0.7 1:9.9.5.dfsg-3ubuntu0.8
+2016-04-01 12:29:45 status half-configured libisc95:amd64 1:9.9.5.dfsg-3ubuntu0.7
+2016-04-01 12:29:45 status unpacked libisc95:amd64 1:9.9.5.dfsg-3ubuntu0.7
+2016-04-01 12:29:45 status half-installed libisc95:amd64 1:9.9.5.dfsg-3ubuntu0.7
+2016-04-01 12:29:45 status half-installed libisc95:amd64 1:9.9.5.dfsg-3ubuntu0.7
+2016-04-01 12:29:45 status unpacked libisc95:amd64 1:9.9.5.dfsg-3ubuntu0.8
+2016-04-01 12:29:45 status unpacked libisc95:amd64 1:9.9.5.dfsg-3ubuntu0.8
+2016-04-01 12:29:46 upgrade libisccc90:amd64 1:9.9.5.dfsg-3ubuntu0.7 1:9.9.5.dfsg-3ubuntu0.8
+2016-04-01 12:29:46 status half-configured libisccc90:amd64 1:9.9.5.dfsg-3ubuntu0.7
+2016-04-01 12:29:46 status unpacked libisccc90:amd64 1:9.9.5.dfsg-3ubuntu0.7
+2016-04-01 12:29:46 status half-installed libisccc90:amd64 1:9.9.5.dfsg-3ubuntu0.7
+2016-04-01 12:29:46 status half-installed libisccc90:amd64 1:9.9.5.dfsg-3ubuntu0.7
+2016-04-01 12:29:46 status unpacked libisccc90:amd64 1:9.9.5.dfsg-3ubuntu0.8
+2016-04-01 12:29:46 status unpacked libisccc90:amd64 1:9.9.5.dfsg-3ubuntu0.8
+2016-04-01 12:29:46 upgrade libisccfg90:amd64 1:9.9.5.dfsg-3ubuntu0.7 1:9.9.5.dfsg-3ubuntu0.8
+2016-04-01 12:29:46 status half-configured libisccfg90:amd64 1:9.9.5.dfsg-3ubuntu0.7
+2016-04-01 12:29:46 status unpacked libisccfg90:amd64 1:9.9.5.dfsg-3ubuntu0.7
+2016-04-01 12:29:46 status half-installed libisccfg90:amd64 1:9.9.5.dfsg-3ubuntu0.7
+2016-04-01 12:29:46 status half-installed libisccfg90:amd64 1:9.9.5.dfsg-3ubuntu0.7
+2016-04-01 12:29:46 status unpacked libisccfg90:amd64 1:9.9.5.dfsg-3ubuntu0.8
+2016-04-01 12:29:46 status unpacked libisccfg90:amd64 1:9.9.5.dfsg-3ubuntu0.8
+2016-04-01 12:29:47 upgrade liblwres90:amd64 1:9.9.5.dfsg-3ubuntu0.7 1:9.9.5.dfsg-3ubuntu0.8
+2016-04-01 12:29:47 status half-configured liblwres90:amd64 1:9.9.5.dfsg-3ubuntu0.7
+2016-04-01 12:29:47 status unpacked liblwres90:amd64 1:9.9.5.dfsg-3ubuntu0.7
+2016-04-01 12:29:47 status half-installed liblwres90:amd64 1:9.9.5.dfsg-3ubuntu0.7
+2016-04-01 12:29:47 status half-installed liblwres90:amd64 1:9.9.5.dfsg-3ubuntu0.7
+2016-04-01 12:29:47 status unpacked liblwres90:amd64 1:9.9.5.dfsg-3ubuntu0.8
+2016-04-01 12:29:47 status unpacked liblwres90:amd64 1:9.9.5.dfsg-3ubuntu0.8
+2016-04-01 12:29:47 upgrade libdns100:amd64 1:9.9.5.dfsg-3ubuntu0.7 1:9.9.5.dfsg-3ubuntu0.8
+2016-04-01 12:29:47 status half-configured libdns100:amd64 1:9.9.5.dfsg-3ubuntu0.7
+2016-04-01 12:29:47 status unpacked libdns100:amd64 1:9.9.5.dfsg-3ubuntu0.7
+2016-04-01 12:29:47 status half-installed libdns100:amd64 1:9.9.5.dfsg-3ubuntu0.7
+2016-04-01 12:29:47 status half-installed libdns100:amd64 1:9.9.5.dfsg-3ubuntu0.7
+2016-04-01 12:29:47 status unpacked libdns100:amd64 1:9.9.5.dfsg-3ubuntu0.8
+2016-04-01 12:29:47 status unpacked libdns100:amd64 1:9.9.5.dfsg-3ubuntu0.8
+2016-04-01 12:29:47 upgrade bind9utils:amd64 1:9.9.5.dfsg-3ubuntu0.7 1:9.9.5.dfsg-3ubuntu0.8
+2016-04-01 12:29:47 status half-configured bind9utils:amd64 1:9.9.5.dfsg-3ubuntu0.7
+2016-04-01 12:29:48 status unpacked bind9utils:amd64 1:9.9.5.dfsg-3ubuntu0.7
+2016-04-01 12:29:48 status half-installed bind9utils:amd64 1:9.9.5.dfsg-3ubuntu0.7
+2016-04-01 12:29:48 status half-installed bind9utils:amd64 1:9.9.5.dfsg-3ubuntu0.7
+2016-04-01 12:29:48 status unpacked bind9utils:amd64 1:9.9.5.dfsg-3ubuntu0.8
+2016-04-01 12:29:48 status unpacked bind9utils:amd64 1:9.9.5.dfsg-3ubuntu0.8
+2016-04-01 12:29:48 upgrade libbind9-90:amd64 1:9.9.5.dfsg-3ubuntu0.7 1:9.9.5.dfsg-3ubuntu0.8
+2016-04-01 12:29:48 status half-configured libbind9-90:amd64 1:9.9.5.dfsg-3ubuntu0.7
+2016-04-01 12:29:48 status unpacked libbind9-90:amd64 1:9.9.5.dfsg-3ubuntu0.7
+2016-04-01 12:29:48 status half-installed libbind9-90:amd64 1:9.9.5.dfsg-3ubuntu0.7
+2016-04-01 12:29:48 status half-installed libbind9-90:amd64 1:9.9.5.dfsg-3ubuntu0.7
+2016-04-01 12:29:48 status unpacked libbind9-90:amd64 1:9.9.5.dfsg-3ubuntu0.8
+2016-04-01 12:29:48 status unpacked libbind9-90:amd64 1:9.9.5.dfsg-3ubuntu0.8
+2016-04-01 12:29:48 trigproc ureadahead:amd64 0.100.0-16 0.100.0-16
+2016-04-01 12:29:48 status half-configured ureadahead:amd64 0.100.0-16
+2016-04-01 12:29:48 status installed ureadahead:amd64 0.100.0-16
+2016-04-01 12:29:48 trigproc ufw:all 0.34~rc-0ubuntu2 0.34~rc-0ubuntu2
+2016-04-01 12:29:48 status half-configured ufw:all 0.34~rc-0ubuntu2
+2016-04-01 12:29:49 status installed ufw:all 0.34~rc-0ubuntu2
+2016-04-01 12:29:49 trigproc man-db:amd64 2.6.7.1-1ubuntu1 2.6.7.1-1ubuntu1
+2016-04-01 12:29:49 status half-configured man-db:amd64 2.6.7.1-1ubuntu1
+2016-04-01 12:29:49 status installed man-db:amd64 2.6.7.1-1ubuntu1
+2016-04-01 12:29:49 startup packages configure
+2016-04-01 12:29:49 configure libisc95:amd64 1:9.9.5.dfsg-3ubuntu0.8 <none>
+2016-04-01 12:29:49 status unpacked libisc95:amd64 1:9.9.5.dfsg-3ubuntu0.8
+2016-04-01 12:29:49 status half-configured libisc95:amd64 1:9.9.5.dfsg-3ubuntu0.8
+2016-04-01 12:29:49 status installed libisc95:amd64 1:9.9.5.dfsg-3ubuntu0.8
+2016-04-01 12:29:49 status triggers-pending libc-bin:amd64 2.19-0ubuntu6.7
+2016-04-01 12:29:49 configure libdns100:amd64 1:9.9.5.dfsg-3ubuntu0.8 <none>
+2016-04-01 12:29:49 status unpacked libdns100:amd64 1:9.9.5.dfsg-3ubuntu0.8
+2016-04-01 12:29:49 status half-configured libdns100:amd64 1:9.9.5.dfsg-3ubuntu0.8
+2016-04-01 12:29:49 status installed libdns100:amd64 1:9.9.5.dfsg-3ubuntu0.8
+2016-04-01 12:29:49 configure libisccc90:amd64 1:9.9.5.dfsg-3ubuntu0.8 <none>
+2016-04-01 12:29:49 status unpacked libisccc90:amd64 1:9.9.5.dfsg-3ubuntu0.8
+2016-04-01 12:29:49 status half-configured libisccc90:amd64 1:9.9.5.dfsg-3ubuntu0.8
+2016-04-01 12:29:50 status installed libisccc90:amd64 1:9.9.5.dfsg-3ubuntu0.8
+2016-04-01 12:29:50 configure libisccfg90:amd64 1:9.9.5.dfsg-3ubuntu0.8 <none>
+2016-04-01 12:29:50 status unpacked libisccfg90:amd64 1:9.9.5.dfsg-3ubuntu0.8
+2016-04-01 12:29:50 status half-configured libisccfg90:amd64 1:9.9.5.dfsg-3ubuntu0.8
+2016-04-01 12:29:50 status installed libisccfg90:amd64 1:9.9.5.dfsg-3ubuntu0.8
+2016-04-01 12:29:50 configure libbind9-90:amd64 1:9.9.5.dfsg-3ubuntu0.8 <none>
+2016-04-01 12:29:50 status unpacked libbind9-90:amd64 1:9.9.5.dfsg-3ubuntu0.8
+2016-04-01 12:29:50 status half-configured libbind9-90:amd64 1:9.9.5.dfsg-3ubuntu0.8
+2016-04-01 12:29:50 status installed libbind9-90:amd64 1:9.9.5.dfsg-3ubuntu0.8
+2016-04-01 12:29:50 configure liblwres90:amd64 1:9.9.5.dfsg-3ubuntu0.8 <none>
+2016-04-01 12:29:50 status unpacked liblwres90:amd64 1:9.9.5.dfsg-3ubuntu0.8
+2016-04-01 12:29:50 status half-configured liblwres90:amd64 1:9.9.5.dfsg-3ubuntu0.8
+2016-04-01 12:29:50 status installed liblwres90:amd64 1:9.9.5.dfsg-3ubuntu0.8
+2016-04-01 12:29:50 configure bind9utils:amd64 1:9.9.5.dfsg-3ubuntu0.8 <none>
+2016-04-01 12:29:50 status unpacked bind9utils:amd64 1:9.9.5.dfsg-3ubuntu0.8
+2016-04-01 12:29:50 status half-configured bind9utils:amd64 1:9.9.5.dfsg-3ubuntu0.8
+2016-04-01 12:29:50 status installed bind9utils:amd64 1:9.9.5.dfsg-3ubuntu0.8
+2016-04-01 12:29:50 configure bind9:amd64 1:9.9.5.dfsg-3ubuntu0.8 <none>
+2016-04-01 12:29:50 status unpacked bind9:amd64 1:9.9.5.dfsg-3ubuntu0.8
+2016-04-01 12:29:50 status unpacked bind9:amd64 1:9.9.5.dfsg-3ubuntu0.8
+2016-04-01 12:29:50 status unpacked bind9:amd64 1:9.9.5.dfsg-3ubuntu0.8
+2016-04-01 12:29:50 status unpacked bind9:amd64 1:9.9.5.dfsg-3ubuntu0.8
+2016-04-01 12:29:50 status unpacked bind9:amd64 1:9.9.5.dfsg-3ubuntu0.8
+2016-04-01 12:29:50 status unpacked bind9:amd64 1:9.9.5.dfsg-3ubuntu0.8
+2016-04-01 12:29:50 status unpacked bind9:amd64 1:9.9.5.dfsg-3ubuntu0.8
+2016-04-01 12:29:50 status unpacked bind9:amd64 1:9.9.5.dfsg-3ubuntu0.8
+2016-04-01 12:29:50 status unpacked bind9:amd64 1:9.9.5.dfsg-3ubuntu0.8
+2016-04-01 12:29:51 status unpacked bind9:amd64 1:9.9.5.dfsg-3ubuntu0.8
+2016-04-01 12:29:51 status unpacked bind9:amd64 1:9.9.5.dfsg-3ubuntu0.8
+2016-04-01 12:29:51 status unpacked bind9:amd64 1:9.9.5.dfsg-3ubuntu0.8
+2016-04-01 12:29:51 status unpacked bind9:amd64 1:9.9.5.dfsg-3ubuntu0.8
+2016-04-01 12:29:51 status unpacked bind9:amd64 1:9.9.5.dfsg-3ubuntu0.8
+2016-04-01 12:29:51 status unpacked bind9:amd64 1:9.9.5.dfsg-3ubuntu0.8
+2016-04-01 12:29:51 status unpacked bind9:amd64 1:9.9.5.dfsg-3ubuntu0.8
+2016-04-01 12:29:51 status unpacked bind9:amd64 1:9.9.5.dfsg-3ubuntu0.8
+2016-04-01 12:29:51 status unpacked bind9:amd64 1:9.9.5.dfsg-3ubuntu0.8
+2016-04-01 12:29:51 status unpacked bind9:amd64 1:9.9.5.dfsg-3ubuntu0.8
+2016-04-01 12:29:51 status unpacked bind9:amd64 1:9.9.5.dfsg-3ubuntu0.8
+2016-04-01 12:29:51 status half-configured bind9:amd64 1:9.9.5.dfsg-3ubuntu0.8
+2016-04-01 12:29:53 status installed bind9:amd64 1:9.9.5.dfsg-3ubuntu0.8
+2016-04-01 12:29:53 configure bind9-host:amd64 1:9.9.5.dfsg-3ubuntu0.8 <none>
+2016-04-01 12:29:53 status unpacked bind9-host:amd64 1:9.9.5.dfsg-3ubuntu0.8
+2016-04-01 12:29:53 status half-configured bind9-host:amd64 1:9.9.5.dfsg-3ubuntu0.8
+2016-04-01 12:29:53 status installed bind9-host:amd64 1:9.9.5.dfsg-3ubuntu0.8
+2016-04-01 12:29:53 configure dnsutils:amd64 1:9.9.5.dfsg-3ubuntu0.8 <none>
+2016-04-01 12:29:53 status unpacked dnsutils:amd64 1:9.9.5.dfsg-3ubuntu0.8
+2016-04-01 12:29:53 status half-configured dnsutils:amd64 1:9.9.5.dfsg-3ubuntu0.8
+2016-04-01 12:29:53 status installed dnsutils:amd64 1:9.9.5.dfsg-3ubuntu0.8
+2016-04-01 12:29:53 trigproc libc-bin:amd64 2.19-0ubuntu6.7 <none>
+2016-04-01 12:29:53 status half-configured libc-bin:amd64 2.19-0ubuntu6.7
+2016-04-01 12:29:53 status installed libc-bin:amd64 2.19-0ubuntu6.7
+2016-04-01 12:29:54 startup packages configure
+2016-04-01 12:29:56 startup archives unpack
+2016-04-01 12:29:57 upgrade ca-certificates:all 20141019ubuntu0.14.04.1 20160104ubuntu0.14.04.1
+2016-04-01 12:29:57 status half-configured ca-certificates:all 20141019ubuntu0.14.04.1
+2016-04-01 12:29:57 status unpacked ca-certificates:all 20141019ubuntu0.14.04.1
+2016-04-01 12:29:57 status half-installed ca-certificates:all 20141019ubuntu0.14.04.1
+2016-04-01 12:29:57 status triggers-pending man-db:amd64 2.6.7.1-1ubuntu1
+2016-04-01 12:29:57 status half-installed ca-certificates:all 20141019ubuntu0.14.04.1
+2016-04-01 12:29:57 status unpacked ca-certificates:all 20160104ubuntu0.14.04.1
+2016-04-01 12:29:57 status unpacked ca-certificates:all 20160104ubuntu0.14.04.1
+2016-04-01 12:29:57 trigproc man-db:amd64 2.6.7.1-1ubuntu1 2.6.7.1-1ubuntu1
+2016-04-01 12:29:57 status half-configured man-db:amd64 2.6.7.1-1ubuntu1
+2016-04-01 12:29:57 status installed man-db:amd64 2.6.7.1-1ubuntu1
+2016-04-01 12:29:57 startup packages configure
+2016-04-01 12:29:57 configure ca-certificates:all 20160104ubuntu0.14.04.1 <none>
+2016-04-01 12:29:57 status unpacked ca-certificates:all 20160104ubuntu0.14.04.1
+2016-04-01 12:29:58 status half-configured ca-certificates:all 20160104ubuntu0.14.04.1
+2016-04-01 12:29:59 status installed ca-certificates:all 20160104ubuntu0.14.04.1
+2016-04-01 12:29:59 status triggers-pending ca-certificates:all 20160104ubuntu0.14.04.1
+2016-04-01 12:29:59 trigproc ca-certificates:all 20160104ubuntu0.14.04.1 <none>
+2016-04-01 12:29:59 status half-configured ca-certificates:all 20160104ubuntu0.14.04.1
+2016-04-01 12:30:01 status installed ca-certificates:all 20160104ubuntu0.14.04.1
+2016-04-01 12:30:02 startup packages configure
+2016-04-01 12:30:03 startup archives unpack
+2016-04-01 12:30:04 upgrade coreutils:amd64 8.21-1ubuntu5.3 8.21-1ubuntu5.4
+2016-04-01 12:30:04 status half-configured coreutils:amd64 8.21-1ubuntu5.3
+2016-04-01 12:30:04 status unpacked coreutils:amd64 8.21-1ubuntu5.3
+2016-04-01 12:30:04 status half-installed coreutils:amd64 8.21-1ubuntu5.3
+2016-04-01 12:30:04 status triggers-pending install-info:amd64 5.2.0.dfsg.1-2
+2016-04-01 12:30:04 status triggers-pending man-db:amd64 2.6.7.1-1ubuntu1
+2016-04-01 12:30:04 status half-installed coreutils:amd64 8.21-1ubuntu5.3
+2016-04-01 12:30:04 status unpacked coreutils:amd64 8.21-1ubuntu5.4
+2016-04-01 12:30:04 status unpacked coreutils:amd64 8.21-1ubuntu5.4
+2016-04-01 12:30:04 trigproc install-info:amd64 5.2.0.dfsg.1-2 5.2.0.dfsg.1-2
+2016-04-01 12:30:04 status half-configured install-info:amd64 5.2.0.dfsg.1-2
+2016-04-01 12:30:04 status installed install-info:amd64 5.2.0.dfsg.1-2
+2016-04-01 12:30:04 trigproc man-db:amd64 2.6.7.1-1ubuntu1 2.6.7.1-1ubuntu1
+2016-04-01 12:30:04 status half-configured man-db:amd64 2.6.7.1-1ubuntu1
+2016-04-01 12:30:05 status installed man-db:amd64 2.6.7.1-1ubuntu1
+2016-04-01 12:30:05 startup packages configure
+2016-04-01 12:30:05 configure coreutils:amd64 8.21-1ubuntu5.4 <none>
+2016-04-01 12:30:05 status unpacked coreutils:amd64 8.21-1ubuntu5.4
+2016-04-01 12:30:05 status half-configured coreutils:amd64 8.21-1ubuntu5.4
+2016-04-01 12:30:05 status installed coreutils:amd64 8.21-1ubuntu5.4
+2016-04-01 12:30:06 startup packages configure
+2016-04-01 12:30:07 startup archives unpack
+2016-04-01 12:30:07 upgrade cpio:amd64 2.11+dfsg-1ubuntu1.1 2.11+dfsg-1ubuntu1.2
+2016-04-01 12:30:07 status half-configured cpio:amd64 2.11+dfsg-1ubuntu1.1
+2016-04-01 12:30:07 status unpacked cpio:amd64 2.11+dfsg-1ubuntu1.1
+2016-04-01 12:30:07 status half-installed cpio:amd64 2.11+dfsg-1ubuntu1.1
+2016-04-01 12:30:07 status triggers-pending man-db:amd64 2.6.7.1-1ubuntu1
+2016-04-01 12:30:07 status half-installed cpio:amd64 2.11+dfsg-1ubuntu1.1
+2016-04-01 12:30:08 status unpacked cpio:amd64 2.11+dfsg-1ubuntu1.2
+2016-04-01 12:30:08 status unpacked cpio:amd64 2.11+dfsg-1ubuntu1.2
+2016-04-01 12:30:08 trigproc man-db:amd64 2.6.7.1-1ubuntu1 2.6.7.1-1ubuntu1
+2016-04-01 12:30:08 status half-configured man-db:amd64 2.6.7.1-1ubuntu1
+2016-04-01 12:30:08 status installed man-db:amd64 2.6.7.1-1ubuntu1
+2016-04-01 12:30:08 startup packages configure
+2016-04-01 12:30:08 configure cpio:amd64 2.11+dfsg-1ubuntu1.2 <none>
+2016-04-01 12:30:08 status unpacked cpio:amd64 2.11+dfsg-1ubuntu1.2
+2016-04-01 12:30:08 status half-configured cpio:amd64 2.11+dfsg-1ubuntu1.2
+2016-04-01 12:30:08 status installed cpio:amd64 2.11+dfsg-1ubuntu1.2
+2016-04-01 12:30:09 startup packages configure
+2016-04-01 12:30:10 startup archives unpack
+2016-04-01 12:30:11 upgrade git:amd64 1:1.9.1-1ubuntu0.2 1:1.9.1-1ubuntu0.3
+2016-04-01 12:30:11 status half-configured git:amd64 1:1.9.1-1ubuntu0.2
+2016-04-01 12:30:11 status unpacked git:amd64 1:1.9.1-1ubuntu0.2
+2016-04-01 12:30:11 status half-installed git:amd64 1:1.9.1-1ubuntu0.2
+2016-04-01 12:30:11 status half-installed git:amd64 1:1.9.1-1ubuntu0.2
+2016-04-01 12:30:11 status unpacked git:amd64 1:1.9.1-1ubuntu0.3
+2016-04-01 12:30:11 status unpacked git:amd64 1:1.9.1-1ubuntu0.3
+2016-04-01 12:30:12 startup packages configure
+2016-04-01 12:30:12 configure git:amd64 1:1.9.1-1ubuntu0.3 <none>
+2016-04-01 12:30:12 status unpacked git:amd64 1:1.9.1-1ubuntu0.3
+2016-04-01 12:30:12 status unpacked git:amd64 1:1.9.1-1ubuntu0.3
+2016-04-01 12:30:12 status half-configured git:amd64 1:1.9.1-1ubuntu0.3
+2016-04-01 12:30:12 status installed git:amd64 1:1.9.1-1ubuntu0.3
+2016-04-01 12:30:12 startup packages configure
+2016-04-01 12:30:13 startup archives unpack
+2016-04-01 12:30:13 upgrade git-man:all 1:1.9.1-1ubuntu0.2 1:1.9.1-1ubuntu0.3
+2016-04-01 12:30:13 status half-configured git-man:all 1:1.9.1-1ubuntu0.2
+2016-04-01 12:30:13 status unpacked git-man:all 1:1.9.1-1ubuntu0.2
+2016-04-01 12:30:13 status half-installed git-man:all 1:1.9.1-1ubuntu0.2
+2016-04-01 12:30:13 status triggers-pending man-db:amd64 2.6.7.1-1ubuntu1
+2016-04-01 12:30:14 status half-installed git-man:all 1:1.9.1-1ubuntu0.2
+2016-04-01 12:30:14 status unpacked git-man:all 1:1.9.1-1ubuntu0.3
+2016-04-01 12:30:14 status unpacked git-man:all 1:1.9.1-1ubuntu0.3
+2016-04-01 12:30:14 trigproc man-db:amd64 2.6.7.1-1ubuntu1 2.6.7.1-1ubuntu1
+2016-04-01 12:30:14 status half-configured man-db:amd64 2.6.7.1-1ubuntu1
+2016-04-01 12:30:14 status installed man-db:amd64 2.6.7.1-1ubuntu1
+2016-04-01 12:30:14 startup packages configure
+2016-04-01 12:30:14 configure git-man:all 1:1.9.1-1ubuntu0.3 <none>
+2016-04-01 12:30:14 status unpacked git-man:all 1:1.9.1-1ubuntu0.3
+2016-04-01 12:30:15 status half-configured git-man:all 1:1.9.1-1ubuntu0.3
+2016-04-01 12:30:15 status installed git-man:all 1:1.9.1-1ubuntu0.3
+2016-04-01 12:30:15 startup packages configure
+2016-04-01 12:30:50 startup archives unpack
+2016-04-01 12:30:50 upgrade gitlab-ce:amd64 8.4.4-ce.0 8.6.2-ce.0
+2016-04-01 12:30:50 status half-configured gitlab-ce:amd64 8.4.4-ce.0
+2016-04-01 12:30:50 status unpacked gitlab-ce:amd64 8.4.4-ce.0
+2016-04-01 12:30:50 status half-installed gitlab-ce:amd64 8.4.4-ce.0
+2016-04-01 12:31:14 status half-installed gitlab-ce:amd64 8.4.4-ce.0
+2016-04-01 12:31:46 status unpacked gitlab-ce:amd64 8.6.2-ce.0
+2016-04-01 12:31:47 status unpacked gitlab-ce:amd64 8.6.2-ce.0
+2016-04-01 12:31:47 startup packages configure
+2016-04-01 12:31:47 configure gitlab-ce:amd64 8.6.2-ce.0 <none>
+2016-04-01 12:31:47 status unpacked gitlab-ce:amd64 8.6.2-ce.0
+2016-04-01 12:31:47 status half-configured gitlab-ce:amd64 8.6.2-ce.0
+2016-04-01 12:32:34 status installed gitlab-ce:amd64 8.6.2-ce.0
+2016-04-01 12:32:35 startup packages configure
+2016-04-01 12:32:36 startup archives unpack
+2016-04-01 12:32:36 upgrade ifupdown:amd64 0.7.47.2ubuntu4.3 0.7.47.2ubuntu4.4
+2016-04-01 12:32:36 status half-configured ifupdown:amd64 0.7.47.2ubuntu4.3
+2016-04-01 12:32:36 status unpacked ifupdown:amd64 0.7.47.2ubuntu4.3
+2016-04-01 12:32:36 status half-installed ifupdown:amd64 0.7.47.2ubuntu4.3
+2016-04-01 12:32:36 status triggers-pending ureadahead:amd64 0.100.0-16
+2016-04-01 12:32:36 status half-installed ifupdown:amd64 0.7.47.2ubuntu4.3
+2016-04-01 12:32:36 status triggers-pending ureadahead:amd64 0.100.0-16
+2016-04-01 12:32:36 status triggers-pending man-db:amd64 2.6.7.1-1ubuntu1
+2016-04-01 12:32:37 status half-installed ifupdown:amd64 0.7.47.2ubuntu4.3
+2016-04-01 12:32:37 status unpacked ifupdown:amd64 0.7.47.2ubuntu4.4
+2016-04-01 12:32:37 status unpacked ifupdown:amd64 0.7.47.2ubuntu4.4
+2016-04-01 12:32:37 trigproc ureadahead:amd64 0.100.0-16 0.100.0-16
+2016-04-01 12:32:37 status half-configured ureadahead:amd64 0.100.0-16
+2016-04-01 12:32:37 status installed ureadahead:amd64 0.100.0-16
+2016-04-01 12:32:37 trigproc man-db:amd64 2.6.7.1-1ubuntu1 2.6.7.1-1ubuntu1
+2016-04-01 12:32:37 status half-configured man-db:amd64 2.6.7.1-1ubuntu1
+2016-04-01 12:32:37 status installed man-db:amd64 2.6.7.1-1ubuntu1
+2016-04-01 12:32:37 startup packages configure
+2016-04-01 12:32:37 configure ifupdown:amd64 0.7.47.2ubuntu4.4 <none>
+2016-04-01 12:32:37 status unpacked ifupdown:amd64 0.7.47.2ubuntu4.4
+2016-04-01 12:32:37 status unpacked ifupdown:amd64 0.7.47.2ubuntu4.4
+2016-04-01 12:32:37 status unpacked ifupdown:amd64 0.7.47.2ubuntu4.4
+2016-04-01 12:32:37 status unpacked ifupdown:amd64 0.7.47.2ubuntu4.4
+2016-04-01 12:32:37 status unpacked ifupdown:amd64 0.7.47.2ubuntu4.4
+2016-04-01 12:32:37 status unpacked ifupdown:amd64 0.7.47.2ubuntu4.4
+2016-04-01 12:32:37 status unpacked ifupdown:amd64 0.7.47.2ubuntu4.4
+2016-04-01 12:32:37 status unpacked ifupdown:amd64 0.7.47.2ubuntu4.4
+2016-04-01 12:32:38 status half-configured ifupdown:amd64 0.7.47.2ubuntu4.4
+2016-04-01 12:32:38 status installed ifupdown:amd64 0.7.47.2ubuntu4.4
+2016-04-01 12:32:38 startup packages configure
+2016-04-01 12:32:39 startup archives unpack
+2016-04-01 12:32:39 upgrade initramfs-tools:all 0.103ubuntu4.2 0.103ubuntu4.3
+2016-04-01 12:32:39 status half-configured initramfs-tools:all 0.103ubuntu4.2
+2016-04-01 12:32:39 status unpacked initramfs-tools:all 0.103ubuntu4.2
+2016-04-01 12:32:39 status half-installed initramfs-tools:all 0.103ubuntu4.2
+2016-04-01 12:32:40 status triggers-pending man-db:amd64 2.6.7.1-1ubuntu1
+2016-04-01 12:32:40 status half-installed initramfs-tools:all 0.103ubuntu4.2
+2016-04-01 12:32:40 status unpacked initramfs-tools:all 0.103ubuntu4.3
+2016-04-01 12:32:40 status unpacked initramfs-tools:all 0.103ubuntu4.3
+2016-04-01 12:32:40 upgrade initramfs-tools-bin:amd64 0.103ubuntu4.2 0.103ubuntu4.3
+2016-04-01 12:32:40 status half-configured initramfs-tools-bin:amd64 0.103ubuntu4.2
+2016-04-01 12:32:40 status unpacked initramfs-tools-bin:amd64 0.103ubuntu4.2
+2016-04-01 12:32:40 status half-installed initramfs-tools-bin:amd64 0.103ubuntu4.2
+2016-04-01 12:32:40 status half-installed initramfs-tools-bin:amd64 0.103ubuntu4.2
+2016-04-01 12:32:40 status unpacked initramfs-tools-bin:amd64 0.103ubuntu4.3
+2016-04-01 12:32:40 status unpacked initramfs-tools-bin:amd64 0.103ubuntu4.3
+2016-04-01 12:32:40 trigproc man-db:amd64 2.6.7.1-1ubuntu1 2.6.7.1-1ubuntu1
+2016-04-01 12:32:40 status half-configured man-db:amd64 2.6.7.1-1ubuntu1
+2016-04-01 12:32:40 status installed man-db:amd64 2.6.7.1-1ubuntu1
+2016-04-01 12:32:41 startup packages configure
+2016-04-01 12:32:41 configure initramfs-tools-bin:amd64 0.103ubuntu4.3 <none>
+2016-04-01 12:32:41 status unpacked initramfs-tools-bin:amd64 0.103ubuntu4.3
+2016-04-01 12:32:41 status half-configured initramfs-tools-bin:amd64 0.103ubuntu4.3
+2016-04-01 12:32:41 status installed initramfs-tools-bin:amd64 0.103ubuntu4.3
+2016-04-01 12:32:41 configure initramfs-tools:all 0.103ubuntu4.3 <none>
+2016-04-01 12:32:41 status unpacked initramfs-tools:all 0.103ubuntu4.3
+2016-04-01 12:32:41 status unpacked initramfs-tools:all 0.103ubuntu4.3
+2016-04-01 12:32:41 status unpacked initramfs-tools:all 0.103ubuntu4.3
+2016-04-01 12:32:41 status unpacked initramfs-tools:all 0.103ubuntu4.3
+2016-04-01 12:32:41 status unpacked initramfs-tools:all 0.103ubuntu4.3
+2016-04-01 12:32:41 status unpacked initramfs-tools:all 0.103ubuntu4.3
+2016-04-01 12:32:41 status half-configured initramfs-tools:all 0.103ubuntu4.3
+2016-04-01 12:32:41 status installed initramfs-tools:all 0.103ubuntu4.3
+2016-04-01 12:32:41 status triggers-pending initramfs-tools:all 0.103ubuntu4.3
+2016-04-01 12:32:41 trigproc initramfs-tools:all 0.103ubuntu4.3 <none>
+2016-04-01 12:32:41 status half-configured initramfs-tools:all 0.103ubuntu4.3
+2016-04-01 12:32:41 status installed initramfs-tools:all 0.103ubuntu4.3
+2016-04-01 12:32:42 startup packages configure
+2016-04-01 12:32:43 startup archives unpack
+2016-04-01 12:32:43 upgrade libgnutls-openssl27:amd64 2.12.23-12ubuntu2.4 2.12.23-12ubuntu2.5
+2016-04-01 12:32:43 status half-configured libgnutls-openssl27:amd64 2.12.23-12ubuntu2.4
+2016-04-01 12:32:43 status unpacked libgnutls-openssl27:amd64 2.12.23-12ubuntu2.4
+2016-04-01 12:32:43 status half-installed libgnutls-openssl27:amd64 2.12.23-12ubuntu2.4
+2016-04-01 12:32:43 status half-installed libgnutls-openssl27:amd64 2.12.23-12ubuntu2.4
+2016-04-01 12:32:44 status unpacked libgnutls-openssl27:amd64 2.12.23-12ubuntu2.5
+2016-04-01 12:32:44 status unpacked libgnutls-openssl27:amd64 2.12.23-12ubuntu2.5
+2016-04-01 12:32:44 upgrade libgnutls26:amd64 2.12.23-12ubuntu2.4 2.12.23-12ubuntu2.5
+2016-04-01 12:32:44 status half-configured libgnutls26:amd64 2.12.23-12ubuntu2.4
+2016-04-01 12:32:44 status unpacked libgnutls26:amd64 2.12.23-12ubuntu2.4
+2016-04-01 12:32:44 status half-installed libgnutls26:amd64 2.12.23-12ubuntu2.4
+2016-04-01 12:32:44 status half-installed libgnutls26:amd64 2.12.23-12ubuntu2.4
+2016-04-01 12:32:44 status unpacked libgnutls26:amd64 2.12.23-12ubuntu2.5
+2016-04-01 12:32:44 status unpacked libgnutls26:amd64 2.12.23-12ubuntu2.5
+2016-04-01 12:32:44 startup packages configure
+2016-04-01 12:32:44 configure libgnutls26:amd64 2.12.23-12ubuntu2.5 <none>
+2016-04-01 12:32:44 status unpacked libgnutls26:amd64 2.12.23-12ubuntu2.5
+2016-04-01 12:32:44 status half-configured libgnutls26:amd64 2.12.23-12ubuntu2.5
+2016-04-01 12:32:44 status installed libgnutls26:amd64 2.12.23-12ubuntu2.5
+2016-04-01 12:32:44 status triggers-pending libc-bin:amd64 2.19-0ubuntu6.7
+2016-04-01 12:32:44 configure libgnutls-openssl27:amd64 2.12.23-12ubuntu2.5 <none>
+2016-04-01 12:32:44 status unpacked libgnutls-openssl27:amd64 2.12.23-12ubuntu2.5
+2016-04-01 12:32:44 status half-configured libgnutls-openssl27:amd64 2.12.23-12ubuntu2.5
+2016-04-01 12:32:45 status installed libgnutls-openssl27:amd64 2.12.23-12ubuntu2.5
+2016-04-01 12:32:45 trigproc libc-bin:amd64 2.19-0ubuntu6.7 <none>
+2016-04-01 12:32:45 status half-configured libc-bin:amd64 2.19-0ubuntu6.7
+2016-04-01 12:32:45 status installed libc-bin:amd64 2.19-0ubuntu6.7
+2016-04-01 12:32:45 startup packages configure
+2016-04-01 12:32:46 startup packages configure
+2016-04-01 12:32:47 startup archives unpack
+2016-04-01 12:32:48 upgrade libnuma1:amd64 2.0.9~rc5-1ubuntu3.14.04.1 2.0.9~rc5-1ubuntu3.14.04.2
+2016-04-01 12:32:48 status half-configured libnuma1:amd64 2.0.9~rc5-1ubuntu3.14.04.1
+2016-04-01 12:32:48 status unpacked libnuma1:amd64 2.0.9~rc5-1ubuntu3.14.04.1
+2016-04-01 12:32:48 status half-installed libnuma1:amd64 2.0.9~rc5-1ubuntu3.14.04.1
+2016-04-01 12:32:48 status half-installed libnuma1:amd64 2.0.9~rc5-1ubuntu3.14.04.1
+2016-04-01 12:32:48 status unpacked libnuma1:amd64 2.0.9~rc5-1ubuntu3.14.04.2
+2016-04-01 12:32:48 status unpacked libnuma1:amd64 2.0.9~rc5-1ubuntu3.14.04.2
+2016-04-01 12:32:48 startup packages configure
+2016-04-01 12:32:48 configure libnuma1:amd64 2.0.9~rc5-1ubuntu3.14.04.2 <none>
+2016-04-01 12:32:48 status unpacked libnuma1:amd64 2.0.9~rc5-1ubuntu3.14.04.2
+2016-04-01 12:32:48 status half-configured libnuma1:amd64 2.0.9~rc5-1ubuntu3.14.04.2
+2016-04-01 12:32:48 status installed libnuma1:amd64 2.0.9~rc5-1ubuntu3.14.04.2
+2016-04-01 12:32:48 status triggers-pending libc-bin:amd64 2.19-0ubuntu6.7
+2016-04-01 12:32:48 trigproc libc-bin:amd64 2.19-0ubuntu6.7 <none>
+2016-04-01 12:32:48 status half-configured libc-bin:amd64 2.19-0ubuntu6.7
+2016-04-01 12:32:48 status installed libc-bin:amd64 2.19-0ubuntu6.7
+2016-04-01 12:32:49 startup packages configure
+2016-04-01 12:32:51 startup archives unpack
+2016-04-01 12:32:51 upgrade libpam-modules-bin:amd64 1.1.8-1ubuntu2 1.1.8-1ubuntu2.2
+2016-04-01 12:32:51 status half-configured libpam-modules-bin:amd64 1.1.8-1ubuntu2
+2016-04-01 12:32:51 status unpacked libpam-modules-bin:amd64 1.1.8-1ubuntu2
+2016-04-01 12:32:51 status half-installed libpam-modules-bin:amd64 1.1.8-1ubuntu2
+2016-04-01 12:32:51 status triggers-pending man-db:amd64 2.6.7.1-1ubuntu1
+2016-04-01 12:32:51 status half-installed libpam-modules-bin:amd64 1.1.8-1ubuntu2
+2016-04-01 12:32:51 status unpacked libpam-modules-bin:amd64 1.1.8-1ubuntu2.2
+2016-04-01 12:32:51 status unpacked libpam-modules-bin:amd64 1.1.8-1ubuntu2.2
+2016-04-01 12:32:51 trigproc man-db:amd64 2.6.7.1-1ubuntu1 2.6.7.1-1ubuntu1
+2016-04-01 12:32:51 status half-configured man-db:amd64 2.6.7.1-1ubuntu1
+2016-04-01 12:32:51 status installed man-db:amd64 2.6.7.1-1ubuntu1
+2016-04-01 12:32:51 startup packages configure
+2016-04-01 12:32:51 configure libpam-modules-bin:amd64 1.1.8-1ubuntu2.2 <none>
+2016-04-01 12:32:51 status unpacked libpam-modules-bin:amd64 1.1.8-1ubuntu2.2
+2016-04-01 12:32:52 status half-configured libpam-modules-bin:amd64 1.1.8-1ubuntu2.2
+2016-04-01 12:32:52 status installed libpam-modules-bin:amd64 1.1.8-1ubuntu2.2
+2016-04-01 12:32:52 startup archives unpack
+2016-04-01 12:32:52 upgrade libpam-modules:amd64 1.1.8-1ubuntu2 1.1.8-1ubuntu2.2
+2016-04-01 12:32:52 status half-configured libpam-modules:amd64 1.1.8-1ubuntu2
+2016-04-01 12:32:52 status unpacked libpam-modules:amd64 1.1.8-1ubuntu2
+2016-04-01 12:32:52 status half-installed libpam-modules:amd64 1.1.8-1ubuntu2
+2016-04-01 12:32:52 status triggers-pending man-db:amd64 2.6.7.1-1ubuntu1
+2016-04-01 12:32:52 status half-installed libpam-modules:amd64 1.1.8-1ubuntu2
+2016-04-01 12:32:52 status unpacked libpam-modules:amd64 1.1.8-1ubuntu2.2
+2016-04-01 12:32:52 status unpacked libpam-modules:amd64 1.1.8-1ubuntu2.2
+2016-04-01 12:32:53 trigproc man-db:amd64 2.6.7.1-1ubuntu1 2.6.7.1-1ubuntu1
+2016-04-01 12:32:53 status half-configured man-db:amd64 2.6.7.1-1ubuntu1
+2016-04-01 12:32:53 status installed man-db:amd64 2.6.7.1-1ubuntu1
+2016-04-01 12:32:53 startup packages configure
+2016-04-01 12:32:53 configure libpam-modules:amd64 1.1.8-1ubuntu2.2 <none>
+2016-04-01 12:32:53 status unpacked libpam-modules:amd64 1.1.8-1ubuntu2.2
+2016-04-01 12:32:53 status unpacked libpam-modules:amd64 1.1.8-1ubuntu2.2
+2016-04-01 12:32:53 status unpacked libpam-modules:amd64 1.1.8-1ubuntu2.2
+2016-04-01 12:32:53 status unpacked libpam-modules:amd64 1.1.8-1ubuntu2.2
+2016-04-01 12:32:53 status unpacked libpam-modules:amd64 1.1.8-1ubuntu2.2
+2016-04-01 12:32:53 status unpacked libpam-modules:amd64 1.1.8-1ubuntu2.2
+2016-04-01 12:32:53 status unpacked libpam-modules:amd64 1.1.8-1ubuntu2.2
+2016-04-01 12:32:53 status unpacked libpam-modules:amd64 1.1.8-1ubuntu2.2
+2016-04-01 12:32:53 status unpacked libpam-modules:amd64 1.1.8-1ubuntu2.2
+2016-04-01 12:32:53 status half-configured libpam-modules:amd64 1.1.8-1ubuntu2.2
+2016-04-01 12:32:53 status installed libpam-modules:amd64 1.1.8-1ubuntu2.2
+2016-04-01 12:32:54 startup packages configure
+2016-04-01 12:32:56 startup archives unpack
+2016-04-01 12:32:56 upgrade libpam-runtime:all 1.1.8-1ubuntu2 1.1.8-1ubuntu2.2
+2016-04-01 12:32:56 status half-configured libpam-runtime:all 1.1.8-1ubuntu2
+2016-04-01 12:32:56 status unpacked libpam-runtime:all 1.1.8-1ubuntu2
+2016-04-01 12:32:56 status half-installed libpam-runtime:all 1.1.8-1ubuntu2
+2016-04-01 12:32:56 status triggers-pending man-db:amd64 2.6.7.1-1ubuntu1
+2016-04-01 12:32:56 status half-installed libpam-runtime:all 1.1.8-1ubuntu2
+2016-04-01 12:32:56 status unpacked libpam-runtime:all 1.1.8-1ubuntu2.2
+2016-04-01 12:32:56 status unpacked libpam-runtime:all 1.1.8-1ubuntu2.2
+2016-04-01 12:32:56 trigproc man-db:amd64 2.6.7.1-1ubuntu1 2.6.7.1-1ubuntu1
+2016-04-01 12:32:56 status half-configured man-db:amd64 2.6.7.1-1ubuntu1
+2016-04-01 12:32:57 status installed man-db:amd64 2.6.7.1-1ubuntu1
+2016-04-01 12:32:57 startup packages configure
+2016-04-01 12:32:57 configure libpam-runtime:all 1.1.8-1ubuntu2.2 <none>
+2016-04-01 12:32:57 status unpacked libpam-runtime:all 1.1.8-1ubuntu2.2
+2016-04-01 12:32:57 status unpacked libpam-runtime:all 1.1.8-1ubuntu2.2
+2016-04-01 12:32:57 status unpacked libpam-runtime:all 1.1.8-1ubuntu2.2
+2016-04-01 12:32:57 status half-configured libpam-runtime:all 1.1.8-1ubuntu2.2
+2016-04-01 12:32:57 status installed libpam-runtime:all 1.1.8-1ubuntu2.2
+2016-04-01 12:32:58 startup packages configure
+2016-04-01 12:32:59 startup archives unpack
+2016-04-01 12:33:00 upgrade libpam0g:amd64 1.1.8-1ubuntu2 1.1.8-1ubuntu2.2
+2016-04-01 12:33:00 status half-configured libpam0g:amd64 1.1.8-1ubuntu2
+2016-04-01 12:33:00 status unpacked libpam0g:amd64 1.1.8-1ubuntu2
+2016-04-01 12:33:00 status half-installed libpam0g:amd64 1.1.8-1ubuntu2
+2016-04-01 12:33:00 status half-installed libpam0g:amd64 1.1.8-1ubuntu2
+2016-04-01 12:33:00 status unpacked libpam0g:amd64 1.1.8-1ubuntu2.2
+2016-04-01 12:33:00 status unpacked libpam0g:amd64 1.1.8-1ubuntu2.2
+2016-04-01 12:33:00 startup packages configure
+2016-04-01 12:33:00 configure libpam0g:amd64 1.1.8-1ubuntu2.2 <none>
+2016-04-01 12:33:00 status unpacked libpam0g:amd64 1.1.8-1ubuntu2.2
+2016-04-01 12:33:00 status half-configured libpam0g:amd64 1.1.8-1ubuntu2.2
+2016-04-01 12:33:00 status installed libpam0g:amd64 1.1.8-1ubuntu2.2
+2016-04-01 12:33:00 status triggers-pending libc-bin:amd64 2.19-0ubuntu6.7
+2016-04-01 12:33:00 trigproc libc-bin:amd64 2.19-0ubuntu6.7 <none>
+2016-04-01 12:33:00 status half-configured libc-bin:amd64 2.19-0ubuntu6.7
+2016-04-01 12:33:01 status installed libc-bin:amd64 2.19-0ubuntu6.7
+2016-04-01 12:33:01 startup packages configure
+2016-04-01 12:33:02 startup archives unpack
+2016-04-01 12:33:02 upgrade libpcre3:amd64 1:8.31-2ubuntu2.1 1:8.31-2ubuntu2.2
+2016-04-01 12:33:02 status half-configured libpcre3:amd64 1:8.31-2ubuntu2.1
+2016-04-01 12:33:02 status unpacked libpcre3:amd64 1:8.31-2ubuntu2.1
+2016-04-01 12:33:02 status half-installed libpcre3:amd64 1:8.31-2ubuntu2.1
+2016-04-01 12:33:02 status triggers-pending man-db:amd64 2.6.7.1-1ubuntu1
+2016-04-01 12:33:02 status half-installed libpcre3:amd64 1:8.31-2ubuntu2.1
+2016-04-01 12:33:03 status unpacked libpcre3:amd64 1:8.31-2ubuntu2.2
+2016-04-01 12:33:03 status unpacked libpcre3:amd64 1:8.31-2ubuntu2.2
+2016-04-01 12:33:03 trigproc man-db:amd64 2.6.7.1-1ubuntu1 2.6.7.1-1ubuntu1
+2016-04-01 12:33:03 status half-configured man-db:amd64 2.6.7.1-1ubuntu1
+2016-04-01 12:33:03 status installed man-db:amd64 2.6.7.1-1ubuntu1
+2016-04-01 12:33:03 startup packages configure
+2016-04-01 12:33:03 configure libpcre3:amd64 1:8.31-2ubuntu2.2 <none>
+2016-04-01 12:33:03 status unpacked libpcre3:amd64 1:8.31-2ubuntu2.2
+2016-04-01 12:33:03 status half-configured libpcre3:amd64 1:8.31-2ubuntu2.2
+2016-04-01 12:33:03 status installed libpcre3:amd64 1:8.31-2ubuntu2.2
+2016-04-01 12:33:03 status triggers-pending libc-bin:amd64 2.19-0ubuntu6.7
+2016-04-01 12:33:03 trigproc libc-bin:amd64 2.19-0ubuntu6.7 <none>
+2016-04-01 12:33:03 status half-configured libc-bin:amd64 2.19-0ubuntu6.7
+2016-04-01 12:33:03 status installed libc-bin:amd64 2.19-0ubuntu6.7
+2016-04-01 12:33:04 startup packages configure
+2016-04-01 12:33:06 startup archives unpack
+2016-04-01 12:33:06 upgrade libssl-dev:amd64 1.0.1f-1ubuntu2.16 1.0.1f-1ubuntu2.18
+2016-04-01 12:33:06 status half-configured libssl-dev:amd64 1.0.1f-1ubuntu2.16
+2016-04-01 12:33:06 status unpacked libssl-dev:amd64 1.0.1f-1ubuntu2.16
+2016-04-01 12:33:06 status half-installed libssl-dev:amd64 1.0.1f-1ubuntu2.16
+2016-04-01 12:33:06 status half-installed libssl-dev:amd64 1.0.1f-1ubuntu2.16
+2016-04-01 12:33:06 status unpacked libssl-dev:amd64 1.0.1f-1ubuntu2.18
+2016-04-01 12:33:06 status unpacked libssl-dev:amd64 1.0.1f-1ubuntu2.18
+2016-04-01 12:33:06 upgrade libssl1.0.0:amd64 1.0.1f-1ubuntu2.16 1.0.1f-1ubuntu2.18
+2016-04-01 12:33:06 status half-configured libssl1.0.0:amd64 1.0.1f-1ubuntu2.16
+2016-04-01 12:33:06 status unpacked libssl1.0.0:amd64 1.0.1f-1ubuntu2.16
+2016-04-01 12:33:06 status half-installed libssl1.0.0:amd64 1.0.1f-1ubuntu2.16
+2016-04-01 12:33:07 status half-installed libssl1.0.0:amd64 1.0.1f-1ubuntu2.16
+2016-04-01 12:33:07 status unpacked libssl1.0.0:amd64 1.0.1f-1ubuntu2.18
+2016-04-01 12:33:07 status unpacked libssl1.0.0:amd64 1.0.1f-1ubuntu2.18
+2016-04-01 12:33:07 startup packages configure
+2016-04-01 12:33:07 configure libssl1.0.0:amd64 1.0.1f-1ubuntu2.18 <none>
+2016-04-01 12:33:07 status unpacked libssl1.0.0:amd64 1.0.1f-1ubuntu2.18
+2016-04-01 12:33:07 status half-configured libssl1.0.0:amd64 1.0.1f-1ubuntu2.18
+2016-04-01 12:33:07 status installed libssl1.0.0:amd64 1.0.1f-1ubuntu2.18
+2016-04-01 12:33:07 status triggers-pending libc-bin:amd64 2.19-0ubuntu6.7
+2016-04-01 12:33:07 configure libssl-dev:amd64 1.0.1f-1ubuntu2.18 <none>
+2016-04-01 12:33:07 status unpacked libssl-dev:amd64 1.0.1f-1ubuntu2.18
+2016-04-01 12:33:07 status half-configured libssl-dev:amd64 1.0.1f-1ubuntu2.18
+2016-04-01 12:33:07 status installed libssl-dev:amd64 1.0.1f-1ubuntu2.18
+2016-04-01 12:33:07 trigproc libc-bin:amd64 2.19-0ubuntu6.7 <none>
+2016-04-01 12:33:07 status half-configured libc-bin:amd64 2.19-0ubuntu6.7
+2016-04-01 12:33:08 status installed libc-bin:amd64 2.19-0ubuntu6.7
+2016-04-01 12:33:08 startup packages configure
+2016-04-01 12:33:09 startup packages configure
+2016-04-01 12:33:10 startup archives unpack
+2016-04-01 12:33:11 upgrade libtiff5:amd64 4.0.3-7ubuntu0.3 4.0.3-7ubuntu0.4
+2016-04-01 12:33:11 status half-configured libtiff5:amd64 4.0.3-7ubuntu0.3
+2016-04-01 12:33:11 status unpacked libtiff5:amd64 4.0.3-7ubuntu0.3
+2016-04-01 12:33:11 status half-installed libtiff5:amd64 4.0.3-7ubuntu0.3
+2016-04-01 12:33:11 status half-installed libtiff5:amd64 4.0.3-7ubuntu0.3
+2016-04-01 12:33:11 status unpacked libtiff5:amd64 4.0.3-7ubuntu0.4
+2016-04-01 12:33:11 status unpacked libtiff5:amd64 4.0.3-7ubuntu0.4
+2016-04-01 12:33:11 startup packages configure
+2016-04-01 12:33:11 configure libtiff5:amd64 4.0.3-7ubuntu0.4 <none>
+2016-04-01 12:33:11 status unpacked libtiff5:amd64 4.0.3-7ubuntu0.4
+2016-04-01 12:33:11 status half-configured libtiff5:amd64 4.0.3-7ubuntu0.4
+2016-04-01 12:33:11 status installed libtiff5:amd64 4.0.3-7ubuntu0.4
+2016-04-01 12:33:11 status triggers-pending libc-bin:amd64 2.19-0ubuntu6.7
+2016-04-01 12:33:11 trigproc libc-bin:amd64 2.19-0ubuntu6.7 <none>
+2016-04-01 12:33:11 status half-configured libc-bin:amd64 2.19-0ubuntu6.7
+2016-04-01 12:33:11 status installed libc-bin:amd64 2.19-0ubuntu6.7
+2016-04-01 12:33:12 startup packages configure
+2016-04-01 12:33:13 startup archives unpack
+2016-04-01 12:33:14 upgrade linux-libc-dev:amd64 3.13.0-77.121 3.13.0-83.127
+2016-04-01 12:33:14 status half-configured linux-libc-dev:amd64 3.13.0-77.121
+2016-04-01 12:33:14 status unpacked linux-libc-dev:amd64 3.13.0-77.121
+2016-04-01 12:33:14 status half-installed linux-libc-dev:amd64 3.13.0-77.121
+2016-04-01 12:33:14 status half-installed linux-libc-dev:amd64 3.13.0-77.121
+2016-04-01 12:33:14 status unpacked linux-libc-dev:amd64 3.13.0-83.127
+2016-04-01 12:33:14 status unpacked linux-libc-dev:amd64 3.13.0-83.127
+2016-04-01 12:33:14 startup packages configure
+2016-04-01 12:33:14 configure linux-libc-dev:amd64 3.13.0-83.127 <none>
+2016-04-01 12:33:14 status unpacked linux-libc-dev:amd64 3.13.0-83.127
+2016-04-01 12:33:14 status half-configured linux-libc-dev:amd64 3.13.0-83.127
+2016-04-01 12:33:14 status installed linux-libc-dev:amd64 3.13.0-83.127
+2016-04-01 12:33:15 startup packages configure
+2016-04-01 12:33:16 startup archives unpack
+2016-04-01 12:33:17 upgrade openssl:amd64 1.0.1f-1ubuntu2.16 1.0.1f-1ubuntu2.18
+2016-04-01 12:33:17 status half-configured openssl:amd64 1.0.1f-1ubuntu2.16
+2016-04-01 12:33:17 status unpacked openssl:amd64 1.0.1f-1ubuntu2.16
+2016-04-01 12:33:17 status half-installed openssl:amd64 1.0.1f-1ubuntu2.16
+2016-04-01 12:33:17 status triggers-pending man-db:amd64 2.6.7.1-1ubuntu1
+2016-04-01 12:33:17 status half-installed openssl:amd64 1.0.1f-1ubuntu2.16
+2016-04-01 12:33:17 status unpacked openssl:amd64 1.0.1f-1ubuntu2.18
+2016-04-01 12:33:17 status unpacked openssl:amd64 1.0.1f-1ubuntu2.18
+2016-04-01 12:33:17 trigproc man-db:amd64 2.6.7.1-1ubuntu1 2.6.7.1-1ubuntu1
+2016-04-01 12:33:17 status half-configured man-db:amd64 2.6.7.1-1ubuntu1
+2016-04-01 12:33:17 status installed man-db:amd64 2.6.7.1-1ubuntu1
+2016-04-01 12:33:18 startup packages configure
+2016-04-01 12:33:18 configure openssl:amd64 1.0.1f-1ubuntu2.18 <none>
+2016-04-01 12:33:18 status unpacked openssl:amd64 1.0.1f-1ubuntu2.18
+2016-04-01 12:33:18 status unpacked openssl:amd64 1.0.1f-1ubuntu2.18
+2016-04-01 12:33:18 status half-configured openssl:amd64 1.0.1f-1ubuntu2.18
+2016-04-01 12:33:18 status installed openssl:amd64 1.0.1f-1ubuntu2.18
+2016-04-01 12:33:18 startup packages configure
+2016-04-01 12:33:20 startup archives unpack
+2016-04-01 12:33:20 upgrade perl:amd64 5.18.2-2ubuntu1 5.18.2-2ubuntu1.1
+2016-04-01 12:33:20 status half-configured perl:amd64 5.18.2-2ubuntu1
+2016-04-01 12:33:20 status unpacked perl:amd64 5.18.2-2ubuntu1
+2016-04-01 12:33:20 status half-installed perl:amd64 5.18.2-2ubuntu1
+2016-04-01 12:33:20 status triggers-pending man-db:amd64 2.6.7.1-1ubuntu1
+2016-04-01 12:33:21 status half-installed perl:amd64 5.18.2-2ubuntu1
+2016-04-01 12:33:21 status unpacked perl:amd64 5.18.2-2ubuntu1.1
+2016-04-01 12:33:21 status unpacked perl:amd64 5.18.2-2ubuntu1.1
+2016-04-01 12:33:21 upgrade perl-base:amd64 5.18.2-2ubuntu1 5.18.2-2ubuntu1.1
+2016-04-01 12:33:21 status half-configured perl-base:amd64 5.18.2-2ubuntu1
+2016-04-01 12:33:21 status unpacked perl-base:amd64 5.18.2-2ubuntu1
+2016-04-01 12:33:21 status half-installed perl-base:amd64 5.18.2-2ubuntu1
+2016-04-01 12:33:22 status half-installed perl-base:amd64 5.18.2-2ubuntu1
+2016-04-01 12:33:22 status unpacked perl-base:amd64 5.18.2-2ubuntu1.1
+2016-04-01 12:33:22 status unpacked perl-base:amd64 5.18.2-2ubuntu1.1
+2016-04-01 12:33:22 trigproc man-db:amd64 2.6.7.1-1ubuntu1 2.6.7.1-1ubuntu1
+2016-04-01 12:33:22 status half-configured man-db:amd64 2.6.7.1-1ubuntu1
+2016-04-01 12:33:22 status installed man-db:amd64 2.6.7.1-1ubuntu1
+2016-04-01 12:33:22 startup packages configure
+2016-04-01 12:33:22 configure perl-base:amd64 5.18.2-2ubuntu1.1 <none>
+2016-04-01 12:33:22 status unpacked perl-base:amd64 5.18.2-2ubuntu1.1
+2016-04-01 12:33:22 status half-configured perl-base:amd64 5.18.2-2ubuntu1.1
+2016-04-01 12:33:22 status installed perl-base:amd64 5.18.2-2ubuntu1.1
+2016-04-01 12:33:22 startup archives unpack
+2016-04-01 12:33:23 upgrade perl-modules:all 5.18.2-2ubuntu1 5.18.2-2ubuntu1.1
+2016-04-01 12:33:23 status half-configured perl-modules:all 5.18.2-2ubuntu1
+2016-04-01 12:33:23 status unpacked perl-modules:all 5.18.2-2ubuntu1
+2016-04-01 12:33:23 status half-installed perl-modules:all 5.18.2-2ubuntu1
+2016-04-01 12:33:23 status half-installed perl-modules:all 5.18.2-2ubuntu1
+2016-04-01 12:33:23 status unpacked perl-modules:all 5.18.2-2ubuntu1.1
+2016-04-01 12:33:23 status unpacked perl-modules:all 5.18.2-2ubuntu1.1
+2016-04-01 12:33:23 startup packages configure
+2016-04-01 12:33:23 configure perl-modules:all 5.18.2-2ubuntu1.1 <none>
+2016-04-01 12:33:23 status unpacked perl-modules:all 5.18.2-2ubuntu1.1
+2016-04-01 12:33:23 status unpacked perl-modules:all 5.18.2-2ubuntu1.1
+2016-04-01 12:33:23 status half-configured perl-modules:all 5.18.2-2ubuntu1.1
+2016-04-01 12:33:23 status installed perl-modules:all 5.18.2-2ubuntu1.1
+2016-04-01 12:33:24 configure perl:amd64 5.18.2-2ubuntu1.1 <none>
+2016-04-01 12:33:24 status unpacked perl:amd64 5.18.2-2ubuntu1.1
+2016-04-01 12:33:24 status half-configured perl:amd64 5.18.2-2ubuntu1.1
+2016-04-01 12:33:24 status installed perl:amd64 5.18.2-2ubuntu1.1
+2016-04-01 12:33:25 startup packages configure
+2016-04-01 12:33:26 startup archives unpack
+2016-04-01 12:33:26 upgrade tzdata:all 2015g-0ubuntu0.14.04 2016c-0ubuntu0.14.04
+2016-04-01 12:33:26 status half-configured tzdata:all 2015g-0ubuntu0.14.04
+2016-04-01 12:33:26 status unpacked tzdata:all 2015g-0ubuntu0.14.04
+2016-04-01 12:33:26 status half-installed tzdata:all 2015g-0ubuntu0.14.04
+2016-04-01 12:33:27 status half-installed tzdata:all 2015g-0ubuntu0.14.04
+2016-04-01 12:33:27 status unpacked tzdata:all 2016c-0ubuntu0.14.04
+2016-04-01 12:33:27 status unpacked tzdata:all 2016c-0ubuntu0.14.04
+2016-04-01 12:33:27 startup packages configure
+2016-04-01 12:33:27 configure tzdata:all 2016c-0ubuntu0.14.04 <none>
+2016-04-01 12:33:27 status unpacked tzdata:all 2016c-0ubuntu0.14.04
+2016-04-01 12:33:27 status half-configured tzdata:all 2016c-0ubuntu0.14.04
+2016-04-01 12:33:28 status installed tzdata:all 2016c-0ubuntu0.14.04
+2016-04-01 12:33:28 startup packages configure
+2016-04-01 12:33:29 startup archives unpack
+2016-04-01 12:33:29 upgrade usbutils:amd64 1:007-2ubuntu1 1:007-2ubuntu1.1
+2016-04-01 12:33:29 status half-configured usbutils:amd64 1:007-2ubuntu1
+2016-04-01 12:33:29 status unpacked usbutils:amd64 1:007-2ubuntu1
+2016-04-01 12:33:29 status half-installed usbutils:amd64 1:007-2ubuntu1
+2016-04-01 12:33:29 status triggers-pending man-db:amd64 2.6.7.1-1ubuntu1
+2016-04-01 12:33:29 status half-installed usbutils:amd64 1:007-2ubuntu1
+2016-04-01 12:33:29 status unpacked usbutils:amd64 1:007-2ubuntu1.1
+2016-04-01 12:33:30 status unpacked usbutils:amd64 1:007-2ubuntu1.1
+2016-04-01 12:33:30 trigproc man-db:amd64 2.6.7.1-1ubuntu1 2.6.7.1-1ubuntu1
+2016-04-01 12:33:30 status half-configured man-db:amd64 2.6.7.1-1ubuntu1
+2016-04-01 12:33:30 status installed man-db:amd64 2.6.7.1-1ubuntu1
+2016-04-01 12:33:30 startup packages configure
+2016-04-01 12:33:30 configure usbutils:amd64 1:007-2ubuntu1.1 <none>
+2016-04-01 12:33:30 status unpacked usbutils:amd64 1:007-2ubuntu1.1
+2016-04-01 12:33:30 status half-configured usbutils:amd64 1:007-2ubuntu1.1
+2016-04-01 12:33:30 status installed usbutils:amd64 1:007-2ubuntu1.1

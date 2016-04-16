@@ -1,0 +1,23 @@
+<IfModule mod_ssl.c>
+<VirtualHost *:80>
+	ServerName ns319966.ip-91-121-76.eu
+	ServerAlias cal.dinde.pro
+
+	DocumentRoot /home/calendar/public_html/agendav-2.0.0-beta1/web/public/
+	ErrorLog /var/log/virtualmin/calendar.ladydinde.org_error_log
+	CustomLog /var/log/virtualmin/calendar.ladydinde.org_access_log combined
+	ScriptAlias /cgi-bin/ /home/calendar/public_html/agendav-2.0.0-beta1/web/public/cgi-bin/
+	DirectoryIndex index.html index.htm index.php index.php4 index.php5
+
+	<Directory "/home/calendar/public_html/agendav-2.0.0-beta1/web/public/">
+		Options -Indexes +IncludesNOEXEC +SymLinksIfOwnerMatch
+		allow from all
+		AllowOverride All Options=ExecCGI,Includes,IncludesNOEXEC,Indexes,MultiViews,SymLinksIfOwnerMatch
+		Require all granted
+	</Directory>
+	RewriteEngine on
+# Some rewrite rules in this file were were disabled on your HTTPS site,
+# because they have the potential to create redirection loops.
+# 	RewriteRule ^ https://%{SERVER_NAME}%{REQUEST_URI} [END,QSA,R=permanent]
+</VirtualHost>
+</IfModule>

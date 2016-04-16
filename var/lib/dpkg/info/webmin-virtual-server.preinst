@@ -1,0 +1,22 @@
+#!/bin/sh
+if [ ! -r /etc/webmin/config -o ! -d /usr/share/webmin ]; then
+	echo "Webmin does not appear to be installed on your system."
+	echo "This package cannot be installed unless the Debian version of Webmin"
+	echo "is installed first."
+	exit 1
+fi
+if [ "net useradmin quota webmin mount init acl cron mailboxes phpini procmail" != "" -a "" != 1 ]; then
+	# Check if depended webmin/usermin modules are installed
+	for d in net useradmin quota webmin mount init acl cron mailboxes phpini procmail; do
+		if [ ! -r /usr/share/webmin/$d/module.info ]; then
+			echo "This Webmin module depends on the module $d, which is"
+			echo "not installed on your system."
+			exit 1
+		fi
+	done
+fi
+# Check if this module is already installed
+if [ -d /usr/share/webmin/virtual-server -a "$1" != "upgrade" -a "1" != "1" ]; then
+	echo "This Webmin module is already installed on your system."
+	exit 1
+fi

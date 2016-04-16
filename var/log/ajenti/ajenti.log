@@ -1,0 +1,20 @@
+2016-02-02 22:44:42,627 INFO     registry.register_crypt_handler(): registered crypt handler 'sha512_crypt': <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+2016-02-02 22:44:42,730 INFO     core.run(): Ajenti 1.2.23.3 running on platform: debian
+2016-02-02 22:44:43,346 INFO     core.run(): Starting server on (u'0.0.0.0', 8000)
+2016-02-02 22:44:43,351 INFO     core.run(): SSL enabled: /etc/ajenti/ajenti.pem
+2016-02-02 22:44:43,355 INFO     connectionpool._new_conn(): Starting new HTTP connection (1): meta.ajenti.org
+2016-02-02 22:45:29,264 INFO     users.check_password(): user root logged in through AjentiSyncProvider from 78.194.214.225
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/gevent/greenlet.py", line 327, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/usr/lib/python2.7/dist-packages/gevent/server.py", line 102, in wrap_socket_and_handle
+    ssl_socket = self.wrap_socket(client_socket, **self.ssl_args)
+  File "/usr/lib/python2.7/dist-packages/gevent/ssl.py", line 395, in wrap_socket
+    ciphers=ciphers)
+  File "/usr/lib/python2.7/dist-packages/gevent/ssl.py", line 106, in __init__
+    self.do_handshake()
+  File "/usr/lib/python2.7/dist-packages/gevent/ssl.py", line 317, in do_handshake
+    return self._sslobj.do_handshake()
+SSLError: [Errno 1] _ssl.c:510: error:1408F10B:SSL routines:SSL3_GET_RECORD:wrong version number
+<Greenlet at 0x6fc6ce89caf0: <bound method SocketIOServer.wrap_socket_and_handle of <SocketIOServer at 0x6fc6cdf0eb90 fileno=8 address=0.0.0.0:8000>>(<socket at 0x6fc6cd28c9d0 fileno=12 sock=91.121.76, ('176.77.7.64', 22580))> failed with SSLError
+

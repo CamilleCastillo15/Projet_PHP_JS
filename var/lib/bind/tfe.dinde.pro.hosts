@@ -1,0 +1,21 @@
+$ttl 38400
+@	IN	SOA	ns319966.ip-91-121-76.eu. root.ns319966.ip-91-121-76.eu. (
+			1457349098
+			10800
+			3600
+			604800
+			38400 )
+@	IN	NS	ns319966.ip-91-121-76.eu.
+tfe.dinde.pro.	IN	A	91.121.76.99
+www.tfe.dinde.pro.	IN	A	91.121.76.99
+ftp.tfe.dinde.pro.	IN	A	91.121.76.99
+m.tfe.dinde.pro.	IN	A	91.121.76.99
+localhost.tfe.dinde.pro.	IN	A	127.0.0.1
+webmail.tfe.dinde.pro.	IN	A	91.121.76.99
+admin.tfe.dinde.pro.	IN	A	91.121.76.99
+tfe.dinde.pro.	IN	AAAA	2001:41d0:1:8163::1
+www.tfe.dinde.pro.	IN	AAAA	2001:41d0:1:8163::1
+ftp.tfe.dinde.pro.	IN	AAAA	2001:41d0:1:8163::1
+m.tfe.dinde.pro.	IN	AAAA	2001:41d0:1:8163::1
+webmail.tfe.dinde.pro.	IN	AAAA	2001:41d0:1:8163::1
+admin.tfe.dinde.pro.	IN	AAAA	2001:41d0:1:8163::1

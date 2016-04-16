@@ -1,0 +1,6 @@
+/etc/init.d/smartmontools
+/etc/smartmontools/run.d/10powersave-notify
+/etc/smartmontools/run.d/10mail
+/etc/default/smartmontools
+/etc/smartd.conf
+/etc/smartd_warning.sh

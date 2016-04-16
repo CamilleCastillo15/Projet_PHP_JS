@@ -1,0 +1,23 @@
+<IfModule mod_ssl.c>
+<VirtualHost *:80>
+ServerName ns319966.ip-91-121-76.eu
+ServerAlias mail.dinde.pro
+DocumentRoot /home/mail.dinde.pro/public_html
+ErrorLog /var/log/virtualmin/mail.dinde.pro_error_log
+CustomLog /var/log/virtualmin/mail.dinde.pro_access_log combined
+ScriptAlias /cgi-bin/ /home/mail.dinde.pro/cgi-bin/
+DirectoryIndex index.html index.htm index.php index.php4 index.php5
+<Directory /home/mail.dinde.pro/public_html>
+Options -Indexes +IncludesNOEXEC +SymLinksIfOwnerMatch
+allow from all
+AllowOverride All Options=ExecCGI,Includes,IncludesNOEXEC,Indexes,MultiViews,SymLinksIfOwnerMatch
+Require all granted
+</Directory>
+<Directory /home/mail.dinde.pro/cgi-bin>
+allow from all
+AllowOverride All Options=ExecCGI,Includes,IncludesNOEXEC,Indexes,MultiViews,SymLinksIfOwnerMatch
+Require all granted
+</Directory>
+RewriteEngine on
+</VirtualHost>
+</IfModule>
